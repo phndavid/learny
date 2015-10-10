@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Learny</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_activity_login">ActivityLogin</string>
+    <string name="title_activity_activity_feedback">ActivityFeedback</string>
+    <string name="title_activity_activity_play">ActivityPlay</string>
+    <string name="title_activity_activity_question">ActivityQuestion</string>
+    <string name="title_activity_activity_arduino">ActivityArduino</string>
 </resources>
