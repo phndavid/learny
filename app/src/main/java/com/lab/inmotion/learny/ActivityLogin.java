@@ -15,6 +15,11 @@ public class ActivityLogin extends AppCompatActivity {
         startActivity(theIntent);
         finish();
     }
+    public void btnSignUp(View view){
+        Intent theIntent = new Intent(this, ActivitySignUp.class);
+        startActivity(theIntent);
+        finish();
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
