@@ -17,7 +17,9 @@ public class ActivityPlay extends AppCompatActivity {
         ParseUser.logOut();
         // Start and intent for the dispatch activity
         Intent theIntent = new Intent(this, ActivityLogin.class);
-        startActivity(theIntent);;
+        startActivity(theIntent);
+        finish();
+
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {

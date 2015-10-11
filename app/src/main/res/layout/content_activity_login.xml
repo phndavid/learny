@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/txt_passwd"
         android:layout_above="@+id/btn_signIn"
         android:layout_alignLeft="@+id/btn_signIn"
         android:layout_alignStart="@+id/btn_signIn" />
@@ -36,12 +36,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="Username"
         android:ems="10"
-        android:id="@+id/editText2"
+        android:id="@+id/txt_username"
         android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText" />
+        android:layout_alignLeft="@+id/txt_passwd"
+        android:layout_alignStart="@+id/txt_passwd" />
 
     <Button
         android:layout_width="wrap_content"
