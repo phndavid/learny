@@ -8,7 +8,7 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_activity_sign_up"
-    tools:context="com.lab.inmotion.learny.Activities.ActivitySignUp">
+    tools:context="com.lab.inmotion.learny.Activities.SignUpActivity">
 
     <EditText
         android:layout_width="wrap_content"

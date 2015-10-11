@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".Activities.ActivityIntro"
+            android:name=".Activities.IntroActivity"
             android:label="@string/app_name"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" >
@@ -25,47 +25,54 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activities.ActivityLogin"
+            android:name=".Activities.LoginActivity"
             android:label="@string/title_activity_activity_login"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
-            android:name=".Activities.ActivityFeedback"
+            android:name=".Activities.ChildListActivity"
             android:label="@string/title_activity_activity_feedback"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
-            android:name=".Activities.ActivityPlay"
+            android:name=".Activities.PlayActivity"
             android:label="@string/title_activity_activity_play"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
-            android:name=".Activities.ActivityQuestion"
+            android:name=".Activities.QuestionActivity"
             android:label="@string/title_activity_activity_question"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
-            android:name=".Activities.ActivityArduino"
+            android:name=".Activities.ArduinoActivity"
             android:label="@string/title_activity_activity_arduino"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
-            android:name=".Activities.ActivityChild"
+            android:name=".Activities.ChildRecordActivity"
             android:label="@string/title_activity_activity_child"
+            android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
-            android:name=".Activities.ActivitySignUp"
+            android:name=".Activities.SignUpActivity"
             android:label="@string/title_activity_activity_sign_up"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-        <activity android:name=".Activities.ActivityDispatch" >
+        <activity android:name=".Activities.DispatchActivity" >
+        </activity>
+        <activity
+            android:name=".Activities.LearnyActivity"
+            android:label="@string/title_activity_learny"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
     </application>
 

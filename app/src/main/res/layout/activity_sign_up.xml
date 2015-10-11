@@ -4,14 +4,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:fitsSystemWindows="true"
-    tools:context="com.lab.inmotion.learny.Activities.ActivitySignUp">
+    tools:context="com.lab.inmotion.learny.Activities.SignUpActivity">
 
     <android.support.design.widget.AppBarLayout android:layout_height="wrap_content"
         android:layout_width="match_parent" android:theme="@style/AppTheme.AppBarOverlay">
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_activity_sign_up" />
+    <include layout="@layout/content_sign_up" />
 
 
 </android.support.design.widget.CoordinatorLayout>

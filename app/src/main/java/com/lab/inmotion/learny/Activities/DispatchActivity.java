@@ -6,9 +6,9 @@ import android.os.Bundle;
 
 import com.parse.ParseUser;
 
-public class ActivityDispatch extends AppCompatActivity {
+public class DispatchActivity extends AppCompatActivity {
 
-    public ActivityDispatch() {
+    public DispatchActivity() {
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,10 +16,10 @@ public class ActivityDispatch extends AppCompatActivity {
         // Check if there is current user info
         if (ParseUser.getCurrentUser() != null) {
             // Start an intent for the logged in activity
-            startActivity(new Intent(this, ActivityPlay.class));
+            startActivity(new Intent(this, PlayActivity.class));
         } else {
             // Start and intent for the logged out activity
-            startActivity(new Intent(this, ActivityLogin.class));
+            startActivity(new Intent(this, LoginActivity.class));
         }
     }
 }

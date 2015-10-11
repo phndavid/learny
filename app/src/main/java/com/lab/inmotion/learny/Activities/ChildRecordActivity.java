@@ -7,18 +7,16 @@ import android.view.View;
 
 import com.lab.inmotion.learny.R;
 
-public class ActivityIntro extends AppCompatActivity {
+public class ChildRecordActivity extends AppCompatActivity {
 
-    public void btnLogin(View view){
-        Intent theIntent = new Intent(this, ActivityLogin.class);
-        startActivity(theIntent);
-        finish();
-    }
+   public void btnRegisterChild(View view){
+       Intent theIntent = new Intent(this, LearnyActivity.class);
+       startActivity(theIntent);
+   }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_activity_intro);
+        setContentView(R.layout.activity_child);
+   
     }
-
-
 }

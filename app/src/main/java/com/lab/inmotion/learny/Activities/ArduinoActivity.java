@@ -9,12 +9,12 @@ import android.view.View;
 
 import com.lab.inmotion.learny.R;
 
-public class ActivityArduino extends AppCompatActivity {
+public class ArduinoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_activity_arduino);
+        setContentView(R.layout.activity_arduino);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
