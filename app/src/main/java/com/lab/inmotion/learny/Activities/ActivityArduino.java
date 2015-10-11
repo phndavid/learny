@@ -1,4 +1,4 @@
-package com.lab.inmotion.learny;
+package com.lab.inmotion.learny.Activities;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -7,12 +7,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-public class ActivityFeedback extends AppCompatActivity {
+import com.lab.inmotion.learny.R;
+
+public class ActivityArduino extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_activity_feedback);
+        setContentView(R.layout.activity_activity_arduino);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

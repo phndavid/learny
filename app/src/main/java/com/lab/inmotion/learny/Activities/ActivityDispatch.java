@@ -1,4 +1,4 @@
-package com.lab.inmotion.learny;
+package com.lab.inmotion.learny.Activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

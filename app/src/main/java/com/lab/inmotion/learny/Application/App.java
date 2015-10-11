@@ -1,4 +1,4 @@
-package com.lab.inmotion.learny;
+package com.lab.inmotion.learny.Application;
 
 import android.app.Application;
 
