@@ -19,11 +19,11 @@ public class PlayActivity extends AppCompatActivity {
         finish();
 
     }
-    public void btnChildList(View view){
+    public void btnChildlist(View view){
         Intent theIntent = new Intent(this, ChildListActivity.class);
         startActivity(theIntent);
     }
-    public void btnRegisterChild(View view){
+    public void btnStart(View view){
         Intent theIntent = new Intent(this, ChildRecordActivity.class);
         startActivity(theIntent);
     }
