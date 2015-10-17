@@ -13,7 +13,7 @@ import com.lab.inmotion.learny.R;
 public class LearnyActivity extends AppCompatActivity {
 
     public void playLearny(View view){
-        Intent theIntent = new Intent(this, QuestionActivity.class);
+        Intent theIntent = new Intent(this, CategoryActivity.class);
         startActivity(theIntent);
         finish();
     }

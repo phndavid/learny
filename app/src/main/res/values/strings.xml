@@ -25,4 +25,5 @@
     <string name="progress_signup">Signing you up&#8230;</string>
     <string name="title_activity_learny">LearnyActivity</string>
     <string name="title_activity_device">DeviceActivity</string>
+    <string name="title_activity_category">CategoryActivity</string>
 </resources>
