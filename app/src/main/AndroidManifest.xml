@@ -43,7 +43,7 @@
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
-            android:name=".Activities.QuestionActivity"
+            android:name=".Activities.CubeActivity"
             android:label="@string/title_activity_activity_question"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" >
@@ -83,6 +83,25 @@
         <activity
             android:name=".Activities.CategoryActivity"
             android:label="@string/title_activity_category"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".Activities.FigureActivity"
+            android:label="@string/title_activity_figure"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".Activities.SequenceActivity"
+            android:label="@string/title_activity_sequence"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".Activities.KeyActivity"
+            android:label="@string/title_activity_key"
+            android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
     </application>

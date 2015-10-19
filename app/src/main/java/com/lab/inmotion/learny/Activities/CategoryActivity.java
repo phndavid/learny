@@ -1,6 +1,7 @@
 package com.lab.inmotion.learny.Activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -68,7 +69,37 @@ public class CategoryActivity extends AppCompatActivity {
             v.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(CategoryActivity.this, "clicked position:" + position, Toast.LENGTH_SHORT).show();
+                    if(position == 0){
+                        Intent theIntent = new Intent(v.getContext(), FigureActivity.class);
+                        startActivity(theIntent);
+                        finish();
+                        Toast.makeText(CategoryActivity.this, "clicked position:" + position, Toast.LENGTH_SHORT).show();
+                    }else if(position == 1){
+                        Intent theIntent = new Intent(v.getContext(), CubeActivity.class);
+                        startActivity(theIntent);
+                        finish();
+                        Toast.makeText(CategoryActivity.this, "clicked position:" + position, Toast.LENGTH_SHORT).show();
+                    }else if(position == 2){
+                        Intent theIntent = new Intent(v.getContext(), SequenceActivity.class);
+                        startActivity(theIntent);
+                        finish();
+                        Toast.makeText(CategoryActivity.this, "clicked position:" + position, Toast.LENGTH_SHORT).show();
+                    }else if(position == 3){
+                        Intent theIntent = new Intent(v.getContext(), KeyActivity.class);
+                        startActivity(theIntent);
+                        finish();
+                        Toast.makeText(CategoryActivity.this, "clicked position:" + position, Toast.LENGTH_SHORT).show();
+                    }else if(position == 4){
+                        Intent theIntent = new Intent(v.getContext(), FigureActivity.class);
+                        startActivity(theIntent);
+                        finish();
+                        Toast.makeText(CategoryActivity.this, "clicked position:" + position, Toast.LENGTH_SHORT).show();
+                    }else if (position == 5){
+                        Intent theIntent = new Intent(v.getContext(), FigureActivity.class);
+                        startActivity(theIntent);
+                        finish();
+                        Toast.makeText(CategoryActivity.this, "clicked position:" + position, Toast.LENGTH_SHORT).show();
+                    }
                 }
             });
 

@@ -9,7 +9,7 @@ import android.view.View;
 
 import com.lab.inmotion.learny.R;
 
-public class QuestionActivity extends AppCompatActivity {
+public class CubeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

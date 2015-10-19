@@ -26,4 +26,7 @@
     <string name="title_activity_learny">LearnyActivity</string>
     <string name="title_activity_device">DeviceActivity</string>
     <string name="title_activity_category">CategoryActivity</string>
+    <string name="title_activity_figure">FigureActivity</string>
+    <string name="title_activity_sequence">SequenceActivity</string>
+    <string name="title_activity_key">KeyActivity</string>
 </resources>
