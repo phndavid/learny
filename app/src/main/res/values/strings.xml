@@ -29,4 +29,5 @@
     <string name="title_activity_figure">FigureActivity</string>
     <string name="title_activity_sequence">SequenceActivity</string>
     <string name="title_activity_key">KeyActivity</string>
+    <string name="title_activity_feed_back">FeedBackActivity</string>
 </resources>

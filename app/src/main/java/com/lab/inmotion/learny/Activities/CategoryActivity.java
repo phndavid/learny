@@ -36,8 +36,8 @@ public class CategoryActivity extends AppCompatActivity {
 
 
     private class MyAdapter extends BaseAdapter {
-        private int[] mResourceIds = {R.drawable.poster1, R.drawable.poster2, R.drawable.poster3, R.drawable.poster4,
-                R.drawable.poster5};
+        private int[] mResourceIds = {R.mipmap.coloruno_xhdpi, R.mipmap.safedos_xhdpi, R.mipmap.safetres_xhdpi, R.mipmap.safecuatro_xhdpi,
+                R.mipmap.safecinco};
 
         private int mCount = mResourceIds.length;
 
@@ -73,32 +73,26 @@ public class CategoryActivity extends AppCompatActivity {
                         Intent theIntent = new Intent(v.getContext(), FigureActivity.class);
                         startActivity(theIntent);
                         finish();
-                        Toast.makeText(CategoryActivity.this, "clicked position:" + position, Toast.LENGTH_SHORT).show();
                     }else if(position == 1){
                         Intent theIntent = new Intent(v.getContext(), CubeActivity.class);
                         startActivity(theIntent);
                         finish();
-                        Toast.makeText(CategoryActivity.this, "clicked position:" + position, Toast.LENGTH_SHORT).show();
                     }else if(position == 2){
                         Intent theIntent = new Intent(v.getContext(), SequenceActivity.class);
                         startActivity(theIntent);
                         finish();
-                        Toast.makeText(CategoryActivity.this, "clicked position:" + position, Toast.LENGTH_SHORT).show();
                     }else if(position == 3){
                         Intent theIntent = new Intent(v.getContext(), KeyActivity.class);
                         startActivity(theIntent);
                         finish();
-                        Toast.makeText(CategoryActivity.this, "clicked position:" + position, Toast.LENGTH_SHORT).show();
                     }else if(position == 4){
                         Intent theIntent = new Intent(v.getContext(), FigureActivity.class);
                         startActivity(theIntent);
                         finish();
-                        Toast.makeText(CategoryActivity.this, "clicked position:" + position, Toast.LENGTH_SHORT).show();
                     }else if (position == 5){
                         Intent theIntent = new Intent(v.getContext(), FigureActivity.class);
                         startActivity(theIntent);
                         finish();
-                        Toast.makeText(CategoryActivity.this, "clicked position:" + position, Toast.LENGTH_SHORT).show();
                     }
                 }
             });
@@ -124,10 +118,8 @@ public class CategoryActivity extends AppCompatActivity {
             super(context);
 
             mImageView = new ImageView(context);
-            mImageView.setScaleType(ImageView.ScaleType.FIT_XY);
+            //mImageView.setScaleType(ImageView.ScaleType.FIT_XY);
             addView(mImageView);
-
-            setBackgroundColor(Color.WHITE);
             setSelected(false);
         }
 

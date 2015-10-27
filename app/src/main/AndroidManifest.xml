@@ -104,6 +104,11 @@
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity
+            android:name=".Activities.FeedBackActivity"
+            android:label="@string/title_activity_feed_back"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
-
 </manifest>

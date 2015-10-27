@@ -1,11 +1,19 @@
 package com.lab.inmotion.learny.Activities;
 
+import android.content.ClipData;
+import android.content.ClipDescription;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.DragEvent;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.lab.inmotion.learny.R;
 
@@ -14,8 +22,63 @@ public class CubeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_question);
+        setContentView(R.layout.activity_cube);
+
+        findViewById(R.id.imgView).setOnTouchListener(new imgTouchListener());
+        findViewById(R.id.right_img).setOnDragListener(new ContainerDragListener());
 
     }
+    private class imgTouchListener implements View.OnTouchListener {
+        public boolean onTouch(View view, MotionEvent motionEvent) {
 
+    	/*ACTION_DOWN -> A pressed gesture has started, the motion contains the initial position*/
+            if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+                ClipData data = ClipData.newPlainText("", "");
+        /*Creates an image that the system displays during the drag and drop operation. This is called a "drag shadow".*/
+                View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
+                view.startDrag(data, shadowBuilder, view, 0);
+        /*while the img is moving, the view is invisible, if we comment this line, the view 'will move' when we drop it*/
+                view.setVisibility(View.INVISIBLE);
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    private class ContainerDragListener implements View.OnDragListener {
+        //Drawable enterShape = getResources().getDrawable(R.drawable.shape_droptarget);
+        //Drawable normalShape = getResources().getDrawable(R.drawable.shape);
+
+        @Override
+        public boolean onDrag(View v, DragEvent event) {
+            int action = event.getAction();
+            switch (event.getAction()) {
+                case DragEvent.ACTION_DRAG_STARTED:
+                    // do nothing
+                    break;
+                case DragEvent.ACTION_DRAG_ENTERED:
+    	             /*change de background*/
+                   // v.setBackground(enterShape);
+                    break;
+                case DragEvent.ACTION_DRAG_EXITED:
+                    //v.setBackground(normalShape);
+                    break;
+                case DragEvent.ACTION_DROP:
+                    // Dropped, reassign View to ViewGroup
+                    View view = (View) event.getLocalState();
+                    LinearLayout oldContainer = (LinearLayout) view.getParent();
+                    oldContainer.removeView(view);
+                    LinearLayout newContainer = (LinearLayout) v;
+                    newContainer.addView(view);
+                    view.setVisibility(View.VISIBLE);
+                    break;
+                case DragEvent.ACTION_DRAG_ENDED:
+                    //v.setBackground(normalShape);
+                default:
+                    break;
+            }
+            return true;
+        }
+    }
 }
