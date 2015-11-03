@@ -11,12 +11,18 @@ import java.util.List;
  * Created by InMotionLab on 10/10/2015.
  */
 @ParseClassName("_User")
-public class Doctor extends ParseUser{
+public class Especialista extends ParseUser{
 
     private String id;
     private String username;
     private String password;
-    private List<Child> children = new ArrayList<Child>();
+    private List<Child> children;
+
+    public Especialista (String username, String password){
+        this.username = username;
+        this.password = password;
+        children = new ArrayList<Child>();
+    }
 
     public void addChild(Child child){
         children.add(child);
@@ -26,7 +32,19 @@ public class Doctor extends ParseUser{
         children.remove(child);
         ParseUser.getCurrentUser().getRelation("children").remove(child);
     }
-
-
-
+    public List<Child> getChilldren(){
+        return children;
+    }
+    public String getUsername(){
+        return username;
+    }
+    public String getPassword(){
+        return password;
+    }
+    public void setUsername(String username){
+        this.username = username;
+    }
+    public void setPassword (String password){
+        this.password = password;
+    }
 }
