@@ -23,15 +23,16 @@
 
     <Button
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:id="@+id/btn_list"
         android:onClick="btnStart"
         android:background="@android:color/transparent"
-        android:layout_marginLeft="47dp"
-        android:layout_marginStart="47dp"
-        android:layout_alignBottom="@+id/btn_register"
+        android:layout_marginLeft="118dp"
+        android:layout_marginStart="118dp"
+        android:layout_alignTop="@+id/btn_register"
         android:layout_toRightOf="@+id/btn_register"
-        android:layout_toEndOf="@+id/btn_register" />
+        android:layout_toEndOf="@+id/btn_register"
+        android:layout_marginTop="49dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -41,5 +42,6 @@
         android:background="@android:color/transparent"
         android:layout_below="@+id/btn_logOut"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="69dp" />
 </RelativeLayout>

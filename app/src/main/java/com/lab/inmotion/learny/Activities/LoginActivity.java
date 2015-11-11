@@ -78,6 +78,9 @@ public class LoginActivity extends AppCompatActivity {
         // Set up the login form.
         usernameEditText = (EditText) findViewById(R.id.txt_username);
         passwordEditText = (EditText) findViewById(R.id.txt_passwd);
+        usernameEditText.setSelected(false);
+        passwordEditText.setSelected(false);
+
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
