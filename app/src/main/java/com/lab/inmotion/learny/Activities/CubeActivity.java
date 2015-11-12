@@ -24,9 +24,13 @@ public class CubeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cube);
 
-        findViewById(R.id.imgView).setOnTouchListener(new imgTouchListener());
+        findViewById(R.id.cubeOne).setOnTouchListener(new imgTouchListener());
+        findViewById(R.id.cubeTwo).setOnTouchListener(new imgTouchListener());
+        findViewById(R.id.cubeThree).setOnTouchListener(new imgTouchListener());
+        findViewById(R.id.cubeFour).setOnTouchListener(new imgTouchListener());
+        findViewById(R.id.cubeFive).setOnTouchListener(new imgTouchListener());
         findViewById(R.id.right_img).setOnDragListener(new ContainerDragListener());
-
+        findViewById(R.id.left_img).setOnDragListener(new ContainerDragListener());
     }
     private class imgTouchListener implements View.OnTouchListener {
         public boolean onTouch(View view, MotionEvent motionEvent) {
