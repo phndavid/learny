@@ -6,8 +6,70 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@mipmap/fondouno"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_sequence"
     tools:context="com.lab.inmotion.learny.Activities.SequenceActivity">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgOne"
+        android:background="@mipmap/plantauno"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="126dp"
+        android:layout_marginStart="126dp"
+        android:layout_marginTop="196dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/plantados"
+        android:id="@+id/imgTwo"
+        android:layout_alignTop="@+id/imgOne"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgThree"
+        android:background="@mipmap/plantatres"
+        android:layout_alignTop="@+id/imgTwo"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="113dp"
+        android:layout_marginEnd="113dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toLeftOf="@+id/imgTwo"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/linearOne"
+        android:layout_alignTop="@+id/linearTwo"
+        android:layout_alignLeft="@+id/imgOne"
+        android:layout_alignStart="@+id/imgOne"></LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/imgTwo"
+        android:layout_marginTop="73dp"
+        android:layout_toRightOf="@+id/linearOne"
+        android:layout_toLeftOf="@+id/imgThree"
+        android:layout_toStartOf="@+id/imgThree"
+        android:id="@+id/linearTwo"></LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@+id/linearTwo"
+        android:layout_toRightOf="@+id/linearTwo"
+        android:layout_toEndOf="@+id/linearTwo"
+        android:id="@+id/linearThree"></LinearLayout>
 </RelativeLayout>
