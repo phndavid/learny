@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -162,6 +163,14 @@ public class FigureActivity extends AppCompatActivity {
         return correct;
     }
     public void btn_next(View view){
+        System.out.println("initialTime en btnNext: " + model.getCurrent().getCurrentTest().getInitialTime());
+        long finalTime = SystemClock.elapsedRealtime();
+        double dFinalTime = (double) finalTime;
+        System.out.println("finalTime long: " + finalTime + " finalTime double: " + dFinalTime);
+        model.getCurrent().getCurrentTest().setFinalTime(dFinalTime);
+        model.getCurrent().getCurrentTest().measureTime();
+        System.out.println("finalTime en btnNext: " + model.getCurrent().getCurrentTest().getFinalTime());
+        System.out.println("tiempo que se demoro, debe ser mas o menos 20 segs: " + model.getCurrent().getCurrentTest().getTime());
         Intent intent = new Intent(this,FeedBackActivity.class);
         intent.putExtra("category", "incompleteFigure");
         intent.putExtra("count", model.getCurrent().getCurrentTest().getId());
@@ -175,7 +184,7 @@ public class FigureActivity extends AppCompatActivity {
             System.out.println("puntaje acumulado: " + model.getCurrent().getPuntaje());
             model.nextTest();
         }
-        System.out.println("count en el next y la pongo mas para que hayan cambios: " + count);
+
 
     }
     @Override
@@ -195,6 +204,10 @@ public class FigureActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        long startTime = SystemClock.elapsedRealtime();
+        double dStartTime = (double) startTime;
+        System.out.println("tiempo en long: " + startTime + " tiempo en double: " + dStartTime);
+        model.getCurrent().getCurrentTest().setInitialTime(dStartTime);
         System.out.println("se ejecuta el onresume y este es el count: " + count);
         int thecount= model.getCurrent().getCurrentTest().getId();
         if(thecount>0){
@@ -229,6 +242,12 @@ public class FigureActivity extends AppCompatActivity {
     protected void onRestart() {
         super.onRestart();
         System.out.println("se ejecuta el onrestart");
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
 
     }
 }
