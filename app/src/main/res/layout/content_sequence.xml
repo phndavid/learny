@@ -17,11 +17,11 @@
         android:id="@+id/imgOne"
         android:background="@mipmap/plantauno"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="126dp"
-        android:layout_marginStart="126dp"
-        android:layout_marginTop="196dp" />
+        android:layout_toLeftOf="@+id/linearTwo"
+        android:layout_toStartOf="@+id/linearTwo"
+        android:layout_marginRight="117dp"
+        android:layout_marginEnd="117dp"
+        android:layout_marginTop="185dp" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -39,19 +39,20 @@
         android:layout_alignTop="@+id/imgTwo"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginRight="113dp"
-        android:layout_marginEnd="113dp" />
+        android:layout_marginRight="120dp"
+        android:layout_marginEnd="120dp" />
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_toLeftOf="@+id/imgTwo"
         android:layout_alignParentBottom="true"
         android:id="@+id/linearOne"
         android:layout_alignTop="@+id/linearTwo"
         android:layout_alignLeft="@+id/imgOne"
-        android:layout_alignStart="@+id/imgOne"></LinearLayout>
+        android:layout_alignStart="@+id/imgOne"
+        android:layout_alignRight="@+id/imgOne"
+        android:layout_alignEnd="@+id/imgOne"></LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
@@ -59,17 +60,20 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/imgTwo"
         android:layout_marginTop="73dp"
-        android:layout_toRightOf="@+id/linearOne"
-        android:layout_toLeftOf="@+id/imgThree"
-        android:layout_toStartOf="@+id/imgThree"
-        android:id="@+id/linearTwo"></LinearLayout>
+        android:id="@+id/linearTwo"
+        android:layout_alignLeft="@+id/imgTwo"
+        android:layout_alignStart="@+id/imgTwo"
+        android:layout_alignRight="@+id/imgTwo"
+        android:layout_alignEnd="@+id/imgTwo"></LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignTop="@+id/linearTwo"
-        android:layout_toRightOf="@+id/linearTwo"
-        android:layout_toEndOf="@+id/linearTwo"
-        android:id="@+id/linearThree"></LinearLayout>
+        android:id="@+id/linearThree"
+        android:layout_alignLeft="@+id/imgThree"
+        android:layout_alignStart="@+id/imgThree"
+        android:layout_alignRight="@+id/imgThree"
+        android:layout_alignEnd="@+id/imgThree"></LinearLayout>
 </RelativeLayout>
