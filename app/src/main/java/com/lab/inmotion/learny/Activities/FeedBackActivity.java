@@ -1,31 +1,57 @@
 package com.lab.inmotion.learny.Activities;
 
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.RelativeLayout;
 
 import com.lab.inmotion.learny.R;
 
 public class FeedBackActivity extends AppCompatActivity {
 
+    private int[] backgrounds = {R.mipmap.retrouno_xhdpi,R.mipmap.retrodos_xhdpi};
+
+    private RelativeLayout relativeLayout;
+    private int globalCount;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed_back);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        relativeLayout = (RelativeLayout) findViewById(R.id.relafeedback);
+        Bundle bundle = getIntent().getExtras();
+        String level = bundle.getString("category");
+        int count = bundle.getInt("count");
+        globalCount = count;
+        if(count==1){
+            relativeLayout.setBackgroundResource(backgrounds[0]);
+        }
+        if(count==2){
+            relativeLayout.setBackgroundResource(backgrounds[1]);
+        }
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
+    }
+
+    public void defineBackground(String category, String count){
+
+
+    }
+    public void tap(View view){
+        if(globalCount<5){
+            Intent theIntent = new Intent(this, FigureActivity.class);
+            theIntent.putExtra("count",globalCount++);
+            startActivity(theIntent);
+            finish();
+        }else{
+            Intent theIntent = new Intent(this,CategoryActivity.class);
+            startActivity(theIntent);
+            finish();
+        }
     }
 
 }

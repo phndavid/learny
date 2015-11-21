@@ -16,8 +16,14 @@ import com.lab.inmotion.learny.R;
 
 public class FigureActivity extends AppCompatActivity {
 
+
     private int[] imgResourceIds = {R.mipmap.carro_xhdpi, R.mipmap.gato_xhdpi,R.mipmap.reloj_xhdpi,R.mipmap.espejo,R.mipmap.mesa_xhdpi};
     private int[] fontResourceIds = {R.mipmap.nivelunoamarillo_xhdpi, R.mipmap.nivelunoazul_xhdpi,R.mipmap.nivelunorosa_xhdpi,R.mipmap.nivelunoverde_xhdpi,R.mipmap.nivelunovioleta_xhdpi};
+    private String [][] answers = {{"rin","rrin","riin","rinn","riinn"},{"bigote","bigotes","bigute","bigutes","bigutrs"},{"cuatro","IV","cutro","catro","cuato","cacho","cuerno","cueno","cerno","cuernp"},{"pata","pierna","paata","patta","pataa"}};
+    private int puntaje=0;
+
+
+
     private  int count;
     private RelativeLayout relativeLayout;
     private ImageView imgFigure;
@@ -134,31 +140,57 @@ public class FigureActivity extends AppCompatActivity {
         textWord.setText(word);
     }
 
+    public boolean checkAnswer(String answer,int count){
+        boolean correct = false;
+        String [] theAnswers = answers[count-1];
+        for(int i=0;i<theAnswers.length;i++){
+            if(answers.equals(theAnswers[i])){
+                puntaje++;
+                correct = true;
+            }
+        }
+        return correct;
+    }
     public void btn_next(View view){
         count++;
         switch (count){
             case 1:
                 relativeLayout.setBackgroundResource(fontResourceIds[1]);
                 imgFigure.setBackgroundResource(imgResourceIds[1]);
+                checkAnswer(textWord.getText().toString(), count);
+                Intent intent1 = new Intent(this,FeedBackActivity.class);
+                intent1.putExtra("category","incompleteFigure");
+                intent1.putExtra("count",count-1);
+                startActivity(intent1);
                 break;
             case 2:
                 relativeLayout.setBackgroundResource(fontResourceIds[2]);
                 imgFigure.setBackgroundResource(imgResourceIds[2]);
+                checkAnswer(textWord.getText().toString(), count);
+                Intent intent2 = new Intent(this,FeedBackActivity.class);
+                intent2.putExtra("category", "incompleteFigure");
+                intent2.putExtra("count", count);
+                startActivity(intent2);
                 break;
             case 3:
                 relativeLayout.setBackgroundResource(fontResourceIds[3]);
                 imgFigure.setBackgroundResource(imgResourceIds[3]);
+                checkAnswer(textWord.getText().toString(), count);
                 break;
             case 4:
                 relativeLayout.setBackgroundResource(fontResourceIds[4]);
                 imgFigure.setBackgroundResource(imgResourceIds[4]);
+                checkAnswer(textWord.getText().toString(), count);
                 break;
             case 5:
                 Intent theIntent = new Intent(this,CategoryActivity.class);
+                checkAnswer(textWord.getText().toString(),count);
                 startActivity(theIntent);
                 finish();
                 break;
         }
+        word="";
+        textWord.setText(word);
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -170,4 +202,40 @@ public class FigureActivity extends AppCompatActivity {
         word = "";
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Bundle bundle = getIntent().getExtras();
+        int count = bundle.getInt("count");
+        switch (count){
+            case 1:
+                relativeLayout.setBackgroundResource(fontResourceIds[1]);
+                imgFigure.setBackgroundResource(imgResourceIds[1]);
+
+                break;
+            case 2:
+                relativeLayout.setBackgroundResource(fontResourceIds[2]);
+                imgFigure.setBackgroundResource(imgResourceIds[2]);
+
+                break;
+            case 3:
+                relativeLayout.setBackgroundResource(fontResourceIds[3]);
+                imgFigure.setBackgroundResource(imgResourceIds[3]);
+
+                break;
+            case 4:
+                relativeLayout.setBackgroundResource(fontResourceIds[4]);
+                imgFigure.setBackgroundResource(imgResourceIds[4]);
+                break;
+            case 5:
+
+                break;
+        }
+    }
 }
