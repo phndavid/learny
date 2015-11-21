@@ -13,9 +13,9 @@
     <Button
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:background="@mipmap/siguiente_xhdpi"
+        android:background="@mipmap/finalizar_xhdpi"
         android:id="@+id/button2"
-        android:onClick="btnRegisterChild"
+        android:onClick="btnFinishRecord"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
@@ -42,8 +42,8 @@
         android:layout_alignLeft="@+id/lbl_name"
         android:layout_alignStart="@+id/lbl_name"
         android:layout_below="@+id/lbl_name"
-        android:layout_alignRight="@+id/button2"
-        android:layout_alignEnd="@+id/button2" />
+        android:layout_toLeftOf="@+id/button2"
+        android:layout_toStartOf="@+id/button2" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -80,8 +80,8 @@
         android:layout_below="@+id/lbl_address"
         android:layout_alignLeft="@+id/lbl_parents"
         android:layout_alignStart="@+id/lbl_parents"
-        android:layout_alignRight="@+id/txt_escuOcol"
-        android:layout_alignEnd="@+id/txt_escuOcol" />
+        android:layout_toLeftOf="@+id/button2"
+        android:layout_toStartOf="@+id/button2" />
 
     <TextView
         android:layout_width="wrap_content"

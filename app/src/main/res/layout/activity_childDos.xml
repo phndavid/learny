@@ -11,6 +11,6 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_childDos" />
+    <include layout="@layout/content_childdos" />
 
 </android.support.design.widget.CoordinatorLayout>

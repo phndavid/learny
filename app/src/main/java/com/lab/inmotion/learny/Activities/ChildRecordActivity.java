@@ -21,9 +21,13 @@ public class ChildRecordActivity extends AppCompatActivity {
     private ImageView gif;
     private Typeface tf;
    public void btnRegisterChild(View view){
-       Intent theIntent = new Intent(this, LearnyActivity.class);
-       startActivity(theIntent);
+
+       setContentView(R.layout.activity_childdos);
    }
+    public void btnFinishRecord(View view){
+        Intent theIntent = new Intent(this, LearnyActivity.class);
+        startActivity(theIntent);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
