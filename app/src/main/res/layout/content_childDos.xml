@@ -23,7 +23,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nombre completo"
+        android:text="Escuela o colegio"
         android:id="@+id/lbl_name"
         android:layout_marginTop="182dp"
         android:layout_marginRight="165dp"
@@ -48,72 +48,16 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fecha de nacimiento"
-        android:id="@+id/lbl_birth"
+        android:text="Grado de escolarización"
+        android:id="@+id/lbl_address"
         android:layout_below="@+id/txt_escuOcol"
         android:layout_alignLeft="@+id/txt_escuOcol"
         android:layout_alignStart="@+id/txt_escuOcol" />
 
-    <EditText
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:id="@+id/dia"
-        android:layout_below="@+id/lbl_birth"
-        android:layout_alignLeft="@+id/lbl_birth"
-        android:layout_alignStart="@+id/lbl_birth"
-       />
-
-    <EditText
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:id="@+id/mes"
-        android:layout_below="@+id/lbl_birth"
-        android:layout_toRightOf="@+id/dia"
-        android:layout_toEndOf="@+id/dia" />
-
-    <EditText
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:id="@+id/ano"
-        android:layout_alignTop="@+id/mes"
-        android:layout_toRightOf="@+id/mes"
-        android:layout_alignRight="@+id/lbl_parents"
-        android:layout_alignEnd="@+id/lbl_parents" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sexo"
-        android:id="@+id/lbl_sex"
-        android:layout_below="@+id/txt_escuOcol"
-        android:layout_alignLeft="@+id/spinnerSex"
-        android:layout_alignStart="@+id/spinnerSex" />
-
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/spinnerSex"
-        android:layout_alignBottom="@+id/ano"
-        android:layout_below="@+id/lbl_sex"
-        android:layout_toEndOf="@+id/ano"
-        android:layout_toRightOf="@+id/ano" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Direcciòn del domicilio"
-        android:id="@+id/lbl_address"
-        android:layout_below="@+id/dia"
-        android:layout_alignLeft="@+id/dia"
-        android:layout_alignStart="@+id/dia" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nombre del padre o tutor"
+        android:text="Lugar de aplicación de la prueba"
         android:id="@+id/lbl_parents"
         android:layout_below="@+id/txt_gde"
         android:layout_alignLeft="@+id/lbl_address"
@@ -138,5 +82,43 @@
         android:layout_alignStart="@+id/lbl_parents"
         android:layout_alignRight="@+id/txt_escuOcol"
         android:layout_alignEnd="@+id/txt_escuOcol" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha de aplicación de la prueba"
+        android:id="@+id/textView5"
+        android:layout_below="@+id/txt_lugar"
+        android:layout_alignLeft="@+id/txt_lugar"
+        android:layout_alignStart="@+id/txt_lugar" />
+
+    <EditText
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:id="@+id/editTextDia"
+        android:layout_below="@+id/textView5"
+        android:layout_alignLeft="@+id/txt_lugar"
+        android:text="Día" />
+
+    <EditText
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:id="@+id/editTextmes"
+        android:text="Mes"
+        android:layout_alignTop="@+id/editTextDia"
+        android:layout_toRightOf="@+id/editTextDia"
+        android:layout_toEndOf="@+id/editTextDia" />
+
+    <EditText
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:id="@+id/editTextano"
+        android:layout_alignTop="@+id/editTextmes"
+        android:layout_toRightOf="@+id/editTextmes"
+        android:layout_toEndOf="@+id/editTextmes"
+        android:text="Año" />
 
 </RelativeLayout>

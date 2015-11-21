@@ -2,8 +2,6 @@ package com.lab.inmotion.learny.Activities;
 
 import android.content.Intent;
 import android.graphics.Typeface;
-import android.graphics.drawable.AnimationDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -33,11 +31,11 @@ public class ChildRecordActivity extends AppCompatActivity {
         tf=Typeface.createFromAsset(getAssets(),"fonts/CAFE.TTF");
         TextView lbl_name = (TextView) findViewById(R.id.lbl_name);
         lbl_name.setTypeface(tf);
-        EditText txt_name = (EditText) findViewById(R.id.txt_name);
+        EditText txt_name = (EditText) findViewById(R.id.txt_escuOcol);
         txt_name.setTypeface(tf);
         TextView lbl_parents = (TextView) findViewById(R.id.lbl_parents);
         lbl_parents.setTypeface(tf);
-        EditText txt_paretns = (EditText) findViewById(R.id.txt_parents);
+        EditText txt_paretns = (EditText) findViewById(R.id.txt_lugar);
         txt_paretns.setTypeface(tf);
         // Spinner element
         Spinner spinner = (Spinner) findViewById(R.id.spinnerSex);
