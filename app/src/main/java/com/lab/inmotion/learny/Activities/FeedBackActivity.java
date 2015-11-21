@@ -20,6 +20,7 @@ public class FeedBackActivity extends AppCompatActivity {
 
 
     private RelativeLayout relativeLayout;
+    private int globalCount;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +29,8 @@ public class FeedBackActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         String level = bundle.getString("category");
         int count = bundle.getInt("count");
+        globalCount = count;
+        System.out.println(count + " count que llega al feedback");
         relativeLayout.setBackgroundResource(backgrounds[count]);
     }
 
@@ -37,8 +40,7 @@ public class FeedBackActivity extends AppCompatActivity {
     }
     public void tap(View view){
         App app = (App) getApplication();
-
-        int globalCount = app.getModel().getCurrent().getCurrentTest().getId();
+        System.out.println(globalCount + " global que debe ser persistente");
         if(globalCount<4){
             Intent theIntent = new Intent(this, FigureActivity.class);
             int  next = globalCount+1;
