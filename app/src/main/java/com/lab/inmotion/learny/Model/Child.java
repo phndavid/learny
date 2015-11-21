@@ -19,7 +19,7 @@ public class Child extends ParseObject {
     private double [] puntajes;
     private double [] tiempos;
 
-    public Child(String firstName, String lastName, Date birth){
+    public Child(){
         this.firstName = firstName;
         this.lastName = lastName;
         this.birth = birth;
