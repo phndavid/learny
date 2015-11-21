@@ -188,11 +188,15 @@ public class FigureActivity extends AppCompatActivity {
         intent.putExtra("category", "incompleteFigure");
         intent.putExtra("count", model.getCurrent().getCurrentTest().getId());
         startActivity(intent);
-        count++;
-        model.nextTest();
-        System.out.println("count en el next y la pongo mas para que hayan cambios: " + count);
         word="";
         textWord.setText(word);
+        count++;
+        int actual = model.getCurrent().getCurrentTest().getId();
+        if(actual<4) {
+            model.nextTest();
+        }
+        System.out.println("count en el next y la pongo mas para que hayan cambios: " + count);
+
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {

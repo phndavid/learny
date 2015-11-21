@@ -10,6 +10,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+import com.lab.inmotion.learny.Application.App;
+import com.lab.inmotion.learny.Model.Category;
 import com.lab.inmotion.learny.R;
 
 public class FeedBackActivity extends AppCompatActivity {
@@ -18,7 +20,6 @@ public class FeedBackActivity extends AppCompatActivity {
 
 
     private RelativeLayout relativeLayout;
-    private int globalCount;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,16 +28,7 @@ public class FeedBackActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         String level = bundle.getString("category");
         int count = bundle.getInt("count");
-        globalCount = count;
-        System.out.println(globalCount+ " este es el globalcount");
-        if(count==0){
-            relativeLayout.setBackgroundResource(backgrounds[0]);
-        }
-        if(count==1){
-            relativeLayout.setBackgroundResource(backgrounds[1]);
-        }
-
-
+        relativeLayout.setBackgroundResource(backgrounds[count]);
     }
 
     public void defineBackground(String category, String count){
@@ -44,7 +36,10 @@ public class FeedBackActivity extends AppCompatActivity {
 
     }
     public void tap(View view){
-        if(globalCount<5){
+        App app = (App) getApplication();
+
+        int globalCount = app.getModel().getCurrent().getCurrentTest().getId();
+        if(globalCount<4){
             Intent theIntent = new Intent(this, FigureActivity.class);
             int  next = globalCount+1;
             System.out.println(next+ " este es el next");
@@ -52,6 +47,7 @@ public class FeedBackActivity extends AppCompatActivity {
             startActivity(theIntent);
             finish();
         }else{
+            app.getModel().nextCategory();
             Intent theIntent = new Intent(this,CategoryActivity.class);
             startActivity(theIntent);
             finish();

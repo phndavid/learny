@@ -58,7 +58,9 @@ public class Learny {
         current.setCurrentTest(current.getTests()[newCurrentId]);
     }
     public void nextCategory(){
-
+        int currentId = current.getId();
+        int newCurrentId = currentId+1;
+        current = categories[newCurrentId];
     }
 
     public Especialista getEspecialista(){
