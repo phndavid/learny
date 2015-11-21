@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.lab.inmotion.learny.Application.App;
 import com.lab.inmotion.learny.R;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
@@ -27,8 +28,8 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(theIntent);
     }
     private void login() {
-        String username = usernameEditText.getText().toString().trim();
-        String password = passwordEditText.getText().toString().trim();
+        final String username = usernameEditText.getText().toString().trim();
+        final String password = passwordEditText.getText().toString().trim();
 
         // Validate the log in data
         boolean validationError = false;
@@ -55,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
 
         // Set up a progress dialog
         final ProgressDialog dialog = new ProgressDialog(LoginActivity.this);
-        dialog.setMessage(getString(R.string.progress_login));
+        dialog.setMessage("Iniciando sesión");
         dialog.show();
         // Call the Parse login method
         ParseUser.logInInBackground(username, password, new LogInCallback() {
@@ -70,6 +71,8 @@ public class LoginActivity extends AppCompatActivity {
                     Intent intent = new Intent(LoginActivity.this, DispatchActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
+                    App aplication = (App) getApplication();
+                    aplication.inicializeModel(username,password);
                 }
             }
         });

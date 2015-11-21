@@ -1,5 +1,6 @@
 package com.lab.inmotion.learny.Activities;
 
+import android.app.Application;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -12,6 +13,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import com.lab.inmotion.learny.Application.App;
+import com.lab.inmotion.learny.Model.Category;
+import com.lab.inmotion.learny.Model.Learny;
 import com.lab.inmotion.learny.R;
 
 public class FigureActivity extends AppCompatActivity {
@@ -21,6 +25,7 @@ public class FigureActivity extends AppCompatActivity {
     private int[] fontResourceIds = {R.mipmap.nivelunoamarillo_xhdpi, R.mipmap.nivelunoazul_xhdpi,R.mipmap.nivelunorosa_xhdpi,R.mipmap.nivelunoverde_xhdpi,R.mipmap.nivelunovioleta_xhdpi};
     private String [][] answers = {{"rin","rrin","riin","rinn","riinn"},{"bigote","bigotes","bigute","bigutes","bigutrs"},{"cuatro","IV","cutro","catro","cuato","cacho","cuerno","cueno","cerno","cuernp"},{"pata","pierna","paata","patta","pataa"}};
     private int puntaje=0;
+    private boolean firstTime =false;
 
 
 
@@ -29,6 +34,8 @@ public class FigureActivity extends AppCompatActivity {
     private ImageView imgFigure;
     private EditText textWord;
     private String word;
+    private Learny model;
+
     public void  btn_a(View view){
         word = word+"a";
         textWord.setText(word);
@@ -142,7 +149,7 @@ public class FigureActivity extends AppCompatActivity {
 
     public boolean checkAnswer(String answer,int count){
         boolean correct = false;
-        String [] theAnswers = answers[count-1];
+        String [] theAnswers = answers[count];
         for(int i=0;i<theAnswers.length;i++){
             if(answers.equals(theAnswers[i])){
                 puntaje++;
@@ -151,16 +158,50 @@ public class FigureActivity extends AppCompatActivity {
         }
         return correct;
     }
+    public int[] getDrawableIdFromTestId(int testId){
+        int[] id = new int[2];
+        if(testId==0){
+            id[0] = imgResourceIds[0];
+            id[1] = fontResourceIds[0];
+        }
+        if(testId==1){
+            id[0] = imgResourceIds[1];
+            id[1] = fontResourceIds[1];
+        }
+        if(testId==2){
+            id[0] = imgResourceIds[2];
+            id[1] = fontResourceIds[2];
+        }
+        if(testId==3){
+            id[0] = imgResourceIds[3];
+            id[1] = fontResourceIds[3];
+        }
+        if(testId==4){
+            id[0] = imgResourceIds[4];
+            id[1] = fontResourceIds[4];
+        }
+        return id;
+    }
     public void btn_next(View view){
+        checkAnswer(textWord.getText().toString(), count);
+        Intent intent = new Intent(this,FeedBackActivity.class);
+        intent.putExtra("category", "incompleteFigure");
+        intent.putExtra("count", count);
+        startActivity(intent);
         count++;
+        model.nextTest();
+        System.out.println("count en el next y la pongo mas para que hayan cambios: " + count);
+        word="";
+        textWord.setText(word);
+       /*
         switch (count){
             case 1:
                 relativeLayout.setBackgroundResource(fontResourceIds[1]);
                 imgFigure.setBackgroundResource(imgResourceIds[1]);
                 checkAnswer(textWord.getText().toString(), count);
                 Intent intent1 = new Intent(this,FeedBackActivity.class);
-                intent1.putExtra("category","incompleteFigure");
-                intent1.putExtra("count",count-1);
+                intent1.putExtra("category", "incompleteFigure");
+                intent1.putExtra("count", count - 1);
                 startActivity(intent1);
                 break;
             case 2:
@@ -189,53 +230,59 @@ public class FigureActivity extends AppCompatActivity {
                 finish();
                 break;
         }
-        word="";
-        textWord.setText(word);
+        */
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_figure);
+        System.out.println("se ejecuta el oncreate");
         relativeLayout = (RelativeLayout) findViewById(R.id.backgroundFigure);
         imgFigure = (ImageView) findViewById(R.id.imgFigure);
         textWord = (EditText) findViewById(R.id.textWord);
+        firstTime = true;
+        App app = (App) getApplication();
+        model = app.getModel();
         word = "";
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        System.out.println("se ejecuta el onresume y este es el count: " + count);
+        int thecount= model.getCurrent().getCurrentTest().getId();
+        if(thecount>0){
+            switch (thecount){
+                case 1:
+                    relativeLayout.setBackgroundResource(fontResourceIds[1]);
+                    imgFigure.setBackgroundResource(imgResourceIds[1]);
 
+                    break;
+                case 2:
+                    relativeLayout.setBackgroundResource(fontResourceIds[2]);
+                    imgFigure.setBackgroundResource(imgResourceIds[2]);
+
+                    break;
+                case 3:
+                    relativeLayout.setBackgroundResource(fontResourceIds[3]);
+                    imgFigure.setBackgroundResource(imgResourceIds[3]);
+
+                    break;
+                case 4:
+                    relativeLayout.setBackgroundResource(fontResourceIds[4]);
+                    imgFigure.setBackgroundResource(imgResourceIds[4]);
+                    break;
+                case 5:
+
+                    break;
+            }
+        }
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        Bundle bundle = getIntent().getExtras();
-        int count = bundle.getInt("count");
-        switch (count){
-            case 1:
-                relativeLayout.setBackgroundResource(fontResourceIds[1]);
-                imgFigure.setBackgroundResource(imgResourceIds[1]);
+        System.out.println("se ejecuta el onrestart");
 
-                break;
-            case 2:
-                relativeLayout.setBackgroundResource(fontResourceIds[2]);
-                imgFigure.setBackgroundResource(imgResourceIds[2]);
-
-                break;
-            case 3:
-                relativeLayout.setBackgroundResource(fontResourceIds[3]);
-                imgFigure.setBackgroundResource(imgResourceIds[3]);
-
-                break;
-            case 4:
-                relativeLayout.setBackgroundResource(fontResourceIds[4]);
-                imgFigure.setBackgroundResource(imgResourceIds[4]);
-                break;
-            case 5:
-
-                break;
-        }
     }
 }

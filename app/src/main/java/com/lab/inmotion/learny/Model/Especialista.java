@@ -18,9 +18,7 @@ public class Especialista extends ParseUser{
     private String password;
     private List<Child> children;
 
-    public Especialista (String username, String password){
-        this.username = username;
-        this.password = password;
+    public Especialista (){
         children = new ArrayList<Child>();
     }
 

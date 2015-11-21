@@ -9,7 +9,31 @@ import com.parse.ParseObject;
 @ParseClassName("Test")
 public class Test extends ParseObject{
 
-    private Double score;
-    private Double time;
+    private double score;
+    private double time;
+    private int id;
+
+    public Test(){
+        score = 0;
+        time = 0;
+    }
+    public int getId(){
+        return id;
+    }
+    public double getScore(){
+        return score;
+    }
+    public double getTime(){
+        return time;
+    }
+    public void setId(int id){
+        this.id = id;
+    }
+    public void setScore(double score){
+        this.score = score;
+    }
+    public void setTime(double time){
+        this.time = time;
+    }
 
 }

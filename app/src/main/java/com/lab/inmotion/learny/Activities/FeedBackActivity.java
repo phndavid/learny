@@ -27,10 +27,11 @@ public class FeedBackActivity extends AppCompatActivity {
         String level = bundle.getString("category");
         int count = bundle.getInt("count");
         globalCount = count;
-        if(count==1){
+        System.out.println(globalCount+ " este es el globalcount");
+        if(count==0){
             relativeLayout.setBackgroundResource(backgrounds[0]);
         }
-        if(count==2){
+        if(count==1){
             relativeLayout.setBackgroundResource(backgrounds[1]);
         }
 
@@ -44,7 +45,9 @@ public class FeedBackActivity extends AppCompatActivity {
     public void tap(View view){
         if(globalCount<5){
             Intent theIntent = new Intent(this, FigureActivity.class);
-            theIntent.putExtra("count",globalCount++);
+            int  next = globalCount+1;
+            System.out.println(next+ " este es el next");
+            theIntent.putExtra("count",next);
             startActivity(theIntent);
             finish();
         }else{
