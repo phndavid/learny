@@ -38,8 +38,17 @@ public class Category extends ParseObject{
         tests[4] = new Test();
         tests[4].setId(4);
     }
+    public void editTest(int index, Test theTest){
+        tests[index] = theTest;
+    }
     public Test getCurrentTest(){
         return currentTest;
+    }
+    public void performCorrectPlay(){
+        double theScore = currentTest.getScore();
+        double newScore = theScore+1;
+        currentTest.setScore(newScore);
+        puntaje++;
     }
     public void setCurrentTest(Test currentTest){
         this.currentTest = currentTest;

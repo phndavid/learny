@@ -148,51 +148,31 @@ public class FigureActivity extends AppCompatActivity {
     }
 
     public boolean checkAnswer(String answer,int count){
+        System.out.println("la respuesta: "+answer);
         boolean correct = false;
         String [] theAnswers = answers[count];
         for(int i=0;i<theAnswers.length;i++){
-            if(answers.equals(theAnswers[i])){
-                puntaje++;
+            System.out.println("entra al metodo, hace el for: " + theAnswers[i]);
+            if(answer.equals(theAnswers[i])){
+                System.out.println("ëntro al if checkanswer");
+                model.performCorrectPlay();
                 correct = true;
             }
         }
         return correct;
     }
-    public int[] getDrawableIdFromTestId(int testId){
-        int[] id = new int[2];
-        if(testId==0){
-            id[0] = imgResourceIds[0];
-            id[1] = fontResourceIds[0];
-        }
-        if(testId==1){
-            id[0] = imgResourceIds[1];
-            id[1] = fontResourceIds[1];
-        }
-        if(testId==2){
-            id[0] = imgResourceIds[2];
-            id[1] = fontResourceIds[2];
-        }
-        if(testId==3){
-            id[0] = imgResourceIds[3];
-            id[1] = fontResourceIds[3];
-        }
-        if(testId==4){
-            id[0] = imgResourceIds[4];
-            id[1] = fontResourceIds[4];
-        }
-        return id;
-    }
     public void btn_next(View view){
-        checkAnswer(textWord.getText().toString(), count);
         Intent intent = new Intent(this,FeedBackActivity.class);
         intent.putExtra("category", "incompleteFigure");
         intent.putExtra("count", model.getCurrent().getCurrentTest().getId());
         startActivity(intent);
-        word="";
-        textWord.setText(word);
         count++;
         int actual = model.getCurrent().getCurrentTest().getId();
+        checkAnswer(textWord.getText().toString().trim(), actual);
+        word="";
+        textWord.setText(word);
         if(actual<4) {
+            System.out.println("puntaje acumulado: " + model.getCurrent().getPuntaje());
             model.nextTest();
         }
         System.out.println("count en el next y la pongo mas para que hayan cambios: " + count);

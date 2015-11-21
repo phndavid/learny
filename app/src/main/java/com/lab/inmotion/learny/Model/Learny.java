@@ -27,7 +27,7 @@ public class Learny {
     public Category getCurrent(){
         return current;
     }
-    public void setCurren(Category current){
+    public void setCurrent(Category current){
         this.current = current;
     }
     public void inicializeCategories(){
@@ -55,12 +55,17 @@ public class Learny {
     public void nextTest(){
         int currentId = current.getCurrentTest().getId();
         int newCurrentId = currentId+1;
+        current.editTest(currentId,current.getCurrentTest());
         current.setCurrentTest(current.getTests()[newCurrentId]);
     }
     public void nextCategory(){
         int currentId = current.getId();
+        categories[currentId] = current;
         int newCurrentId = currentId+1;
         current = categories[newCurrentId];
+    }
+    public void performCorrectPlay(){
+        current.performCorrectPlay();
     }
 
     public Especialista getEspecialista(){

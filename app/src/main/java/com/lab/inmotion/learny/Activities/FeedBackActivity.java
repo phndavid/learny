@@ -34,10 +34,6 @@ public class FeedBackActivity extends AppCompatActivity {
         relativeLayout.setBackgroundResource(backgrounds[count]);
     }
 
-    public void defineBackground(String category, String count){
-
-
-    }
     public void tap(View view){
         App app = (App) getApplication();
         System.out.println(globalCount + " global que debe ser persistente");
@@ -55,5 +51,4 @@ public class FeedBackActivity extends AppCompatActivity {
             finish();
         }
     }
-
 }
