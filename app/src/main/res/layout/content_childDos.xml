@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Escuela o colegio"
-        android:id="@+id/lbl_name"
+        android:id="@+id/lbl_school"
         android:layout_marginTop="182dp"
         android:layout_marginRight="165dp"
         android:layout_marginEnd="165dp"
@@ -38,10 +38,10 @@
         android:inputType="textPersonName"
         android:ems="10"
 
-        android:id="@+id/txt_escuOcol"
-        android:layout_alignLeft="@+id/lbl_name"
-        android:layout_alignStart="@+id/lbl_name"
-        android:layout_below="@+id/lbl_name"
+        android:id="@+id/txt_school"
+        android:layout_alignLeft="@+id/lbl_school"
+        android:layout_alignStart="@+id/lbl_school"
+        android:layout_below="@+id/lbl_school"
         android:layout_toLeftOf="@+id/button2"
         android:layout_toStartOf="@+id/button2" />
 
@@ -49,57 +49,38 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Grado de escolarización"
-        android:id="@+id/lbl_address"
-        android:layout_below="@+id/txt_escuOcol"
-        android:layout_alignLeft="@+id/txt_escuOcol"
-        android:layout_alignStart="@+id/txt_escuOcol" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Lugar de aplicación de la prueba"
-        android:id="@+id/lbl_parents"
-        android:layout_below="@+id/txt_gde"
-        android:layout_alignLeft="@+id/lbl_address"
-        android:layout_alignStart="@+id/lbl_address" />
+        android:id="@+id/lbl_semester"
+        android:layout_below="@+id/txt_school"
+        android:layout_alignLeft="@+id/txt_school"
+        android:layout_alignStart="@+id/txt_school" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txt_lugar"
-        android:layout_alignLeft="@+id/lbl_parents"
-        android:layout_alignStart="@+id/lbl_parents"
-        android:layout_alignRight="@+id/txt_gde"
-        android:layout_alignEnd="@+id/txt_gde"
-        android:layout_below="@+id/lbl_parents" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txt_gde"
-        android:layout_below="@+id/lbl_address"
-        android:layout_alignLeft="@+id/lbl_parents"
-        android:layout_alignStart="@+id/lbl_parents"
+        android:id="@+id/txt_semester"
+        android:layout_below="@+id/lbl_semester"
         android:layout_toLeftOf="@+id/button2"
-        android:layout_toStartOf="@+id/button2" />
+        android:layout_toStartOf="@+id/button2"
+        android:layout_alignLeft="@+id/lbl_semester"
+        android:layout_alignStart="@+id/lbl_semester" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Fecha de aplicación de la prueba"
-        android:id="@+id/textView5"
-        android:layout_below="@+id/txt_lugar"
-        android:layout_alignLeft="@+id/txt_lugar"
-        android:layout_alignStart="@+id/txt_lugar" />
+        android:id="@+id/lbl_dateTest"
+        android:layout_below="@+id/txt_place"
+        android:layout_alignLeft="@+id/txt_place"
+        android:layout_alignStart="@+id/txt_place" />
 
     <EditText
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:inputType="number"
         android:id="@+id/editTextDia"
-        android:layout_below="@+id/textView5"
-        android:layout_alignLeft="@+id/txt_lugar"
-        android:text="Día" />
+        android:layout_below="@+id/lbl_dateTest"
+        android:text="Día"
+        android:layout_alignLeft="@+id/txt_semester" />
 
     <EditText
         android:layout_width="50dp"
@@ -120,5 +101,24 @@
         android:layout_toRightOf="@+id/editTextmes"
         android:layout_toEndOf="@+id/editTextmes"
         android:text="Año" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lugar de la prueba"
+        android:id="@+id/lbl_place"
+        android:layout_below="@+id/txt_semester"
+        android:layout_alignLeft="@+id/txt_semester"
+        android:layout_alignStart="@+id/txt_semester" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_place"
+        android:layout_below="@+id/lbl_place"
+        android:layout_alignLeft="@+id/lbl_place"
+        android:layout_alignStart="@+id/lbl_place"
+        android:layout_alignRight="@+id/txt_semester"
+        android:layout_alignEnd="@+id/txt_semester" />
 
 </RelativeLayout>

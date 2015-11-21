@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nombre completo"
-        android:id="@+id/lbl_name"
+        android:id="@+id/lbl_school"
         android:layout_marginTop="182dp"
         android:layout_marginRight="165dp"
         android:layout_marginEnd="165dp"
@@ -38,10 +38,10 @@
         android:inputType="textPersonName"
         android:ems="10"
 
-        android:id="@+id/txt_escuOcol"
-        android:layout_alignLeft="@+id/lbl_name"
-        android:layout_alignStart="@+id/lbl_name"
-        android:layout_below="@+id/lbl_name"
+        android:id="@+id/txt_school"
+        android:layout_alignLeft="@+id/lbl_school"
+        android:layout_alignStart="@+id/lbl_school"
+        android:layout_below="@+id/lbl_school"
         android:layout_alignRight="@+id/button2"
         android:layout_alignEnd="@+id/button2" />
 
@@ -50,9 +50,9 @@
         android:layout_height="wrap_content"
         android:text="Fecha de nacimiento"
         android:id="@+id/lbl_birth"
-        android:layout_below="@+id/txt_escuOcol"
-        android:layout_alignLeft="@+id/txt_escuOcol"
-        android:layout_alignStart="@+id/txt_escuOcol" />
+        android:layout_below="@+id/txt_school"
+        android:layout_alignLeft="@+id/txt_school"
+        android:layout_alignStart="@+id/txt_school" />
 
     <EditText
         android:layout_width="50dp"
@@ -88,7 +88,7 @@
         android:layout_height="wrap_content"
         android:text="Sexo"
         android:id="@+id/lbl_sex"
-        android:layout_below="@+id/txt_escuOcol"
+        android:layout_below="@+id/txt_school"
         android:layout_alignLeft="@+id/spinnerSex"
         android:layout_alignStart="@+id/spinnerSex" />
 
@@ -105,7 +105,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Direcciòn del domicilio"
-        android:id="@+id/lbl_address"
+        android:id="@+id/lbl_semester"
         android:layout_below="@+id/dia"
         android:layout_alignLeft="@+id/dia"
         android:layout_alignStart="@+id/dia" />
@@ -115,28 +115,28 @@
         android:layout_height="wrap_content"
         android:text="Nombre del padre o tutor"
         android:id="@+id/lbl_parents"
-        android:layout_below="@+id/txt_gde"
-        android:layout_alignLeft="@+id/lbl_address"
-        android:layout_alignStart="@+id/lbl_address" />
+        android:layout_below="@+id/txt_semester"
+        android:layout_alignLeft="@+id/lbl_semester"
+        android:layout_alignStart="@+id/lbl_semester" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txt_lugar"
+        android:id="@+id/txt_parents"
         android:layout_alignLeft="@+id/lbl_parents"
         android:layout_alignStart="@+id/lbl_parents"
-        android:layout_alignRight="@+id/txt_gde"
-        android:layout_alignEnd="@+id/txt_gde"
+        android:layout_alignRight="@+id/txt_semester"
+        android:layout_alignEnd="@+id/txt_semester"
         android:layout_below="@+id/lbl_parents" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txt_gde"
-        android:layout_below="@+id/lbl_address"
+        android:id="@+id/txt_semester"
+        android:layout_below="@+id/lbl_semester"
         android:layout_alignLeft="@+id/lbl_parents"
         android:layout_alignStart="@+id/lbl_parents"
-        android:layout_alignRight="@+id/txt_escuOcol"
-        android:layout_alignEnd="@+id/txt_escuOcol" />
+        android:layout_alignRight="@+id/txt_school"
+        android:layout_alignEnd="@+id/txt_school" />
 
 </RelativeLayout>

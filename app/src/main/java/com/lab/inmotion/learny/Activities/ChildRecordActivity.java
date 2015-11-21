@@ -33,13 +33,23 @@ public class ChildRecordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_child);
         tf=Typeface.createFromAsset(getAssets(),"fonts/CAFE.TTF");
-        TextView lbl_name = (TextView) findViewById(R.id.lbl_name);
+        TextView lbl_name = (TextView) findViewById(R.id.lbl_school);
         lbl_name.setTypeface(tf);
-        EditText txt_name = (EditText) findViewById(R.id.txt_escuOcol);
-        txt_name.setTypeface(tf);
         TextView lbl_parents = (TextView) findViewById(R.id.lbl_parents);
         lbl_parents.setTypeface(tf);
-        EditText txt_paretns = (EditText) findViewById(R.id.txt_lugar);
+
+        TextView lbl_school = (TextView) findViewById(R.id.lbl_school);
+        lbl_school.setTypeface(tf);
+        TextView lbl_semester = (TextView) findViewById(R.id.lbl_semester);
+        lbl_semester.setTypeface(tf);
+        TextView lbl_place = (TextView) findViewById(R.id.lbl_place);
+        lbl_place.setTypeface(tf);
+        TextView lbl_dateTest = (TextView) findViewById(R.id.lbl_dateTest);
+        lbl_dateTest.setTypeface(tf);
+
+        EditText txt_name = (EditText) findViewById(R.id.txt_school);
+        txt_name.setTypeface(tf);
+        EditText txt_paretns = (EditText) findViewById(R.id.txt_parents);
         txt_paretns.setTypeface(tf);
         // Spinner element
         Spinner spinner = (Spinner) findViewById(R.id.spinnerSex);
