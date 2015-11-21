@@ -23,36 +23,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Escuela o colegio"
-        android:id="@+id/lbl_school"
-        android:layout_marginTop="182dp"
-        android:layout_marginRight="165dp"
-        android:layout_marginEnd="165dp"
-        android:layout_alignParentTop="true"
-        android:layout_toLeftOf="@+id/button2"
-        android:layout_toStartOf="@+id/button2" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-
-        android:id="@+id/txt_school"
-        android:layout_alignLeft="@+id/lbl_school"
-        android:layout_alignStart="@+id/lbl_school"
-        android:layout_below="@+id/lbl_school"
-        android:layout_toLeftOf="@+id/button2"
-        android:layout_toStartOf="@+id/button2" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="Grado de escolarización"
         android:id="@+id/lbl_semester"
-        android:layout_below="@+id/txt_school"
-        android:layout_alignLeft="@+id/txt_school"
-        android:layout_alignStart="@+id/txt_school" />
+        android:layout_marginTop="241dp"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/button2"
+        android:layout_toStartOf="@+id/button2"
+        android:layout_marginRight="101dp"
+        android:layout_marginEnd="101dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -77,7 +55,7 @@
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:inputType="number"
-        android:id="@+id/editTextDia"
+        android:id="@+id/txt_dayTest"
         android:layout_below="@+id/lbl_dateTest"
         android:text="Día"
         android:layout_alignLeft="@+id/txt_semester" />
@@ -86,20 +64,20 @@
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:inputType="number"
-        android:id="@+id/editTextmes"
+        android:id="@+id/txt_mothTest"
         android:text="Mes"
-        android:layout_alignTop="@+id/editTextDia"
-        android:layout_toRightOf="@+id/editTextDia"
-        android:layout_toEndOf="@+id/editTextDia" />
+        android:layout_alignTop="@+id/txt_dayTest"
+        android:layout_toRightOf="@+id/txt_dayTest"
+        android:layout_toEndOf="@+id/txt_dayTest" />
 
     <EditText
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:inputType="number"
-        android:id="@+id/editTextano"
-        android:layout_alignTop="@+id/editTextmes"
-        android:layout_toRightOf="@+id/editTextmes"
-        android:layout_toEndOf="@+id/editTextmes"
+        android:id="@+id/txt_yearTest"
+        android:layout_alignTop="@+id/txt_mothTest"
+        android:layout_toRightOf="@+id/txt_mothTest"
+        android:layout_toEndOf="@+id/txt_mothTest"
         android:text="Año" />
 
     <TextView
@@ -120,5 +98,25 @@
         android:layout_alignStart="@+id/lbl_place"
         android:layout_alignRight="@+id/txt_semester"
         android:layout_alignEnd="@+id/txt_semester" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_school"
+        android:layout_alignTop="@+id/lbl_school"
+        android:layout_alignLeft="@+id/lbl_school"
+        android:layout_alignStart="@+id/lbl_school"
+        android:layout_alignRight="@+id/txt_semester"
+        android:layout_alignEnd="@+id/txt_semester" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Colegio o escuela"
+        android:id="@+id/lbl_school"
+        android:layout_above="@+id/txt_semester"
+        android:layout_alignLeft="@+id/lbl_semester"
+        android:layout_alignStart="@+id/lbl_semester"
+        android:layout_marginBottom="54dp" />
 
 </RelativeLayout>

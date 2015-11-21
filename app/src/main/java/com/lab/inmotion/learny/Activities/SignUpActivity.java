@@ -20,7 +20,7 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText passwordAgainEditText;
 
     public void  init(){
-        usernameEditText = (EditText) findViewById(R.id.txt_school);
+        usernameEditText = (EditText) findViewById(R.id.txt_name);
         passwordEditText = (EditText) findViewById(R.id.txt_passwd);
         passwordAgainEditText = (EditText) findViewById(R.id.txt_confirmPasswd);
 
