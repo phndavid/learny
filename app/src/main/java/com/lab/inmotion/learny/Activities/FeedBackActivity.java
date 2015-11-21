@@ -14,7 +14,8 @@ import com.lab.inmotion.learny.R;
 
 public class FeedBackActivity extends AppCompatActivity {
 
-    private int[] backgrounds = {R.mipmap.retrouno_xhdpi,R.mipmap.retrodos_xhdpi};
+    private int[] backgrounds = {R.mipmap.retrouno_xhdpi,R.mipmap.retrodos_xhdpi,R.mipmap.retrotres_xhdpi,R.mipmap.retrocuatro_xhdpi,R.mipmap.retrocinco};
+
 
     private RelativeLayout relativeLayout;
     private int globalCount;

@@ -186,51 +186,13 @@ public class FigureActivity extends AppCompatActivity {
         checkAnswer(textWord.getText().toString(), count);
         Intent intent = new Intent(this,FeedBackActivity.class);
         intent.putExtra("category", "incompleteFigure");
-        intent.putExtra("count", count);
+        intent.putExtra("count", model.getCurrent().getCurrentTest().getId());
         startActivity(intent);
         count++;
         model.nextTest();
         System.out.println("count en el next y la pongo mas para que hayan cambios: " + count);
         word="";
         textWord.setText(word);
-       /*
-        switch (count){
-            case 1:
-                relativeLayout.setBackgroundResource(fontResourceIds[1]);
-                imgFigure.setBackgroundResource(imgResourceIds[1]);
-                checkAnswer(textWord.getText().toString(), count);
-                Intent intent1 = new Intent(this,FeedBackActivity.class);
-                intent1.putExtra("category", "incompleteFigure");
-                intent1.putExtra("count", count - 1);
-                startActivity(intent1);
-                break;
-            case 2:
-                relativeLayout.setBackgroundResource(fontResourceIds[2]);
-                imgFigure.setBackgroundResource(imgResourceIds[2]);
-                checkAnswer(textWord.getText().toString(), count);
-                Intent intent2 = new Intent(this,FeedBackActivity.class);
-                intent2.putExtra("category", "incompleteFigure");
-                intent2.putExtra("count", count);
-                startActivity(intent2);
-                break;
-            case 3:
-                relativeLayout.setBackgroundResource(fontResourceIds[3]);
-                imgFigure.setBackgroundResource(imgResourceIds[3]);
-                checkAnswer(textWord.getText().toString(), count);
-                break;
-            case 4:
-                relativeLayout.setBackgroundResource(fontResourceIds[4]);
-                imgFigure.setBackgroundResource(imgResourceIds[4]);
-                checkAnswer(textWord.getText().toString(), count);
-                break;
-            case 5:
-                Intent theIntent = new Intent(this,CategoryActivity.class);
-                checkAnswer(textWord.getText().toString(),count);
-                startActivity(theIntent);
-                finish();
-                break;
-        }
-        */
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
