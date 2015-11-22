@@ -49,13 +49,12 @@ public class SequenceActivity extends AppCompatActivity {
     }
     public void btnContinue(View view){
         Intent intent = new Intent(this,FeedBackActivity.class);
-        intent.putExtra("sequence", "organizeFigure");
+        intent.putExtra("sequence", "vidaCotidiana");
         intent.putExtra("count", model.getCurrent().getCurrentTest().getId());
         startActivity(intent);
         getPositionCount();
         count++;
         init();
-
     }
     public  void getPositionCount(){
         int[] locations1 = new int[2];

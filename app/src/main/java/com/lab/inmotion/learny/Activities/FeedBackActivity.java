@@ -46,12 +46,21 @@ public class FeedBackActivity extends AppCompatActivity {
         App app = (App) getApplication();
         System.out.println(globalCount + " global que debe ser persistente");
         if(globalCount<4){
-            Intent theIntent = new Intent(this, FigureActivity.class);
-            int  next = globalCount+1;
-            System.out.println(next+ " este es el next");
-            theIntent.putExtra("count",next);
-            startActivity(theIntent);
-            finish();
+            if(app.getModel().getCurrent().getNombre().equals("incompleteFigure")) {
+                Intent theIntent = new Intent(this, FigureActivity.class);
+                int next = globalCount + 1;
+                System.out.println(next + " este es el next");
+                theIntent.putExtra("count", next);
+                startActivity(theIntent);
+                finish();
+            }else if(app.getModel().getCurrent().getNombre().equals("vidaCotidiana")) {
+                Intent theIntent = new Intent(this, SequenceActivity.class);
+                int next = globalCount + 1;
+                System.out.println(next + " este es el next");
+                theIntent.putExtra("count", next);
+                startActivity(theIntent);
+                finish();
+            }
         }else{
             app.getModel().nextCategory();
             Intent theIntent = new Intent(this,CategoryActivity.class);

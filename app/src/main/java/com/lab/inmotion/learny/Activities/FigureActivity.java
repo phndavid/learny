@@ -177,10 +177,10 @@ public class FigureActivity extends AppCompatActivity {
         startActivity(intent);
         count++;
         int actual = model.getCurrent().getCurrentTest().getId();
-        checkAnswer(textWord.getText().toString().trim(), actual);
         word="";
         textWord.setText(word);
         if(actual<4) {
+            checkAnswer(textWord.getText().toString().trim(), actual);
             System.out.println("puntaje acumulado: " + model.getCurrent().getPuntaje());
             model.nextTest();
         }
