@@ -29,6 +29,18 @@
         android:layout_alignLeft="@+id/textView4"
         android:layout_alignStart="@+id/textView4"
         >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Button"
+            android:id="@+id/button34" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Button"
+            android:id="@+id/button33" />
     </LinearLayout>
 
      <LinearLayout
@@ -38,8 +50,7 @@
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/right_img"
-        android:layout_toStartOf="@+id/right_img"
+         android:layout_toStartOf="@+id/right_img"
         android:id="@+id/left_img"
         android:layout_alignParentBottom="true">
          <ImageView
@@ -72,6 +83,7 @@
              android:layout_alignParentLeft="true"
              android:layout_alignParentStart="true"
              android:onClick="btnRojo" />
+
          <ImageView
              android:layout_width="100dp"
              android:layout_height="100dp"

@@ -13,14 +13,14 @@
     android:id="@+id/backgroudSequence">
 
     <LinearLayout
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
         android:id="@+id/linearFigureOne"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="80dp">
+        android:layout_marginLeft="158dp"
+        android:layout_marginTop="130dp">
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
         android:id="@+id/imgOne"
         android:background="@mipmap/plantauno"
         android:layout_marginRight="26dp"
@@ -28,14 +28,14 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
         android:id="@+id/linearFigureTwo"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp">
+        android:layout_marginTop="130dp">
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
             android:background="@mipmap/plantados"
             android:id="@+id/imgTwo"
             android:layout_centerHorizontal="true" />
@@ -43,15 +43,15 @@
 
 
     <LinearLayout
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
         android:id="@+id/linearFigureThree"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="90dp"
-        android:layout_marginTop="80dp">
+        android:layout_marginRight="150dp"
+        android:layout_marginTop="130dp">
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
             android:id="@+id/imgThree"
             android:background="@mipmap/plantatres"/>
     </LinearLayout>
@@ -59,8 +59,8 @@
 
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
         android:layout_alignParentBottom="true"
         android:id="@+id/linearOne"
         android:layout_alignLeft="@+id/linearFigureOne"
@@ -71,8 +71,8 @@
 
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
         android:id="@+id/linearTwo"
         android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/linearFigureTwo"
@@ -80,8 +80,8 @@
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
         android:id="@+id/linearThree"
         android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/linearFigureThree"

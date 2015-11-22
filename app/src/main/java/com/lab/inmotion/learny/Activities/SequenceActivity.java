@@ -82,6 +82,8 @@ public class SequenceActivity extends AppCompatActivity {
 
         String msg = "IMG1 X:"+x1+" Y:"+y1+" - IMG2 X:"+x2+" Y:"+y2+" - IMG3 X:"+x3+" Y:"+y3;
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
+        
+
     }
 
     private class imgTouchListener implements View.OnTouchListener {

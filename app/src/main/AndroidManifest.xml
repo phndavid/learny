@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.lab.inmotion.learny" >
+    package="com.lab.inmotion.learny">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -20,12 +20,12 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".Activities.IntroActivity"
             android:label="@string/app_name"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,90 +36,81 @@
             android:name=".Activities.LoginActivity"
             android:label="@string/title_activity_activity_login"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activities.ChildListActivity"
             android:label="@string/title_activity_activity_feedback"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activities.PlayActivity"
             android:label="@string/title_activity_activity_play"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activities.CubeActivity"
             android:label="@string/title_activity_activity_question"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activities.ArduinoActivity"
             android:label="@string/title_activity_activity_arduino"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activities.ChildRecordActivity"
             android:label="@string/title_activity_activity_child"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activities.SignUpActivity"
             android:label="@string/title_activity_activity_sign_up"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-        <activity android:name=".Activities.DispatchActivity" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Activities.DispatchActivity" />
         <activity
             android:name=".Activities.LearnyActivity"
             android:label="@string/title_activity_learny"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activities.DeviceActivity"
             android:label="@string/title_activity_device"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activities.CategoryActivity"
             android:label="@string/title_activity_category"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activities.FigureActivity"
             android:label="@string/title_activity_figure"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar" >
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activities.SequenceActivity"
             android:label="@string/title_activity_sequence"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activities.KeyActivity"
             android:label="@string/title_activity_key"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activities.FeedBackActivity"
             android:label="@string/title_activity_feed_back"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.ObjectActivity"
+            android:label="@string/title_activity_object"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activities.OptionsObjectActivity"
+            android:label="@string/title_activity_options_object"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

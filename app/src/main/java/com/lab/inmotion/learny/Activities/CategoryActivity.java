@@ -82,11 +82,11 @@ public class CategoryActivity extends AppCompatActivity {
                         startActivity(theIntent);
                         finish();
                     }else if(position == 3){
-                        Intent theIntent = new Intent(v.getContext(), KeyActivity.class);
+                        Intent theIntent = new Intent(v.getContext(), ObjectActivity.class);
                         startActivity(theIntent);
                         finish();
                     }else if(position == 4){
-                        Intent theIntent = new Intent(v.getContext(), FigureActivity.class);
+                        Intent theIntent = new Intent(v.getContext(), KeyActivity.class);
                         startActivity(theIntent);
                         finish();
                     }else if (position == 5){
