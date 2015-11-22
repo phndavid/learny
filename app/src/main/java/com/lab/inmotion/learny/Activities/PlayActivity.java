@@ -24,7 +24,7 @@ public class PlayActivity extends AppCompatActivity {
         startActivity(theIntent);
     }
     public void btnStart(View view){
-        Intent theIntent = new Intent(this, ChildRecordActivity.class);
+        Intent theIntent = new Intent(this, CategoryActivity.class);
         startActivity(theIntent);
     }
     @Override

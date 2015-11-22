@@ -73,6 +73,11 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(intent);
                     App aplication = (App) getApplication();
                     aplication.inicializeModel(username,password);
+                    try {
+                        ParseUser.getCurrentUser().fetchIfNeeded();
+                    } catch (ParseException e1) {
+                        e1.printStackTrace();
+                    }
                 }
             }
         });

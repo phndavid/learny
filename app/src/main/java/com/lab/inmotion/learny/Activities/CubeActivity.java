@@ -23,15 +23,15 @@ import com.lab.inmotion.learny.R;
 
 public class CubeActivity extends AppCompatActivity {
 
-    private int[] imgResourceIds = {R.mipmap.figurauno,R.mipmap.figurados,R.mipmap.figuratres,
-                                    R.mipmap.figuracuatro,R.mipmap.figuracinco
-                                    ,R.mipmap.pquno,R.mipmap.pqdos,R.mipmap.pqtres,
-                                    R.mipmap.pqcuatro,R.mipmap.pqcinco,R.mipmap.pqseis};
+    private int[] imgResourceIds = {R.mipmap.pquno,R.mipmap.pqdos,R.mipmap.pqtres,
+            R.mipmap.pqcuatro,R.mipmap.pqcinco,R.mipmap.pqseis};
 
-    private ImageView imgOne;
-    private ImageView imgTwo;
-    private ImageView imgThree;
-    private ImageView imgFouer;
+    private int[] fontResourceIds = {R.mipmap.figurauno,R.mipmap.figurados,R.mipmap.figuratres,
+            R.mipmap.figuracuatro,R.mipmap.figuracinco};
+    private ImageView imgCubeOne;
+    private ImageView imgCubeTwo;
+    private ImageView imgCubeThree;
+    private ImageView imgCubeFour;
     private ImageView imgMuestra;
 
     private int count;
@@ -41,10 +41,10 @@ public class CubeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cube);
 
         imgMuestra = (ImageView) findViewById(R.id.figuraMuestra);
-        imgOne = (ImageView) findViewById(R.id.cubeOne);
-        imgTwo = (ImageView) findViewById(R.id.cubeTwo);
-        imgThree = (ImageView) findViewById(R.id.cubeThree);
-        imgFouer = (ImageView) findViewById(R.id.cubeFour);
+        imgCubeOne = (ImageView) findViewById(R.id.cubeOne);
+        imgCubeTwo = (ImageView) findViewById(R.id.cubeTwo);
+        imgCubeThree = (ImageView) findViewById(R.id.cubeThree);
+        imgCubeFour = (ImageView) findViewById(R.id.cubeFour);
 
         findViewById(R.id.cubeOne).setOnTouchListener(new imgTouchListener());
         findViewById(R.id.cubeTwo).setOnTouchListener(new imgTouchListener());
@@ -68,23 +68,22 @@ public class CubeActivity extends AppCompatActivity {
             System.out.println("puntaje acumulado: " + model.getCurrent().getPuntaje());
             model.nextTest();
         }
-
     }
     public  void getPositionCount(){
         int[] locations1 = new int[2];
-        imgOne.getLocationOnScreen(locations1);
+        imgCubeOne.getLocationOnScreen(locations1);
         int x1 = locations1[0];
         int y1 = locations1[1];
         int[] locations2 = new int[2];
-        imgTwo.getLocationOnScreen(locations2);
+        imgCubeTwo.getLocationOnScreen(locations2);
         int x2 = locations2[0];
         int y2 = locations2[1];
         int[] locations3 = new int[2];
-        imgThree.getLocationOnScreen(locations3);
+        imgCubeThree.getLocationOnScreen(locations3);
         int x3 = locations3[0];
         int y3 = locations3[1];
         int[] locations4 = new int[2];
-        imgFouer.getLocationOnScreen(locations4);
+        imgCubeFour.getLocationOnScreen(locations4);
         int x4 = locations4[0];
         int y4 = locations4[1];
 
@@ -92,7 +91,6 @@ public class CubeActivity extends AppCompatActivity {
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
 
     }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -154,35 +152,38 @@ public class CubeActivity extends AppCompatActivity {
             return true;
         }
     }
-    protected void onResume() {
+   protected void onResume() {
         super.onResume();
         System.out.println("OnResume Counter Sequence: " + count);
         int thecount = model.getCurrent().getCurrentTest().getId();
         if(thecount>0) {
             switch (thecount){
                 case 1:
-                    imgMuestra.setBackgroundResource(imgResourceIds[1]);
+                    imgMuestra.setBackgroundResource(fontResourceIds[1]);
                     break;
                 case 2:
-                    imgMuestra.setBackgroundResource(imgResourceIds[2]);
-                    imgOne.setBackgroundResource(imgResourceIds[6]);
-                    imgTwo.setBackgroundResource(imgResourceIds[7]);
-                    imgThree.setBackgroundResource(imgResourceIds[11]);
-                    imgFouer.setBackgroundResource(imgResourceIds[6]);
+                    imgMuestra.setBackgroundResource(fontResourceIds[2]);
+
+                    imgCubeOne.setBackgroundResource(imgResourceIds[2]);
+                    imgCubeTwo.setBackgroundResource(imgResourceIds[5]);
+                    imgCubeThree.setBackgroundResource(imgResourceIds[1]);
+                    imgCubeFour.setBackgroundResource(imgResourceIds[1]);
                     break;
                 case 3:
-                    imgMuestra.setBackgroundResource(imgResourceIds[3]);
-                    imgOne.setBackgroundResource(imgResourceIds[9]);
-                    imgTwo.setBackgroundResource(imgResourceIds[10]);
-                    imgFouer.setBackgroundResource(imgResourceIds[6]);
-                    imgThree.setBackgroundResource(imgResourceIds[8]);
+                    imgMuestra.setBackgroundResource(fontResourceIds[3]);
+
+                    imgCubeOne.setBackgroundResource(imgResourceIds[0]);
+                    imgCubeTwo.setBackgroundResource(imgResourceIds[4]);
+                    imgCubeFour.setBackgroundResource(imgResourceIds[0]);
+                    imgCubeThree.setBackgroundResource(imgResourceIds[3]);
                     break;
                 case 4:
-                    imgMuestra.setBackgroundResource(imgResourceIds[4]);
-                    imgOne.setBackgroundResource(imgResourceIds[6]);
-                    imgTwo.setBackgroundResource(imgResourceIds[7]);
-                    imgFouer.setBackgroundResource(imgResourceIds[6]);
-                    imgThree.setBackgroundResource(imgResourceIds[8]);
+                    imgMuestra.setBackgroundResource(fontResourceIds[4]);
+
+                    imgCubeOne.setBackgroundResource(imgResourceIds[3]);
+                    imgCubeTwo.setBackgroundResource(imgResourceIds[4]);
+                    imgCubeFour.setBackgroundResource(imgResourceIds[2]);
+                    imgCubeThree.setBackgroundResource(imgResourceIds[0]);
                     break;
                 case 5:
 

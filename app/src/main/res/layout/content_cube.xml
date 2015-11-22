@@ -7,7 +7,6 @@
     android:paddingTop="0dp"
     android:background="@mipmap/fondo"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.lab.inmotion.learny.Activities.CubeActivity">
 
     <LinearLayout
@@ -24,7 +23,7 @@
             android:layout_height="125dp"
             android:text="Rojo"
             android:id="@+id/cubeOne"
-            android:src="@mipmap/pquno"
+            android:background="@mipmap/pquno"
             android:layout_below="@+id/textView4"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -34,7 +33,7 @@
             android:layout_height="125dp"
             android:text="Rojo"
             android:id="@+id/cubeTwo"
-            android:src="@mipmap/pqdos"
+            android:background="@mipmap/pqdos"
             android:layout_below="@+id/textView4"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -45,7 +44,7 @@
             android:layout_height="125dp"
             android:text="Rojo"
             android:id="@+id/cubeThree"
-            android:src="@mipmap/pquno"
+            android:background="@mipmap/pquno"
             android:layout_below="@+id/textView4"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -56,7 +55,7 @@
             android:layout_height="125dp"
             android:text="Rojo"
             android:id="@+id/cubeFour"
-            android:src="@mipmap/pqdos"
+            android:background="@mipmap/pqdos"
             android:layout_below="@+id/textView4"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -67,7 +66,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:id="@+id/figuraMuestra"
-        android:src="@mipmap/figurauno"
+        android:background="@mipmap/figurauno"
         android:onClick="btnRojo"
         android:layout_marginLeft="133dp"
         android:layout_marginStart="133dp"
@@ -81,7 +80,7 @@
         android:layout_width="150dp"
         android:layout_height="132dp"
         android:layout_marginBottom="0dp"
-        android:layout_marginLeft="560dp"
+        android:layout_marginLeft="550dp"
         android:layout_marginTop="220dp"
         android:id="@+id/right_img">
     </LinearLayout>
@@ -100,7 +99,7 @@
         android:layout_height="132dp"
         android:layout_marginBottom="0dp"
         android:layout_marginLeft="670dp"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="315dp"
         android:id="@+id/right_imgCuatro">
     </LinearLayout>
     <LinearLayout
@@ -108,19 +107,19 @@
         android:layout_width="150dp"
         android:layout_height="132dp"
         android:layout_marginBottom="0dp"
-        android:layout_marginLeft="560dp"
-        android:layout_marginTop="320dp"
+        android:layout_marginLeft="550dp"
+        android:layout_marginTop="315dp"
         android:id="@+id/right_imgTres">
     </LinearLayout>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="siguient"
-        android:id="@+id/cuboSiguiente"
-        android:layout_alignBottom="@+id/left_img"
-        android:layout_toRightOf="@+id/right_imgCuatro"
-        android:layout_toEndOf="@+id/right_imgCuatro"
+        android:text="Continuar"
+        android:id="@+id/btn_continueCube"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/figuraMuestra"
+        android:layout_alignEnd="@+id/figuraMuestra"
         android:onClick="btnContinueCube" />
 
 </RelativeLayout>
