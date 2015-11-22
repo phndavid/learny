@@ -10,7 +10,8 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_figure"
     tools:context="com.lab.inmotion.learny.Activities.FigureActivity"
-    android:id="@+id/backgroundFigure">
+    android:id="@+id/backgroundFigure"
+    android:onClick="tapTest">
 
     <Button
         android:layout_width="53dp"

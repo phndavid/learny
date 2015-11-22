@@ -1,14 +1,18 @@
 package com.lab.inmotion.learny.Activities;
 
+import android.app.AlertDialog;
 import android.app.Application;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.SystemClock;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -232,6 +236,22 @@ public class FigureActivity extends AppCompatActivity {
                     break;
             }
         }
+        Runnable mRunnable;
+        Handler mHandler=new Handler();
+
+        mRunnable=new Runnable() {
+
+            @Override
+            public void run() {
+                // TODO Auto-generated method stub
+                AlertDialog.Builder alertadd = new AlertDialog.Builder(FigureActivity.this);
+                LayoutInflater factory = LayoutInflater.from(FigureActivity.this);
+                final View view1 = factory.inflate(R.layout.try_again_layout, null);
+                alertadd.setView(view1);
+                alertadd.show();
+            }
+        };
+        mHandler.postDelayed(mRunnable,30*1000);
     }
 
     @Override
@@ -244,6 +264,9 @@ public class FigureActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
+
+    }
+    public void tapTest(View view){
 
     }
 }
