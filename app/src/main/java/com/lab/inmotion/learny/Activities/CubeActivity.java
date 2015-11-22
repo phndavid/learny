@@ -34,6 +34,9 @@ public class CubeActivity extends AppCompatActivity {
         findViewById(R.id.cubeFive).setOnTouchListener(new imgTouchListener());
         findViewById(R.id.cubeSix).setOnTouchListener(new imgTouchListener());
         findViewById(R.id.right_img).setOnDragListener(new ContainerDragListener());
+        findViewById(R.id.right_imgCuatro).setOnDragListener(new ContainerDragListener());
+        findViewById(R.id.right_imgDos).setOnDragListener(new ContainerDragListener());
+        findViewById(R.id.right_imgTres).setOnDragListener(new ContainerDragListener());
         findViewById(R.id.left_img).setOnDragListener(new ContainerDragListener());
     }
     private class imgTouchListener implements View.OnTouchListener {
