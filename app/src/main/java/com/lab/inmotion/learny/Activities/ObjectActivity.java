@@ -1,6 +1,7 @@
 package com.lab.inmotion.learny.Activities;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -9,7 +10,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
+import com.lab.inmotion.learny.Application.App;
+import com.lab.inmotion.learny.Model.Learny;
 import com.lab.inmotion.learny.R;
 
 import java.io.ObjectStreamException;
@@ -22,17 +28,77 @@ public class ObjectActivity extends AppCompatActivity {
             R.mipmap.ovejacinco,R.mipmap.ovejaseis,R.mipmap.ovejasiete,R.mipmap.ovejaocho,R.mipmap.ovejanueve,
 
             R.mipmap.neverauno,R.mipmap.neverados,R.mipmap.neveratres,R.mipmap.neveracuatro,
-            R.mipmap.neveracinco,R.mipmap.neveraseis,R.mipmap.neverasiete,R.mipmap.neveraoccho,R.mipmap.neveranueve};
-    private int[] fontResourceIds = {R.mipmap.fondouno,R.mipmap.fondodos,R.mipmap.fondotres,R.mipmap.fondocuatro,R.mipmap.fondocinco};
+            R.mipmap.neveracinco,R.mipmap.neveraseis,R.mipmap.neverasiete,R.mipmap.neveraoccho,R.mipmap.neveranueve,
+
+            R.mipmap.camarauno,R.mipmap.camarados,R.mipmap.camaratres,R.mipmap.camaracuatro,
+            R.mipmap.camaracinco,R.mipmap.camaraseis,R.mipmap.camarasiete,R.mipmap.camaraocho,R.mipmap.camaranueve,
+
+            R.mipmap.micouno,R.mipmap.micodos,R.mipmap.micotres,R.mipmap.micocuatro,
+            R.mipmap.micocinco,R.mipmap.micoseis,R.mipmap.micosiete,R.mipmap.micoocho,R.mipmap.miconueve,
+
+            R.mipmap.leuno,R.mipmap.ledos,R.mipmap.letres,R.mipmap.leacuatro,
+            R.mipmap.lecinco,R.mipmap.leseis,R.mipmap.lesiete,R.mipmap.leocho,R.mipmap.lenueve
+    };
+
+    private int[] fontResourceIds = {R.mipmap.fondooveja,R.mipmap.fondonevera,R.mipmap.fondocamara,R.mipmap.fondomico,R.mipmap.fondole};
 
     private  AlertDialog.Builder alertadd;
     private int position;
+    private int count;
+    private RelativeLayout relativeLayout;
+    private Learny model;
+
     public void popupOptions(){
         alertadd = new AlertDialog.Builder(ObjectActivity.this);
         LayoutInflater factory = LayoutInflater.from(ObjectActivity.this);
         final View view1 = factory.inflate(R.layout.activity_options_object, null);
         alertadd.setView(view1);
         alertadd.show();
+        setChangeTitleOption(view1);
+        setChangeOptionsBackground(view1);
+    }
+    public void setChangeTitleOption(View view){
+        switch (count){
+            case 1:
+                ImageView titleOption1 = (ImageView) view.findViewById(R.id.titleOption);
+                titleOption1.setBackgroundResource(R.mipmap.popupnevera);
+                break;
+            case 2:
+                ImageView titleOption2 = (ImageView) view.findViewById(R.id.titleOption);
+                titleOption2.setBackgroundResource(R.mipmap.popupcamara);
+                break;
+            case 3:
+                ImageView titleOption3 = (ImageView) view.findViewById(R.id.titleOption);
+                titleOption3.setBackgroundResource(R.mipmap.popupmico);
+                break;
+            case 4:
+                ImageView titleOption4 = (ImageView) view.findViewById(R.id.titleOption);
+                titleOption4.setBackgroundResource(R.mipmap.popuple);
+                break;
+            case 5:
+                break;
+        }
+    }
+    public void setChangeOptionsBackground(View view){
+
+        ImageButton option1 = (ImageButton) view.findViewById(R.id.option1);
+        option1.setBackgroundResource(imgResourceIds[count*9]);
+        ImageButton option2 = (ImageButton) view.findViewById(R.id.option2);
+        option2.setBackgroundResource(imgResourceIds[count*9+1]);
+        ImageButton option3 = (ImageButton) view.findViewById(R.id.option3);
+        option3.setBackgroundResource(imgResourceIds[count*9+2]);
+        ImageButton option4 = (ImageButton) view.findViewById(R.id.option4);
+        option4.setBackgroundResource(imgResourceIds[count*9+3]);
+        ImageButton option5 = (ImageButton) view.findViewById(R.id.option5);
+        option5.setBackgroundResource(imgResourceIds[count*9+4]);
+        ImageButton option6 = (ImageButton) view.findViewById(R.id.option6);
+        option6.setBackgroundResource(imgResourceIds[count*9+5]);
+        ImageButton option7 = (ImageButton) view.findViewById(R.id.option7);
+        option7.setBackgroundResource(imgResourceIds[count*9+6]);
+        ImageButton option8 = (ImageButton) view.findViewById(R.id.option8);
+        option8.setBackgroundResource(imgResourceIds[count*9+7]);
+        ImageButton option9 = (ImageButton) view.findViewById(R.id.option9);
+        option9.setBackgroundResource(imgResourceIds[count*9+8]);
     }
     public void changeImageoption(int imgResourceIds){
         switch (position){
@@ -80,7 +146,7 @@ public class ObjectActivity extends AppCompatActivity {
         popupOptions();
     }
     public void btnOption1(View view){
-        changeImageoption(imgResourceIds[0]);
+        changeImageoption(imgResourceIds[count*9]);
     }
     //---------------------------------------
     public void btnRompe2(View view){
@@ -88,7 +154,7 @@ public class ObjectActivity extends AppCompatActivity {
         popupOptions();
     }
     public void btnOption2(View view){
-        changeImageoption(imgResourceIds[1]);
+        changeImageoption(imgResourceIds[count*9+1]);
     }
     //----------------------------------------
     public void btnRompe3(View view){
@@ -96,7 +162,7 @@ public class ObjectActivity extends AppCompatActivity {
         popupOptions();
     }
     public void btnOption3(View view){
-        changeImageoption(imgResourceIds[2]);
+        changeImageoption(imgResourceIds[count*9+2]);
     }
     //---------------------------------------
     public void btnRompe4(View view){
@@ -104,7 +170,7 @@ public class ObjectActivity extends AppCompatActivity {
         popupOptions();
     }
     public void btnOption4(View view){
-        changeImageoption(imgResourceIds[3]);
+        changeImageoption(imgResourceIds[count*9+3]);
     }
     //---------------------------------------
 
@@ -113,7 +179,7 @@ public class ObjectActivity extends AppCompatActivity {
         popupOptions();
     }
     public void btnOption5(View view){
-        changeImageoption(imgResourceIds[4]);
+        changeImageoption(imgResourceIds[count*9+4]);
     }
     //---------------------------------------
 
@@ -122,7 +188,7 @@ public class ObjectActivity extends AppCompatActivity {
         popupOptions();
     }
     public void btnOption6(View view){
-        changeImageoption(imgResourceIds[5]);
+        changeImageoption(imgResourceIds[count*9+5]);
     }
     //---------------------------------------
     public void btnRompe7(View view){
@@ -130,7 +196,7 @@ public class ObjectActivity extends AppCompatActivity {
         popupOptions();
     }
     public void btnOption7(View view){
-        changeImageoption(imgResourceIds[6]);
+        changeImageoption(imgResourceIds[count*9+6]);
     }
     //---------------------------------------
     public void btnRompe8(View view){
@@ -138,7 +204,7 @@ public class ObjectActivity extends AppCompatActivity {
         popupOptions();
     }
     public void btnOption8(View view){
-        changeImageoption(imgResourceIds[7]);
+        changeImageoption(imgResourceIds[count*9+7]);
     }
     //---------------------------------------
     public void btnRompe9(View view){
@@ -146,14 +212,60 @@ public class ObjectActivity extends AppCompatActivity {
         popupOptions();
     }
     public void btnOption9(View view){
-        changeImageoption(imgResourceIds[8]);
+        changeImageoption(imgResourceIds[count*9+8]);
     }
     //---------------------------------------
+    public void btnContinue(View view){
+        Intent intent = new Intent(this,FeedBackActivity.class);
+        intent.putExtra("category", "construyelos");
+        intent.putExtra("count", model.getCurrent().getCurrentTest().getId());
+        startActivity(intent);
+        count++;
+        int actual = model.getCurrent().getCurrentTest().getId();
+        if(actual<4) {
+            System.out.println("puntaje acumulado: " + model.getCurrent().getPuntaje());
+            model.nextTest();
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_object);
+        relativeLayout = (RelativeLayout) findViewById(R.id.backgroundObject);
+        App app = (App) getApplication();
+        model = app.getModel();
     }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        //init();
+        System.out.println("OnResume Counter Sequence: " + count);
+        int thecount= model.getCurrent().getCurrentTest().getId();
+        if(thecount>0) {
+            switch (thecount){
+                case 1:
+                    relativeLayout.setBackgroundResource(fontResourceIds[1]);
+                    break;
+                case 2:
+                    relativeLayout.setBackgroundResource(fontResourceIds[2]);
+                    break;
+                case 3:
+                    relativeLayout.setBackgroundResource(fontResourceIds[3]);
+                    break;
+                case 4:
+                    relativeLayout.setBackgroundResource(fontResourceIds[4]);
+                    break;
+                case 5:
+                    relativeLayout.setBackgroundResource(fontResourceIds[5]);
+                    break;
+            }
+        }
+    }
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        System.out.println("se ejecuta el onrestart");
 
+    }
 }
