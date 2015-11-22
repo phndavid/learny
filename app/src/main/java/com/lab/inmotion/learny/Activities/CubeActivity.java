@@ -19,9 +19,8 @@ import com.lab.inmotion.learny.R;
 
 public class CubeActivity extends AppCompatActivity {
 
-    private int[] imgResourceIds = {R.mipmap.plantauno,R.mipmap.plantados,R.mipmap.plantatres,R.mipmap.mediauno,R.mipmap.mediados,R.mipmap.mediatres,
-            R.mipmap.vacauno,R.mipmap.vacados,R.mipmap.vacatres,R.mipmap.paletauno,R.mipmap.paletados,R.mipmap.paletatres,
-            R.mipmap.banouno,R.mipmap.banodos,R.mipmap.banotres};
+    private int[] imgResourceIds = {R.mipmap.pquno,R.mipmap.pqdos,R.mipmap.pqtres,
+                                    R.mipmap.pqcuatro,R.mipmap.pqcinco,R.mipmap.pqseis};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +32,7 @@ public class CubeActivity extends AppCompatActivity {
         findViewById(R.id.cubeThree).setOnTouchListener(new imgTouchListener());
         findViewById(R.id.cubeFour).setOnTouchListener(new imgTouchListener());
         findViewById(R.id.cubeFive).setOnTouchListener(new imgTouchListener());
+        findViewById(R.id.cubeSix).setOnTouchListener(new imgTouchListener());
         findViewById(R.id.right_img).setOnDragListener(new ContainerDragListener());
         findViewById(R.id.left_img).setOnDragListener(new ContainerDragListener());
     }

@@ -2,7 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     android:background="#e0e0e0" >
+=======
+    android:background="#005ccFFF">
+>>>>>>> 1434d29d70991ca3c17f68aeb808ab8750571c1f
 
     <ImageView
         android:layout_width="wrap_content"
