@@ -10,119 +10,78 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.lab.inmotion.learny.Activities.CubeActivity">
 
-<<<<<<< HEAD
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="¿Pregunta learny? otra forma de aprender"
-        android:id="@+id/textView4"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
     <LinearLayout
-        android:id="@+id/right_img"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="0.5"
-        android:orientation="vertical"
-        android:layout_alignLeft="@+id/textView4"
-        android:layout_alignStart="@+id/textView4"
-        >
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Button"
-            android:id="@+id/button34" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Button"
-            android:id="@+id/button33" />
-    </LinearLayout>
-
-=======
->>>>>>> 1434d29d70991ca3c17f68aeb808ab8750571c1f
-     <LinearLayout
         android:orientation="vertical"
         android:layout_width="100dp"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-<<<<<<< HEAD
-         android:layout_toStartOf="@+id/right_img"
-=======
->>>>>>> 1434d29d70991ca3c17f68aeb808ab8750571c1f
         android:id="@+id/left_img"
         android:layout_alignParentBottom="true">
 
-         <ImageView
-             android:layout_width="87dp"
-             android:layout_height="87dp"
-             android:text="Rojo"
-             android:id="@+id/cubeOne"
-             android:src="@mipmap/pquno"
-             android:layout_below="@+id/textView4"
-             android:layout_alignParentLeft="true"
-             android:layout_alignParentStart="true"
-             android:onClick="btnRojo" />
+        <ImageView
+            android:layout_width="87dp"
+            android:layout_height="87dp"
+            android:text="Rojo"
+            android:id="@+id/cubeOne"
+            android:src="@mipmap/pquno"
+            android:layout_below="@+id/textView4"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:onClick="btnRojo" />
 
 
-         <ImageView
-             android:layout_width="87dp"
-             android:layout_height="87dp"
-             android:text="Rojo"
-             android:id="@+id/cubeTwo"
-             android:src="@mipmap/pqdos"
-             android:layout_below="@+id/textView4"
-             android:layout_alignParentLeft="true"
-             android:layout_alignParentStart="true"
-             android:onClick="btnRojo" />
-         <ImageView
-             android:layout_width="87dp"
-             android:layout_height="87dp"
-             android:text="Rojo"
-             android:id="@+id/cubeThree"
-             android:src="@mipmap/pqtres"
-             android:layout_below="@+id/textView4"
-             android:layout_alignParentLeft="true"
-             android:layout_alignParentStart="true"
-             android:onClick="btnRojo" />
-
-         <ImageView
-             android:layout_width="87dp"
-             android:layout_height="87dp"
-             android:text="Rojo"
-             android:id="@+id/cubeFour"
-             android:src="@mipmap/pqcuatro"
-             android:layout_below="@+id/textView4"
-             android:layout_alignParentLeft="true"
-             android:layout_alignParentStart="true"
-             android:onClick="btnRojo" />
-         <ImageView
-             android:layout_width="87dp"
-             android:layout_height="87dp"
-             android:text="Rojo"
-             android:id="@+id/cubeFive"
-             android:src="@mipmap/pqdos"
-             android:layout_below="@+id/textView4"
-             android:layout_alignParentLeft="true"
-             android:layout_alignParentStart="true"
-             android:onClick="btnRojo" />
-         <ImageView
-             android:layout_width="87dp"
-             android:layout_height="87dp"
-             android:text="Rojo"
-             android:id="@+id/cubeSix"
-             android:src="@mipmap/pquno"
-             android:layout_below="@+id/textView4"
-             android:layout_alignParentLeft="true"
-             android:layout_alignParentStart="true"
-             android:onClick="btnRojo" />
-     </LinearLayout>
+        <ImageView
+            android:layout_width="87dp"
+            android:layout_height="87dp"
+            android:text="Rojo"
+            android:id="@+id/cubeTwo"
+            android:src="@mipmap/pqdos"
+            android:layout_below="@+id/textView4"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:onClick="btnRojo" />
+        <ImageView
+            android:layout_width="87dp"
+            android:layout_height="87dp"
+            android:text="Rojo"
+            android:id="@+id/cubeThree"
+            android:src="@mipmap/pqtres"
+            android:layout_below="@+id/textView4"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:onClick="btnRojo" />
+        <ImageView
+            android:layout_width="87dp"
+            android:layout_height="87dp"
+            android:text="Rojo"
+            android:id="@+id/cubeFour"
+            android:src="@mipmap/pqcuatro"
+            android:layout_below="@+id/textView4"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:onClick="btnRojo" />
+        <ImageView
+            android:layout_width="87dp"
+            android:layout_height="87dp"
+            android:text="Rojo"
+            android:id="@+id/cubeFive"
+            android:src="@mipmap/pqdos"
+            android:layout_below="@+id/textView4"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:onClick="btnRojo" />
+        <ImageView
+            android:layout_width="87dp"
+            android:layout_height="87dp"
+            android:text="Rojo"
+            android:id="@+id/cubeSix"
+            android:src="@mipmap/pquno"
+            android:layout_below="@+id/textView4"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:onClick="btnRojo" />
+    </LinearLayout>
 
     <ImageView
         android:layout_width="150dp"
