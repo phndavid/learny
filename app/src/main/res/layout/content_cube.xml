@@ -94,16 +94,15 @@
         android:layout_marginTop="65dp"
         android:layout_alignParentTop="true"/>
 
-    <FrameLayout
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="307dp"
         android:layout_height="275dp"
         android:layout_marginBottom="0dp"
         android:layout_marginLeft="550dp"
         android:layout_marginTop="200dp"
-        android:id="@+id/right_img"
-        >
-
-    </FrameLayout>
+        android:id="@+id/right_img">
+    </LinearLayout>
 
 
 </RelativeLayout>
