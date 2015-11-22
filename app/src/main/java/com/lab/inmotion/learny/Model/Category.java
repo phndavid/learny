@@ -22,6 +22,13 @@ public class Category extends ParseObject{
         inicializeTests();
         currentTest = tests[0];
     }
+    public void measureTotalTime(){
+        double totalTime=0;
+        for(int i=0; i<tests.length;i++){
+            totalTime+=tests[i].getTime();
+        }
+        tiempo = totalTime;
+    }
     public void inicializeTests(){
         tests[0] = new Test();
         tests[0].setId(0);
