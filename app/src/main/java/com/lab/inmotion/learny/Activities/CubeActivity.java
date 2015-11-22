@@ -58,7 +58,7 @@ public class CubeActivity extends AppCompatActivity {
 
     public void btnContinueCube(View view){
         Intent intent = new Intent(this,FeedBackActivity.class);
-        intent.putExtra("category", "organizalos");
+        intent.putExtra("category","organizalos");
         intent.putExtra("count", model.getCurrent().getCurrentTest().getId());
         startActivity(intent);
         count++;
@@ -97,7 +97,6 @@ public class CubeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cube);
         init();
         App app = (App) getApplication();
         model = app.getModel();
@@ -158,7 +157,7 @@ public class CubeActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         System.out.println("OnResume Counter Sequence: " + count);
-        int thecount= model.getCurrent().getCurrentTest().getId();
+        int thecount = model.getCurrent().getCurrentTest().getId();
         if(thecount>0) {
             switch (thecount){
                 case 1:

@@ -27,9 +27,11 @@ public class Learny {
     public Category getCurrent(){
         return current;
     }
+
     public void setCurrent(Category current){
         this.current = current;
     }
+
     public void inicializeCategories(){
 
         categories[0] = new Category();
