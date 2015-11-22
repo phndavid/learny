@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.lab.inmotion.learny.Application.App;
 import com.parse.ParseUser;
 
 public class DispatchActivity extends AppCompatActivity {
