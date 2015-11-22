@@ -69,7 +69,7 @@ public class FeedBackActivity extends AppCompatActivity {
                 finish();
             }
             if(app.getModel().getCurrent().getNombre().equals("organizalos")) {
-                Intent theIntent = new Intent(this, SequenceActivity.class);
+                Intent theIntent = new Intent(this, CubeActivity.class);
                 int next = globalCount + 1;
                 System.out.println(next + " este es el next");
                 theIntent.putExtra("count", next);
@@ -77,7 +77,7 @@ public class FeedBackActivity extends AppCompatActivity {
                 finish();
             }
             if(app.getModel().getCurrent().getNombre().equals("construyelos")) {
-                Intent theIntent = new Intent(this, SequenceActivity.class);
+                Intent theIntent = new Intent(this, ObjectActivity.class);
                 int next = globalCount + 1;
                 System.out.println(next + " este es el next");
                 theIntent.putExtra("count", next);
@@ -85,7 +85,7 @@ public class FeedBackActivity extends AppCompatActivity {
                 finish();
             }
             if(app.getModel().getCurrent().getNombre().equals("descifraClave")) {
-                Intent theIntent = new Intent(this, SequenceActivity.class);
+                Intent theIntent = new Intent(this, KeyActivity.class);
                 int next = globalCount + 1;
                 System.out.println(next + " este es el next");
                 theIntent.putExtra("count", next);

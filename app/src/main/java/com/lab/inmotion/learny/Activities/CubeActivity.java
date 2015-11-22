@@ -39,11 +39,13 @@ public class CubeActivity extends AppCompatActivity {
 
     public void init(){
         setContentView(R.layout.activity_cube);
+
         imgMuestra = (ImageView) findViewById(R.id.figuraMuestra);
         imgOne = (ImageView) findViewById(R.id.cubeOne);
         imgTwo = (ImageView) findViewById(R.id.cubeTwo);
         imgThree = (ImageView) findViewById(R.id.cubeThree);
         imgFouer = (ImageView) findViewById(R.id.cubeFour);
+
         findViewById(R.id.cubeOne).setOnTouchListener(new imgTouchListener());
         findViewById(R.id.cubeTwo).setOnTouchListener(new imgTouchListener());
         findViewById(R.id.cubeThree).setOnTouchListener(new imgTouchListener());
@@ -54,9 +56,9 @@ public class CubeActivity extends AppCompatActivity {
         findViewById(R.id.right_imgTres).setOnDragListener(new ContainerDragListener());
         findViewById(R.id.left_img).setOnDragListener(new ContainerDragListener());}
 
-    public void btnContinue(View view){
+    public void btnContinueCube(View view){
         Intent intent = new Intent(this,FeedBackActivity.class);
-        intent.putExtra("category", "vidaCotidiana");
+        intent.putExtra("category", "organizalos");
         intent.putExtra("count", model.getCurrent().getCurrentTest().getId());
         startActivity(intent);
         count++;
@@ -88,7 +90,6 @@ public class CubeActivity extends AppCompatActivity {
 
         String msg = "IMG1 X:"+x1+" Y:"+y1+" - IMG2 X:"+x2+" Y:"+y2+" - IMG3 X:"+x3+" Y:"+y3+" - IMG4 X:"+x4+" Y:"+y4;
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
-
 
     }
 
@@ -156,7 +157,6 @@ public class CubeActivity extends AppCompatActivity {
     }
     protected void onResume() {
         super.onResume();
-        //init();
         System.out.println("OnResume Counter Sequence: " + count);
         int thecount= model.getCurrent().getCurrentTest().getId();
         if(thecount>0) {
