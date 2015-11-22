@@ -74,11 +74,11 @@ public class CategoryActivity extends AppCompatActivity {
                         startActivity(theIntent);
                         finish();
                     }else if(position == 1){
-                        Intent theIntent = new Intent(v.getContext(), CubeActivity.class);
+                        Intent theIntent = new Intent(v.getContext(), SequenceActivity.class);
                         startActivity(theIntent);
                         finish();
                     }else if(position == 2){
-                        Intent theIntent = new Intent(v.getContext(), SequenceActivity.class);
+                        Intent theIntent = new Intent(v.getContext(), CubeActivity.class);
                         startActivity(theIntent);
                         finish();
                     }else if(position == 3){

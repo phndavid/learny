@@ -16,7 +16,8 @@ import com.lab.inmotion.learny.R;
 
 public class FeedBackActivity extends AppCompatActivity {
 
-    private int[] backgrounds = {R.mipmap.retrouno_xhdpi,R.mipmap.retrodos_xhdpi,R.mipmap.retrotres_xhdpi,R.mipmap.retrocuatro_xhdpi,R.mipmap.retrocinco};
+    private int[] backgroundsOne = {R.mipmap.retrouno_xhdpi,R.mipmap.retrodos_xhdpi,R.mipmap.retrotres_xhdpi,R.mipmap.retrocuatro_xhdpi,R.mipmap.retrocinco};
+    private int[] backgroundsTwo = {R.mipmap.dosretrouno_xhdpi,R.mipmap.dosretrodos,R.mipmap.dosretrotres,R.mipmap.dosretrocuatro,R.mipmap.dosretrocinco};
 
 
     private RelativeLayout relativeLayout;
@@ -26,12 +27,19 @@ public class FeedBackActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed_back);
         relativeLayout = (RelativeLayout) findViewById(R.id.relafeedback);
+
         Bundle bundle = getIntent().getExtras();
-        String level = bundle.getString("category");
+        String levelOne = bundle.getString("category");
+        String leveTwo = bundle.getString("sequence");
+
         int count = bundle.getInt("count");
         globalCount = count;
         System.out.println(count + " count que llega al feedback");
-        relativeLayout.setBackgroundResource(backgrounds[count]);
+        if(levelOne != null)
+            relativeLayout.setBackgroundResource(backgroundsOne[count]);
+        else if(leveTwo != null)
+            relativeLayout.setBackgroundResource(backgroundsTwo[count]);
+
     }
 
     public void tap(View view){
