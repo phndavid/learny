@@ -49,12 +49,17 @@ public class SequenceActivity extends AppCompatActivity {
     }
     public void btnContinue(View view){
         Intent intent = new Intent(this,FeedBackActivity.class);
-        intent.putExtra("sequence", "vidaCotidiana");
+        intent.putExtra("category", "vidaCotidiana");
         intent.putExtra("count", model.getCurrent().getCurrentTest().getId());
         startActivity(intent);
-        getPositionCount();
         count++;
-        init();
+        getPositionCount();
+        int actual = model.getCurrent().getCurrentTest().getId();
+        if(actual<4) {
+            System.out.println("puntaje acumulado: " + model.getCurrent().getPuntaje());
+            model.nextTest();
+        }
+
     }
     public  void getPositionCount(){
         int[] locations1 = new int[2];
@@ -133,12 +138,12 @@ public class SequenceActivity extends AppCompatActivity {
         init();
         App app = (App) getApplication();
         model = app.getModel();
-        count = 0;
     }
     @Override
     protected void onResume() {
         super.onResume();
-        System.out.println("se ejecuta el onresume y este es el count: " + count);
+        //init();
+        System.out.println("OnResume Counter Sequence: " + count);
         int thecount= model.getCurrent().getCurrentTest().getId();
         if(thecount>0) {
             switch (thecount){

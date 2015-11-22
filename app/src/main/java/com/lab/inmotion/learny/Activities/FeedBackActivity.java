@@ -29,15 +29,13 @@ public class FeedBackActivity extends AppCompatActivity {
         relativeLayout = (RelativeLayout) findViewById(R.id.relafeedback);
 
         Bundle bundle = getIntent().getExtras();
-        String levelOne = bundle.getString("category");
-        String leveTwo = bundle.getString("sequence");
-
+        String level = bundle.getString("category");
         int count = bundle.getInt("count");
         globalCount = count;
         System.out.println(count + " count que llega al feedback");
-        if(levelOne != null)
+        if(level.equals("incompleteFigure"))
             relativeLayout.setBackgroundResource(backgroundsOne[count]);
-        else if(leveTwo != null)
+        if(level.equals("vidaCotidiana"))
             relativeLayout.setBackgroundResource(backgroundsTwo[count]);
 
     }
@@ -53,7 +51,8 @@ public class FeedBackActivity extends AppCompatActivity {
                 theIntent.putExtra("count", next);
                 startActivity(theIntent);
                 finish();
-            }else if(app.getModel().getCurrent().getNombre().equals("vidaCotidiana")) {
+            }
+            if(app.getModel().getCurrent().getNombre().equals("vidaCotidiana")) {
                 Intent theIntent = new Intent(this, SequenceActivity.class);
                 int next = globalCount + 1;
                 System.out.println(next + " este es el next");
