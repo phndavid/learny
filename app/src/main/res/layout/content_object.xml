@@ -11,7 +11,8 @@
     android:background="@mipmap/fondooveja"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.lab.inmotion.learny.Activities.ObjectActivity"
-    tools:showIn="@layout/activity_object">
+    tools:showIn="@layout/activity_object"
+    android:id="@+id/backgroundObject">
 
     <Button
         android:layout_width="135dp"
@@ -94,4 +95,14 @@
         android:layout_marginTop="290dp"
         android:layout_marginLeft="710dp"
         android:onClick="btnRompe9" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Continuar"
+        android:id="@+id/button33"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/btn_rompe8"
+        android:layout_toEndOf="@+id/btn_rompe8"
+        android:onClick="btnContinue" />
 </RelativeLayout>

@@ -15,7 +15,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView2"
+        android:id="@+id/titleOption"
         android:background="@mipmap/popupoveja"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -23,95 +23,95 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView3"
+        android:id="@+id/option7"
         android:background="@mipmap/ovejauno"
-        android:onClick="btnOption1"
+        android:onClick="btnOption7"
         android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/imageButton"
-        android:layout_toStartOf="@+id/imageButton"
+        android:layout_toLeftOf="@+id/option8"
+        android:layout_toStartOf="@+id/option8"
         android:layout_marginRight="28dp"
         android:layout_marginEnd="28dp" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton"
+        android:id="@+id/option8"
         android:background="@mipmap/ovejados"
-        android:onClick="btnOption2"
+        android:onClick="btnOption8"
         android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/imageButton2"
-        android:layout_toStartOf="@+id/imageButton2" />
+        android:layout_toLeftOf="@+id/option9"
+        android:layout_toStartOf="@+id/option9" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton2"
+        android:id="@+id/option9"
         android:background="@mipmap/ovejatres"
-        android:onClick="btnOption3"
+        android:onClick="btnOption9"
         android:layout_marginLeft="32dp"
         android:layout_marginStart="32dp"
-        android:layout_below="@+id/imageButton3"
-        android:layout_toRightOf="@+id/imageButton4"
-        android:layout_toEndOf="@+id/imageButton4" />
+        android:layout_below="@+id/option4"
+        android:layout_toRightOf="@+id/option5"
+        android:layout_toEndOf="@+id/option5" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton3"
+        android:id="@+id/option4"
         android:background="@mipmap/ovejacuatro"
         android:onClick="btnOption4"
-        android:layout_above="@+id/imageView3"
-        android:layout_alignLeft="@+id/imageButton6"
-        android:layout_alignStart="@+id/imageButton6" />
+        android:layout_above="@+id/option7"
+        android:layout_alignLeft="@+id/option1"
+        android:layout_alignStart="@+id/option1" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton4"
+        android:id="@+id/option5"
         android:background="@mipmap/ovejacinco"
         android:onClick="btnOption5"
-        android:layout_alignBottom="@+id/imageButton3"
-        android:layout_toLeftOf="@+id/imageButton5"
-        android:layout_toStartOf="@+id/imageButton5" />
+        android:layout_alignBottom="@+id/option4"
+        android:layout_toLeftOf="@+id/option3"
+        android:layout_toStartOf="@+id/option3" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton5"
+        android:id="@+id/option3"
         android:background="@mipmap/ovejaseis"
-        android:onClick="btnOption6"
-        android:layout_above="@+id/imageButton4"
-        android:layout_alignRight="@+id/imageView2"
-        android:layout_alignEnd="@+id/imageView2" />
+        android:onClick="btnOption3"
+        android:layout_above="@+id/option5"
+        android:layout_alignRight="@+id/titleOption"
+        android:layout_alignEnd="@+id/titleOption" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton6"
+        android:id="@+id/option1"
         android:background="@mipmap/ovejasiete"
-        android:onClick="btnOption7"
-        android:layout_alignBottom="@+id/imageButton8"
-        android:layout_toLeftOf="@+id/imageButton4"
-        android:layout_toStartOf="@+id/imageButton4" />
+        android:onClick="btnOption1"
+        android:layout_alignBottom="@+id/option2"
+        android:layout_toLeftOf="@+id/option5"
+        android:layout_toStartOf="@+id/option5" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton7"
+        android:id="@+id/option6"
         android:background="@mipmap/ovejaocho"
-        android:onClick="btnOption8"
+        android:onClick="btnOption6"
         android:layout_marginTop="28dp"
-        android:layout_alignTop="@+id/imageButton3"
-        android:layout_alignLeft="@+id/imageButton2"
-        android:layout_alignStart="@+id/imageButton2" />
+        android:layout_alignTop="@+id/option4"
+        android:layout_alignLeft="@+id/option9"
+        android:layout_alignStart="@+id/option9" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton8"
+        android:id="@+id/option2"
         android:background="@mipmap/ovejanueve"
-        android:onClick="btnOption9"
-        android:layout_above="@+id/imageButton4"
-        android:layout_alignRight="@+id/imageButton4"
-        android:layout_alignEnd="@+id/imageButton4" />
+        android:onClick="btnOption2"
+        android:layout_above="@+id/option5"
+        android:layout_alignRight="@+id/option5"
+        android:layout_alignEnd="@+id/option5" />
 </RelativeLayout>
