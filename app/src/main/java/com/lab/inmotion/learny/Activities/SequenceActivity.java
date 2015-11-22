@@ -147,7 +147,7 @@ public class SequenceActivity extends AppCompatActivity {
         model = app.getModel();
     }
     @Override
-    protected void onResume() {
+     protected void onResume() {
         super.onResume();
         //init();
         System.out.println("OnResume Counter Sequence: " + count);
