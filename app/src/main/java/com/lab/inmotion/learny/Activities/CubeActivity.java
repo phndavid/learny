@@ -48,8 +48,6 @@ public class CubeActivity extends AppCompatActivity {
         findViewById(R.id.cubeTwo).setOnTouchListener(new imgTouchListener());
         findViewById(R.id.cubeThree).setOnTouchListener(new imgTouchListener());
         findViewById(R.id.cubeFour).setOnTouchListener(new imgTouchListener());
-        findViewById(R.id.cubeFive).setOnTouchListener(new imgTouchListener());
-        findViewById(R.id.cubeSix).setOnTouchListener(new imgTouchListener());
         findViewById(R.id.right_img).setOnDragListener(new ContainerDragListener());
         findViewById(R.id.right_imgCuatro).setOnDragListener(new ContainerDragListener());
         findViewById(R.id.right_imgDos).setOnDragListener(new ContainerDragListener());
