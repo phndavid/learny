@@ -53,7 +53,7 @@ public class ChildRecordActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_child);
-        tf=Typeface.createFromAsset(getAssets(),"fonts/CAFE.TTF");
+        tf=Typeface.createFromAsset(getAssets(), "fonts/CAFE.TTF");
         TextView lbl_name = (TextView) findViewById(R.id.lbl_name);
         lbl_name.setTypeface(tf);
         TextView lbl_birth = (TextView) findViewById(R.id.lbl_birth);
