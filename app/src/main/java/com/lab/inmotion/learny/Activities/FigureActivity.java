@@ -28,8 +28,6 @@ public class FigureActivity extends AppCompatActivity {
     private int puntaje=0;
     private boolean firstTime =false;
 
-
-
     private  int count;
     private RelativeLayout relativeLayout;
     private ImageView imgFigure;
@@ -184,8 +182,6 @@ public class FigureActivity extends AppCompatActivity {
             System.out.println("puntaje acumulado: " + model.getCurrent().getPuntaje());
             model.nextTest();
         }
-
-
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
