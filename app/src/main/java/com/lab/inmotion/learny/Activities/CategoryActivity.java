@@ -37,7 +37,7 @@ public class CategoryActivity extends AppCompatActivity {
 
     private class MyAdapter extends BaseAdapter {
         private int[] mResourceIds = {R.mipmap.coloruno_xhdpi, R.mipmap.safedos_xhdpi, R.mipmap.safetres_xhdpi, R.mipmap.safecuatro_xhdpi,
-                R.mipmap.safecinco};
+                R.mipmap.safecinco,R.mipmap.safeseis_xhdpi};
 
         private int mCount = mResourceIds.length;
 
@@ -90,7 +90,7 @@ public class CategoryActivity extends AppCompatActivity {
                         startActivity(theIntent);
                         finish();
                     }else if (position == 5){
-                        Intent theIntent = new Intent(v.getContext(), FigureActivity.class);
+                        Intent theIntent = new Intent(v.getContext(), ArduinoActivity.class);
                         startActivity(theIntent);
                         finish();
                     }

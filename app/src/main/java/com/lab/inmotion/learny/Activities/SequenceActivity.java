@@ -47,6 +47,11 @@ public class SequenceActivity extends AppCompatActivity {
         findViewById(R.id.linearFigureThree).setOnDragListener(new ContainerDragListener());
         relativeLayout = (RelativeLayout) findViewById(R.id.backgroudSequence);
     }
+    public boolean checkAnswer(){
+        boolean correct = false;
+
+        return correct;
+    }
     public void btnContinue(View view){
         Intent intent = new Intent(this,FeedBackActivity.class);
         intent.putExtra("category", "vidaCotidiana");
