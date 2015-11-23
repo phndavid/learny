@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Layout;
 import android.util.Log;
 import android.view.DragEvent;
 import android.view.MotionEvent;
@@ -36,6 +37,18 @@ public class CubeActivity extends AppCompatActivity {
     private ImageView imgMuestra;
 
     private Learny model;
+
+    //Para puntaje--------------------------
+    private LinearLayout elLayoutUno;
+    private LinearLayout elLayoDos;
+    private LinearLayout elLayoTres;
+    private LinearLayout elLayoCuatro;
+
+    private View viewUno;
+    private View viewDos;
+    private View viewTres;
+    private View viewCuatro;
+    //-------------------------------
 
     public void btnContinueCube(View view){
         Intent intent = new Intent(this,FeedBackActivity.class);
@@ -83,6 +96,13 @@ public class CubeActivity extends AppCompatActivity {
         imgCubeTwo = (ImageView) findViewById(R.id.cubeTwo);
         imgCubeThree = (ImageView) findViewById(R.id.cubeThree);
         imgCubeFour = (ImageView) findViewById(R.id.cubeFour);
+
+        //para contar Nuevo
+        View view = (View) findViewById(R.id.buttonStop);
+        elLayoutUno= (LinearLayout) view;
+        //
+
+        //termina
 
         findViewById(R.id.cubeOne).setOnTouchListener(new imgTouchListener());
         findViewById(R.id.cubeTwo).setOnTouchListener(new imgTouchListener());
@@ -141,6 +161,12 @@ public class CubeActivity extends AppCompatActivity {
                     LinearLayout newContainer = (LinearLayout) v;
                     newContainer.addView(view);
                     view.setVisibility(View.VISIBLE);
+
+                    //Nueevo
+                    elLayoutUno.addView(view);
+                    System.out.println("Si asigno");
+                    //
+
                     break;
                 case DragEvent.ACTION_DRAG_ENDED:
                     //v.setBackground(normalShape);
