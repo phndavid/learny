@@ -58,7 +58,8 @@ public class ObjectActivity extends AppCompatActivity {
         setChangeOptionsBackground(view1);
     }
     public void setChangeTitleOption(View view){
-        switch (count){
+        int thecount= model.getCurrent().getCurrentTest().getId();
+        switch (thecount){
             case 1:
                 ImageView titleOption1 = (ImageView) view.findViewById(R.id.titleOption);
                 titleOption1.setBackgroundResource(R.mipmap.popupnevera);
@@ -80,7 +81,7 @@ public class ObjectActivity extends AppCompatActivity {
         }
     }
     public void setChangeOptionsBackground(View view){
-
+        int count= model.getCurrent().getCurrentTest().getId();
         ImageButton option1 = (ImageButton) view.findViewById(R.id.option1);
         option1.setBackgroundResource(imgResourceIds[count*9]);
         ImageButton option2 = (ImageButton) view.findViewById(R.id.option2);
@@ -146,6 +147,7 @@ public class ObjectActivity extends AppCompatActivity {
         popupOptions();
     }
     public void btnOption1(View view){
+        int count= model.getCurrent().getCurrentTest().getId();
         changeImageoption(imgResourceIds[count*9]);
     }
     //---------------------------------------
@@ -154,6 +156,7 @@ public class ObjectActivity extends AppCompatActivity {
         popupOptions();
     }
     public void btnOption2(View view){
+        int count= model.getCurrent().getCurrentTest().getId();
         changeImageoption(imgResourceIds[count*9+1]);
     }
     //----------------------------------------
@@ -162,6 +165,7 @@ public class ObjectActivity extends AppCompatActivity {
         popupOptions();
     }
     public void btnOption3(View view){
+        int count= model.getCurrent().getCurrentTest().getId();
         changeImageoption(imgResourceIds[count*9+2]);
     }
     //---------------------------------------
@@ -170,6 +174,7 @@ public class ObjectActivity extends AppCompatActivity {
         popupOptions();
     }
     public void btnOption4(View view){
+        int count= model.getCurrent().getCurrentTest().getId();
         changeImageoption(imgResourceIds[count*9+3]);
     }
     //---------------------------------------
@@ -179,6 +184,7 @@ public class ObjectActivity extends AppCompatActivity {
         popupOptions();
     }
     public void btnOption5(View view){
+        int count= model.getCurrent().getCurrentTest().getId();
         changeImageoption(imgResourceIds[count*9+4]);
     }
     //---------------------------------------
@@ -188,6 +194,7 @@ public class ObjectActivity extends AppCompatActivity {
         popupOptions();
     }
     public void btnOption6(View view){
+        int count= model.getCurrent().getCurrentTest().getId();
         changeImageoption(imgResourceIds[count*9+5]);
     }
     //---------------------------------------
@@ -196,6 +203,7 @@ public class ObjectActivity extends AppCompatActivity {
         popupOptions();
     }
     public void btnOption7(View view){
+        int count= model.getCurrent().getCurrentTest().getId();
         changeImageoption(imgResourceIds[count*9+6]);
     }
     //---------------------------------------
@@ -204,6 +212,7 @@ public class ObjectActivity extends AppCompatActivity {
         popupOptions();
     }
     public void btnOption8(View view){
+        int count= model.getCurrent().getCurrentTest().getId();
         changeImageoption(imgResourceIds[count*9+7]);
     }
     //---------------------------------------
@@ -212,6 +221,7 @@ public class ObjectActivity extends AppCompatActivity {
         popupOptions();
     }
     public void btnOption9(View view){
+        int count= model.getCurrent().getCurrentTest().getId();
         changeImageoption(imgResourceIds[count*9+8]);
     }
     //---------------------------------------
