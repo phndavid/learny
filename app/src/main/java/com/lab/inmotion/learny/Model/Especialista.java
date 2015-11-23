@@ -30,58 +30,7 @@ public class Especialista extends ParseUser{
     public void addChild(Child child){
         final Child thechild = child;
         children.add(child);
-        final ParseObject object = ParseObject.create("Child");
-        System.out.println("datos del child:" + thechild.getFirstName());
-        object.put("firstName", thechild.getFirstName());
-        object.put("lastName", thechild.getLastName());
-        object.put("birth",thechild.getBirth());
-        object.put("educationLevel",thechild.getEducationLevel());
-        object.put("parentName",thechild.getParentName());
-        object.put("school",thechild.getSchool());
-        object.put("address", thechild.getAddress());
-        object.put("testPlace",thechild.getTestPlace());
-        object.put("testDate",thechild.getTestDate());
-        object.put("sex",thechild.getSex());
-        object.saveInBackground(new SaveCallback() {
-            @Override
-            public void done(ParseException e) {
-                if (e != null) {
-                    System.out.println("e del primer save");
-                    e.printStackTrace();
-                } else {
-                    System.out.println("success primer save");
-                    final ParseUser user = ParseUser.getCurrentUser();
-                    //user.setUsername(username);
-                    System.out.println("currentUser: " + user.getObjectId());
-                    System.out.println("currentUsername: " + username);
-                    ParseRelation relation = user.getRelation("children");
-                    System.out.println("relacion children:" + relation.toString());
-                    System.out.println("---prueba de datos---");
-                    System.out.println("firstName: " + thechild.getFirstName());
-                    System.out.println("lastName: " + thechild.getLastName());
-                    System.out.println("birthdate:" + thechild.getBirth());
-                    System.out.println("address: " + thechild.getAddress());
-                    System.out.println("---Prueba de datos---");
-                    relation.add(object);
-                    user.saveInBackground(new SaveCallback() {
-                        @Override
-                        public void done(ParseException e) {
-                            if (e != null) {
-                                e.printStackTrace();
-                            } else {
-                                System.out.println("lo registro oh yeah");
-                                try {
-                                    user.fetch();
-                                } catch (ParseException e1) {
-                                    e1.printStackTrace();
-                                    System.out.println("entro al excepcion del fetch");
-                                }
-                            }
-                        }
-                    });
-                }
-            }
-        });
+
 
     }
     public void addChildWithoutDB(Child child){
