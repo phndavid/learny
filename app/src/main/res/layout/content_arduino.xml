@@ -81,8 +81,20 @@
         android:layout_marginTop="330dp"
         android:layout_marginLeft="10dp" />
 
+    <Button
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/buttonPlay"
+        android:background="@mipmap/play43"
+        android:layout_marginTop="330dp"
+        android:layout_marginLeft="595dp" />
 
-
-
+    <Button
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/buttonStop"
+        android:background="@mipmap/pause48"
+        android:layout_marginTop="340dp"
+        android:layout_marginLeft="780dp" />
 
 </RelativeLayout>
