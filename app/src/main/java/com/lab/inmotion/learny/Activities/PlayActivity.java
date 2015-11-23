@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.lab.inmotion.learny.Application.App;
+import com.lab.inmotion.learny.Model.Category;
 import com.lab.inmotion.learny.R;
 import com.parse.ParseUser;
 
@@ -25,7 +26,7 @@ public class PlayActivity extends AppCompatActivity {
         startActivity(theIntent);
     }
     public void btnStart(View view){
-        Intent theIntent = new Intent(this, ChildRecordActivity.class);
+        Intent theIntent = new Intent(this, CategoryActivity.class);
         startActivity(theIntent);
     }
     @Override

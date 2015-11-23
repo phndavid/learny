@@ -38,6 +38,8 @@ public class FigureActivity extends AppCompatActivity {
     private EditText textWord;
     private String word;
     private Learny model;
+    Runnable mRunnable;
+    Handler mHandler;
 
     public void  btn_a(View view){
         word = word+"a";
@@ -177,6 +179,8 @@ public class FigureActivity extends AppCompatActivity {
         intent.putExtra("category", "incompleteFigure");
         intent.putExtra("count", model.getCurrent().getCurrentTest().getId());
         startActivity(intent);
+        finish();
+
         count++;
         int actual = model.getCurrent().getCurrentTest().getId();
         if(actual<4) {
@@ -184,9 +188,7 @@ public class FigureActivity extends AppCompatActivity {
             System.out.println("puntaje acumulado: " + model.getCurrent().getPuntaje());
             model.nextTest();
         }
-        else{
-            finish();
-        }
+
         word="";
         textWord.setText(word);
     }
@@ -239,9 +241,7 @@ public class FigureActivity extends AppCompatActivity {
                     break;
             }
         }
-        Runnable mRunnable;
-        Handler mHandler=new Handler();
-
+        mHandler=new Handler();
         mRunnable=new Runnable() {
 
             @Override
@@ -267,6 +267,7 @@ public class FigureActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
+        mHandler.removeCallbacks(mRunnable);
 
     }
     public void tapTest(View view){

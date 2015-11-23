@@ -57,6 +57,7 @@ public class SequenceActivity extends AppCompatActivity {
         intent.putExtra("category", "vidaCotidiana");
         intent.putExtra("count", model.getCurrent().getCurrentTest().getId());
         startActivity(intent);
+        finish();
         count++;
         getPositionCount();
         int actual = model.getCurrent().getCurrentTest().getId();

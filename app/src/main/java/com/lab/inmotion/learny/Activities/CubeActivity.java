@@ -168,7 +168,6 @@ public class CubeActivity extends AppCompatActivity {
                     break;
                 case 3:
                     imgMuestra.setBackgroundResource(fontResourceIds[3]);
-                    Toast.makeText(this, "Cambio 3: "+thecount, Toast.LENGTH_LONG).show();
                     imgCubeOne.setBackgroundResource(imgResourceIds[0]);
                     imgCubeTwo.setBackgroundResource(imgResourceIds[4]);
                     imgCubeFour.setBackgroundResource(imgResourceIds[0]);
