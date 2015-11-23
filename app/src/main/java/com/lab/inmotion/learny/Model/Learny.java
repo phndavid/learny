@@ -11,6 +11,8 @@ public class Learny {
     public static final String CATE3 = "organizalos";
     public static final String CATE4 = "construyelos";
     public static final String CATE5 = "descifraClave";
+    public static final String CATE6 = "laberintos";
+
 
     private Especialista especialista;
     private Category[] categories;
@@ -53,6 +55,10 @@ public class Learny {
         categories[4] = new Category();
         categories[4].setNombre(CATE5);
         categories[4].setId(4);
+
+        categories[5] = new Category();
+        categories[5].setNombre(CATE6);
+        categories[5].setId(5);
     }
     public void nextTest(){
         int currentId = current.getCurrentTest().getId();

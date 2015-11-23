@@ -21,7 +21,7 @@ public class FeedBackActivity extends AppCompatActivity {
     private int[] backgroundsThree = {R.mipmap.tresretrouno,R.mipmap.tresretrodos,R.mipmap.tresretotres,R.mipmap.tresretrocuatro,R.mipmap.tresretrocinco};
     private int[] backgroundsFour = {R.mipmap.cuatroretrouno,R.mipmap.cuatroretrodos,R.mipmap.cuatroretrotres,R.mipmap.cuatroretrocuatro,R.mipmap.cuatroretocinco};
     private int[] backgroundsFive = {R.mipmap.cincoretrouno,R.mipmap.cincoretrodos,R.mipmap.cincoretrotres,R.mipmap.cincoretrocuatro,R.mipmap.cincoretrocinco};
-
+    private int[] backgroundsSix = {R.mipmap.seisretrouno,R.mipmap.seisretrodos,R.mipmap.seisretrotres,R.mipmap.seisretrocuatro,R.mipmap.seisretrocinco};
 
     private RelativeLayout relativeLayout;
     private int globalCount;
@@ -46,6 +46,8 @@ public class FeedBackActivity extends AppCompatActivity {
             relativeLayout.setBackgroundResource(backgroundsFour[count]);
         if(level.equals("descifraClave"))
             relativeLayout.setBackgroundResource(backgroundsFive[count]);
+        if(level.equals("laberintos"))
+            relativeLayout.setBackgroundResource(backgroundsSix[count]);
     }
 
     public void tap(View view){
@@ -86,6 +88,14 @@ public class FeedBackActivity extends AppCompatActivity {
             }
             if(app.getModel().getCurrent().getNombre().equals("descifraClave")) {
                 Intent theIntent = new Intent(this, KeyActivity.class);
+                int next = globalCount + 1;
+                System.out.println(next + " este es el next");
+                theIntent.putExtra("count", next);
+                startActivity(theIntent);
+                finish();
+            }
+            if(app.getModel().getCurrent().getNombre().equals("laberintos")) {
+                Intent theIntent = new Intent(this, ArduinoActivity.class);
                 int next = globalCount + 1;
                 System.out.println(next + " este es el next");
                 theIntent.putExtra("count", next);
