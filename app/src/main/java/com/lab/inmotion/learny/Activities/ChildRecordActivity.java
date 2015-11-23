@@ -1,5 +1,6 @@
 package com.lab.inmotion.learny.Activities;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -17,6 +18,11 @@ import android.widget.Toast;
 import com.lab.inmotion.learny.Application.App;
 import com.lab.inmotion.learny.Model.Child;
 import com.lab.inmotion.learny.R;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseRelation;
+import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 import java.text.DateFormat;
 import java.text.FieldPosition;
@@ -48,6 +54,8 @@ public class ChildRecordActivity extends AppCompatActivity {
 
        boolean cancontinue = false;
 
+
+       String fullName = txt_name.getText().toString();
        String birthday = txt_dayBirth.getText().toString();
        String birthmonth = txt_mothBirth.getText().toString();
        String birthyear = txt_yearBirth.getText().toString();
@@ -55,9 +63,19 @@ public class ChildRecordActivity extends AppCompatActivity {
        System.out.println("seleccion del spinner: " + spinner.getSelectedItem().toString());
        SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
        try{
+           String [] names = fullName.split(" ");
+           String firstName = names[0];
+           String lastName = names[1];
            Date birthdate = df.parse(sDate);
            cancontinue=true;
-       }catch (Exception e){
+       } catch (IndexOutOfBoundsException e){
+           String message = "por favor use un formato: 'nombre apellido' para el nombre del paciente";
+           Context context = getApplicationContext();
+           int duration = Toast.LENGTH_LONG;
+           Toast toast = Toast.makeText(context,message,duration);
+           toast.show();
+
+       } catch (Exception e){
            boolean canContinue = false;
            Context context = getApplicationContext();
            String message = "Por favor utilice un formato dd MM yyyy para la fecha";
@@ -143,9 +161,69 @@ public class ChildRecordActivity extends AppCompatActivity {
             child.setTestDate(testdate);
             child.setSex(sex);
             app.getModel().getEspecialista().addChild(child);
+            registerChildInDB(child);
             Intent theIntent = new Intent(this, LearnyActivity.class);
             startActivity(theIntent);
         }
+    }
+    public void registerChildInDB(final Child thechild){
+        // Set up a progress dialog
+        final ProgressDialog dialog = new ProgressDialog(this);
+        dialog.setMessage("Registrando paciente");
+        dialog.show();
+        final ParseObject object = ParseObject.create("Child");
+        System.out.println("datos del child:" + thechild.getFirstName());
+        object.put("firstName", thechild.getFirstName());
+        object.put("lastName", thechild.getLastName());
+        object.put("birth",thechild.getBirth());
+        object.put("educationLevel",thechild.getEducationLevel());
+        object.put("parentName",thechild.getParentName());
+        object.put("school",thechild.getSchool());
+        object.put("address", thechild.getAddress());
+        object.put("testPlace",thechild.getTestPlace());
+        object.put("testDate",thechild.getTestDate());
+        object.put("sex",thechild.getSex());
+        object.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                if (e != null) {
+                    System.out.println("e del primer save");
+                    e.printStackTrace();
+                } else {
+                    System.out.println("success primer save");
+                    final ParseUser user = ParseUser.getCurrentUser();
+                    //user.setUsername(username);
+                    System.out.println("currentUser: " + user.getObjectId());
+                    System.out.println("currentUsername: " + user.getUsername());
+                    ParseRelation relation = user.getRelation("children");
+                    System.out.println("relacion children:" + relation.toString());
+                    System.out.println("---prueba de datos---");
+                    System.out.println("firstName: " + thechild.getFirstName());
+                    System.out.println("lastName: " + thechild.getLastName());
+                    System.out.println("birthdate:" + thechild.getBirth());
+                    System.out.println("address: " + thechild.getAddress());
+                    System.out.println("---Prueba de datos---");
+                    relation.add(object);
+                    user.saveInBackground(new SaveCallback() {
+                        @Override
+                        public void done(ParseException e) {
+                            if (e != null) {
+                                e.printStackTrace();
+                            } else {
+                                System.out.println("lo registro oh yeah");
+                                dialog.dismiss();
+                                try {
+                                    user.fetch();
+                                } catch (ParseException e1) {
+                                    e1.printStackTrace();
+                                    System.out.println("entro al excepcion del fetch");
+                                }
+                            }
+                        }
+                    });
+                }
+            }
+        });
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {

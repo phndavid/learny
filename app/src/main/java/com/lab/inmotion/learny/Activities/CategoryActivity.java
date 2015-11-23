@@ -16,6 +16,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.lab.inmotion.learny.Application.App;
 import com.lab.inmotion.learny.Carousel.CoverFlowCarousel;
 import com.lab.inmotion.learny.R;
 
@@ -34,6 +35,14 @@ public class CategoryActivity extends AppCompatActivity {
         carousel.setSpacing(0.5f);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+    }
+    public void setEnableById(){
+
+    }
 
     private class MyAdapter extends BaseAdapter {
         private int[] mResourceIds = {R.mipmap.coloruno_xhdpi, R.mipmap.safedos_xhdpi, R.mipmap.safetres_xhdpi, R.mipmap.safecuatro_xhdpi,
@@ -66,30 +75,32 @@ public class CategoryActivity extends AppCompatActivity {
             }
 
             v.setImageResource(mResourceIds[position % mResourceIds.length]);
+            App app = (App) getApplication();
+            final int id = app.getModel().getCurrent().getId();
             v.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if(position == 0){
+                    if(position == 0 && (position==id)){
                         Intent theIntent = new Intent(v.getContext(), FigureActivity.class);
                         startActivity(theIntent);
                         finish();
-                    }else if(position == 1){
+                    }else if(position == 1 && (position==id)){
                         Intent theIntent = new Intent(v.getContext(), SequenceActivity.class);
                         startActivity(theIntent);
                         finish();
-                    }else if(position == 2){
+                    }else if(position == 2 && (position==id)){
                         Intent theIntent = new Intent(v.getContext(), CubeActivity.class);
                         startActivity(theIntent);
                         finish();
-                    }else if(position == 3){
+                    }else if(position == 3 && (position==id)){
                         Intent theIntent = new Intent(v.getContext(), ObjectActivity.class);
                         startActivity(theIntent);
                         finish();
-                    }else if(position == 4){
+                    }else if(position == 4 && (position==id)){
                         Intent theIntent = new Intent(v.getContext(), KeyActivity.class);
                         startActivity(theIntent);
                         finish();
-                    }else if (position == 5){
+                    }else if (position == 5 && (position==id)){
                         Intent theIntent = new Intent(v.getContext(), ArduinoActivity.class);
                         startActivity(theIntent);
                         finish();
