@@ -89,13 +89,13 @@ public class SequenceActivity extends AppCompatActivity {
     private class imgTouchListener implements View.OnTouchListener {
         public boolean onTouch(View view, MotionEvent motionEvent) {
 
-    	/*ACTION_DOWN -> A pressed gesture has started, the motion contains the initial position*/
+    	    /*ACTION_DOWN -> A pressed gesture has started, the motion contains the initial position*/
             if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
                 ClipData data = ClipData.newPlainText("", "");
-        /*Creates an image that the system displays during the drag and drop operation. This is called a "drag shadow".*/
+            /*Creates an image that the system displays during the drag and drop operation. This is called a "drag shadow".*/
                 View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
                 view.startDrag(data, shadowBuilder, view, 0);
-        /*while the img is moving, the view is invisible, if we comment this line, the view 'will move' when we drop it*/
+            /*while the img is moving, the view is invisible, if we comment this line, the view 'will move' when we drop it*/
                 view.setVisibility(View.INVISIBLE);
                 return true;
             } else {
