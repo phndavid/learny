@@ -162,11 +162,6 @@ public class CubeActivity extends AppCompatActivity {
                     newContainer.addView(view);
                     view.setVisibility(View.VISIBLE);
 
-                    //Nueevo
-                    elLayoutUno.addView(view);
-                    System.out.println("Si asigno");
-                    //
-
                     break;
                 case DragEvent.ACTION_DRAG_ENDED:
                     //v.setBackground(normalShape);
