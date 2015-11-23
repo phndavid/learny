@@ -11,7 +11,7 @@ import java.util.Date;
 @ParseClassName("Child")
 public class Child extends ParseObject {
 
-    public static final int CATEGORIAS = 5;
+    public static final int CATEGORIAS = 6;
 
     private String firstName;
     private String lastName;
@@ -22,6 +22,15 @@ public class Child extends ParseObject {
     private String educationLevel;
     private String testPlace;
     private Date testDate;
+    private String sex;
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
 
     private double [] puntajes;
     private double [] tiempos;
@@ -29,6 +38,10 @@ public class Child extends ParseObject {
     public Child(){
         this.puntajes = new double[CATEGORIAS];
         this.tiempos = new double[CATEGORIAS];
+        for(int i=0;i<CATEGORIAS;i++){
+            this.puntajes[i] = 0;
+            this.tiempos[i] = 0;
+        }
 
     }
 
@@ -99,6 +112,12 @@ public class Child extends ParseObject {
 
     public Date getTestDate() {
         return testDate;
+    }
+    public double[] getPuntajes(){
+        return puntajes;
+    }
+    public double[] getTiempos(){
+        return tiempos;
     }
 }
 

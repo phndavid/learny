@@ -15,13 +15,13 @@ import java.util.List;
 /**
  * Created by InMotionLab on 10/10/2015.
  */
-@ParseClassName("_User")
+@ParseClassName("User")
 public class Especialista extends ParseUser{
 
     private String id;
     private String username;
     private String password;
-    private List<Child> children;
+    private ArrayList<Child> children;
 
     public Especialista (){
         children = new ArrayList<Child>();
@@ -41,6 +41,7 @@ public class Especialista extends ParseUser{
         object.put("address", thechild.getAddress());
         object.put("testPlace",thechild.getTestPlace());
         object.put("testDate",thechild.getTestDate());
+        object.put("sex",thechild.getSex());
         object.saveInBackground(new SaveCallback() {
             @Override
             public void done(ParseException e) {
@@ -83,11 +84,16 @@ public class Especialista extends ParseUser{
         });
 
     }
+    public void addChildWithoutDB(Child child){
+        System.out.println("entro al without DB: ");
+        children.add(child);
+        System.out.println("salio al without DB: ");
+    }
     public void removeChild(Child child){
         children.remove(child);
         ParseUser.getCurrentUser().getRelation("children").remove(child);
     }
-    public List<Child> getChilldren(){
+    public ArrayList<Child> getChilldren(){
         return children;
     }
     public String getUsername(){

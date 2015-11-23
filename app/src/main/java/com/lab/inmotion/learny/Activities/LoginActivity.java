@@ -68,9 +68,6 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
                 } else {
                     // Start an intent for the dispatch activity
-                    Intent intent = new Intent(LoginActivity.this, DispatchActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                    startActivity(intent);
                     App aplication = (App) getApplication();
                     aplication.inicializeModel(username,password);
                     try {
@@ -78,6 +75,9 @@ public class LoginActivity extends AppCompatActivity {
                     } catch (ParseException e1) {
                         e1.printStackTrace();
                     }
+                    Intent intent = new Intent(LoginActivity.this, DispatchActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
                 }
             }
         });

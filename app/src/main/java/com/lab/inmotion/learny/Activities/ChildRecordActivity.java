@@ -6,6 +6,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -41,6 +42,7 @@ public class ChildRecordActivity extends AppCompatActivity {
     private EditText txt_dayTest;
     private EditText txt_mothTest;
     private EditText txt_yearTest;
+    private Spinner spinner;
 
    public void btnRegisterChild(View view){
 
@@ -50,6 +52,7 @@ public class ChildRecordActivity extends AppCompatActivity {
        String birthmonth = txt_mothBirth.getText().toString();
        String birthyear = txt_yearBirth.getText().toString();
        String sDate = birthday + "/" + birthmonth + "/" + birthyear;
+       System.out.println("seleccion del spinner: " + spinner.getSelectedItem().toString());
        SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
        try{
            Date birthdate = df.parse(sDate);
@@ -109,6 +112,7 @@ public class ChildRecordActivity extends AppCompatActivity {
         String testday = txt_dayTest.getText().toString();
         String testmonth = txt_mothTest.getText().toString();
         String testyear = txt_yearTest.getText().toString();
+        String sex = spinner.getSelectedItem().toString();
         String sTestDate = testday + "/" + testmonth + "/" + testyear;
         Date birthdate = null;
         Date testdate = null;
@@ -139,6 +143,7 @@ public class ChildRecordActivity extends AppCompatActivity {
             child.setTestPlace(testPlace);
             child.setParentName(parentname);
             child.setTestDate(testdate);
+            child.setSex(sex);
             app.getModel().getEspecialista().addChild(child);
             Intent theIntent = new Intent(this, LearnyActivity.class);
             startActivity(theIntent);
@@ -180,10 +185,10 @@ public class ChildRecordActivity extends AppCompatActivity {
 
 
         // Spinner element
-        Spinner spinner = (Spinner) findViewById(R.id.spinnerSex);
+        spinner = (Spinner) findViewById(R.id.spinnerSex);
 
         // Spinner click listener
-       // spinner.setOnItemSelectedListener(this);
+        //spinner.setOnItemSelectedListener(this);
 
         // Spinner Drop down elements
         List<String> categories = new ArrayList<String>();
@@ -200,4 +205,5 @@ public class ChildRecordActivity extends AppCompatActivity {
         // attaching data adapter to spinner
         spinner.setAdapter(dataAdapter);
     }
+
 }

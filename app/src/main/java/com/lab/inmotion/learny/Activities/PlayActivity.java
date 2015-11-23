@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.lab.inmotion.learny.Application.App;
 import com.lab.inmotion.learny.R;
 import com.parse.ParseUser;
 
@@ -24,14 +25,15 @@ public class PlayActivity extends AppCompatActivity {
         startActivity(theIntent);
     }
     public void btnStart(View view){
-        Intent theIntent = new Intent(this, CategoryActivity.class);
+        Intent theIntent = new Intent(this, ChildRecordActivity.class);
         startActivity(theIntent);
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play);
-
+        App app = (App) getApplication();
+        System.out.println("size de los child: " + app.getModel().getEspecialista().getChilldren().size());
     }
 
 }
