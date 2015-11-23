@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.lab.inmotion.learny.Application.App;
 import com.lab.inmotion.learny.Model.Learny;
@@ -23,73 +24,78 @@ import static com.lab.inmotion.learny.R.*;
 
 public class KeyActivity extends AppCompatActivity {
 
-    private RelativeLayout relativeLayout;
-    private ImageView imgFigure;
+
     private TextView textNumber;
-    private String word;
-    private LinearLayout miL;
+    private String number;
     private Learny model;
-    private ImageView elIma;
+    private ImageView imgPosOne;
+    private ImageView imgPosTwo;
+    private ImageView imgPosThree;
+    private ImageView imgPosFour;
+    private ImageView imgPosFive;
 
     private  int count;
     private int[] imgResourceIds = {R.mipmap.uno, R.mipmap.dos, R.mipmap.tres, R.mipmap.cuatro, R.mipmap.cinco, R.mipmap.seis, R.mipmap.siete,
             R.mipmap.ocho, R.mipmap.nueve};
     private String[] numbers = {"31242","76532","98421","78128"};
 
+    public void init(){
+        number = "";
+        imgPosOne = (ImageView) findViewById(id.imgDigOne);
+        imgPosTwo = (ImageView) findViewById(id.imgDigTwo);
+        imgPosThree = (ImageView) findViewById(id.imgDigThree);
+        imgPosFour = (ImageView) findViewById(id.imgDigFour);
+        imgPosFive = (ImageView) findViewById(id.imgDigFive);
+    }
+    public void validePostion(int imgResourceIds,String num){
+        if(imgPosOne.getBackground().getConstantState() == getResources().getDrawable(R.mipmap.fondonumero).getConstantState()){
+            imgPosOne.setBackgroundResource(imgResourceIds);
+            number += num;
+        }
+        else if(imgPosTwo.getBackground().getConstantState() == getResources().getDrawable(R.mipmap.fondonumero).getConstantState()){
+            imgPosTwo.setBackgroundResource(imgResourceIds);
+            number += num;
+        }
+        else if(imgPosThree.getBackground().getConstantState() == getResources().getDrawable(R.mipmap.fondonumero).getConstantState()){
+            imgPosThree.setBackgroundResource(imgResourceIds);
+            number += num;
+        }
+        else if(imgPosFour.getBackground().getConstantState() == getResources().getDrawable(R.mipmap.fondonumero).getConstantState()){
+            imgPosFour.setBackgroundResource(imgResourceIds);
+            number += num;
+        }
+        else if(imgPosFive.getBackground().getConstantState() == getResources().getDrawable(R.mipmap.fondonumero).getConstantState()){
+            imgPosFive.setBackgroundResource(imgResourceIds);
+            number += num;
+        }
+        Toast.makeText(this,"Num: "+number, Toast.LENGTH_LONG).show();
+    }
     public void btnOne(View view ){
-        ImageView myImage = new ImageView(this);
-        myImage.setImageResource(R.mipmap.uno);
-        miL.addView(myImage);
-        setContentView(miL);
+        validePostion(imgResourceIds[0],"1");
     }
     public void btnTwo(View view ){
-        ImageView myImage = new ImageView(this);
-        myImage.setImageResource(R.mipmap.uno);
-        miL.addView(myImage);
-        setContentView(miL);
-
+        validePostion(imgResourceIds[1],"2");
     }
     public void btnThree(View view ){
-        ImageView myImage = new ImageView(this);
-        myImage.setImageResource(R.mipmap.uno);
-        miL.addView(myImage);
-        setContentView(miL);
+        validePostion(imgResourceIds[2],"3");
     }
     public void btnFour(View view ){
-        ImageView myImage = new ImageView(this);
-        myImage.setImageResource(R.mipmap.uno);
-        miL.addView(myImage);
-        setContentView(miL);
+        validePostion(imgResourceIds[3],"4");
     }
     public void btnFive(View view ){
-        ImageView myImage = new ImageView(this);
-        myImage.setImageResource(R.mipmap.uno);
-        miL.addView(myImage);
-        setContentView(miL);
+        validePostion(imgResourceIds[4],"5");
     }
     public void btnSix(View view ){
-        ImageView myImage = new ImageView(this);
-        myImage.setImageResource(R.mipmap.uno);
-        miL.addView(myImage);
-        setContentView(miL);
+        validePostion(imgResourceIds[5],"6");
     }
     public void btnSeven(View view ){
-        ImageView myImage = new ImageView(this);
-        myImage.setImageResource(R.mipmap.uno);
-        miL.addView(myImage);
-        setContentView(miL);
+        validePostion(imgResourceIds[6],"7");
     }
     public void btnEight(View view ){
-        ImageView myImage = new ImageView(this);
-        myImage.setImageResource(R.mipmap.uno);
-        miL.addView(myImage);
-        setContentView(miL);
+        validePostion(imgResourceIds[7],"8");
     }
     public void btnNine(View view ){
-        ImageView myImage = new ImageView(this);
-        myImage.setImageResource(R.mipmap.uno);
-        miL.addView(myImage);
-        setContentView(miL);
+        validePostion(imgResourceIds[8],"9");
     }
     public void btnContinueKey(View view){
         Intent intent = new Intent(this,FeedBackActivity.class);
@@ -102,19 +108,15 @@ public class KeyActivity extends AppCompatActivity {
             System.out.println("puntaje acumulado:" + model.getCurrent().getPuntaje());
             model.nextTest();
         }
-
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layout.activity_key);
-        setContentView(layout.activity_figure);
-        System.out.println("se ejecuta el oncreate");
-        imgFigure = (ImageView) findViewById(id.imgFigure);
+        init();
         textNumber = (TextView) findViewById(id.textViewNumber);
         App app = (App) getApplication();
         model = app.getModel();
-        miL= (LinearLayout) findViewById(id.linearLa);
     }
 
     protected void onResume() {
@@ -124,20 +126,16 @@ public class KeyActivity extends AppCompatActivity {
         if(thecount>0) {
             switch (thecount){
                 case 1:
-                    word = word+numbers[1];
-                    textNumber.setText(word);
+                    textNumber.setText(numbers[1]);
                     break;
                 case 2:
-                    word = word+numbers[2];
-                    textNumber.setText(word);
+                    textNumber.setText(numbers[2]);
                     break;
                 case 3:
-                    word = word+numbers[3];
-                    textNumber.setText(word);
+                    textNumber.setText(numbers[3]);
                     break;
                 case 4:
-                    word = word+numbers[4];
-                    textNumber.setText(word);
+                   textNumber.setText(numbers[4]);
                     break;
             }
         }
