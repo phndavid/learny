@@ -7,6 +7,7 @@
     android:paddingTop="0dp"
     android:background="@mipmap/fondo"
     android:paddingBottom="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.lab.inmotion.learny.Activities.CubeActivity">
 
     <LinearLayout
@@ -23,7 +24,7 @@
             android:layout_height="125dp"
             android:text="Rojo"
             android:id="@+id/cubeOne"
-            android:background="@mipmap/pquno"
+            android:src="@mipmap/pquno"
             android:layout_below="@+id/textView4"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -33,7 +34,7 @@
             android:layout_height="125dp"
             android:text="Rojo"
             android:id="@+id/cubeTwo"
-            android:background="@mipmap/pqdos"
+            android:src="@mipmap/pqdos"
             android:layout_below="@+id/textView4"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -44,7 +45,7 @@
             android:layout_height="125dp"
             android:text="Rojo"
             android:id="@+id/cubeThree"
-            android:background="@mipmap/pquno"
+            android:src="@mipmap/pquno"
             android:layout_below="@+id/textView4"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -55,7 +56,7 @@
             android:layout_height="125dp"
             android:text="Rojo"
             android:id="@+id/cubeFour"
-            android:background="@mipmap/pqdos"
+            android:src="@mipmap/pqdos"
             android:layout_below="@+id/textView4"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -66,7 +67,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:id="@+id/figuraMuestra"
-        android:background="@mipmap/figurauno"
+        android:src="@mipmap/figurauno"
         android:onClick="btnRojo"
         android:layout_marginLeft="133dp"
         android:layout_marginStart="133dp"
@@ -115,11 +116,11 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Continuar"
-        android:id="@+id/btn_continueCube"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/figuraMuestra"
-        android:layout_alignEnd="@+id/figuraMuestra"
+        android:text="siguient"
+        android:id="@+id/cuboSiguiente"
+        android:layout_alignBottom="@+id/left_img"
+        android:layout_toRightOf="@+id/right_imgCuatro"
+        android:layout_toEndOf="@+id/right_imgCuatro"
         android:onClick="btnContinueCube" />
 
 </RelativeLayout>
