@@ -116,11 +116,17 @@ public class ArduinoActivity extends AppCompatActivity {
         });*/
     }
     public void playMusic(View view){
-        sp.start();
+        if(!sp.isPlaying()){
+            sp.start();
+        }
+        else{
+            sp.reset();
+        }
+
     }
     public void stopMusic(View view){
-        if(sp.isPlaying()==true){
-        sp.stop();
+        if(sp.isPlaying()){
+            sp.pause();
         }
     }
     private void Disconnect()
