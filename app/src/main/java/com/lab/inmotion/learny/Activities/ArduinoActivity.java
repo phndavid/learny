@@ -28,8 +28,7 @@ import java.util.UUID;
 public class ArduinoActivity extends AppCompatActivity {
 
     Button btnOn, btnOff, btnDis;
-    SeekBar brightness;
-    TextView lumn;
+
     String address = null;
     private ProgressDialog progress;
     BluetoothAdapter myBluetooth = null;
@@ -44,76 +43,13 @@ public class ArduinoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_arduino);
-        sp = MediaPlayer.create(this,R.raw.sp);
-/*
         Intent newint = getIntent();
         address = newint.getStringExtra(DeviceActivity.EXTRA_ADDRESS); //receive the address of the bluetooth device
 
-
-
-        //call the widgtes
-        btnOn = (Button)findViewById(R.id.button2);
-        btnOff = (Button)findViewById(R.id.button3);
-        btnDis = (Button)findViewById(R.id.button4);
-
+        setContentView(R.layout.activity_arduino);
+        sp = MediaPlayer.create(this, R.raw.sp);
 
         new ConnectBT().execute(); //Call the class to connect
-
-        //commands to be sent to bluetooth
-        btnOn.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                turnOnLed();      //method to turn on
-            }
-        });
-
-        btnOff.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
-            {
-                turnOffLed();   //method to turn off
-            }
-        });
-
-        btnDis.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                Disconnect(); //close connection
-            }
-        });
-
-        brightness.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                if (fromUser==true)
-                {
-                    lumn.setText(String.valueOf(progress));
-                    try
-                    {
-                        btSocket.getOutputStream().write(String.valueOf(progress).getBytes());
-                    }
-                    catch (IOException e)
-                    {
-
-                    }
-                }
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });*/
     }
     public void playMusic(View view){
         if(!sp.isPlaying()){
@@ -128,6 +64,18 @@ public class ArduinoActivity extends AppCompatActivity {
         if(sp.isPlaying()){
             sp.pause();
         }
+    }
+    public void btnAhead(View view){
+        ahead();
+    }
+    public void btnBack(View view){
+        back();
+    }
+    public void btnRight(View view){
+        right();
+    }
+    public void btnLeft(View view){
+        left();
     }
     private void Disconnect()
     {
@@ -144,13 +92,13 @@ public class ArduinoActivity extends AppCompatActivity {
 
     }
 
-    private void turnOffLed()
+    private void left()
     {
         if (btSocket!=null)
         {
             try
             {
-                btSocket.getOutputStream().write("TF".toString().getBytes());
+                btSocket.getOutputStream().write("b".toString().getBytes());
             }
             catch (IOException e)
             {
@@ -159,13 +107,43 @@ public class ArduinoActivity extends AppCompatActivity {
         }
     }
 
-    private void turnOnLed()
+    private void right()
     {
         if (btSocket!=null)
         {
             try
             {
-                btSocket.getOutputStream().write("TO".toString().getBytes());
+                btSocket.getOutputStream().write("d".toString().getBytes());
+            }
+            catch (IOException e)
+            {
+                msg("Error");
+            }
+        }
+    }
+
+    private void ahead()
+    {
+        if (btSocket!=null)
+        {
+            try
+            {
+                btSocket.getOutputStream().write("a".toString().getBytes());
+            }
+            catch (IOException e)
+            {
+                msg("Error");
+            }
+        }
+    }
+
+    private void back()
+    {
+        if (btSocket!=null)
+        {
+            try
+            {
+                btSocket.getOutputStream().write("e".toString().getBytes());
             }
             catch (IOException e)
             {
@@ -214,7 +192,7 @@ public class ArduinoActivity extends AppCompatActivity {
                 if (btSocket == null || !isBtConnected)
                 {
                     myBluetooth = BluetoothAdapter.getDefaultAdapter();//get the mobile bluetooth device
-                    BluetoothDevice dispositivo = myBluetooth.getRemoteDevice(address);//connects to the device's address and checks if it's available
+                    BluetoothDevice dispositivo = myBluetooth.getRemoteDevice("20:14:05:19:37:41");//connects to the device's address and checks if it's available
                     btSocket = dispositivo.createInsecureRfcommSocketToServiceRecord(myUUID);//create a RFCOMM (SPP) connection
                     BluetoothAdapter.getDefaultAdapter().cancelDiscovery();
                     btSocket.connect();//start connection

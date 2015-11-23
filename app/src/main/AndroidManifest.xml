@@ -106,11 +106,12 @@
         <activity
             android:name=".Activities.ObjectActivity"
             android:label="@string/title_activity_object"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activities.OptionsObjectActivity"
             android:label="@string/title_activity_options_object"
-            android:theme="@style/AppTheme"></activity>
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

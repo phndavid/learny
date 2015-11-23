@@ -55,31 +55,32 @@
     <Button
         android:layout_width="70dp"
         android:layout_height="50dp"
-        android:id="@+id/buttonAdelante"
-        android:background="@android:color/transparent"
+        android:id="@+id/btn_ahead"
         android:layout_marginTop="260dp"
-        android:layout_marginLeft="95dp" />
+        android:layout_marginLeft="95dp"
+        android:onClick="btnAhead" />
     <Button
         android:layout_width="70dp"
         android:layout_height="50dp"
-        android:id="@+id/buttonAtras"
-        android:background="@android:color/transparent"
+        android:id="@+id/btn_back"
         android:layout_marginTop="395dp"
-        android:layout_marginLeft="95dp" />
+        android:layout_marginLeft="95dp"
+        android:nestedScrollingEnabled="false"
+        android:onClick="btnBack" />
     <Button
         android:layout_width="70dp"
         android:layout_height="50dp"
-        android:id="@+id/buttonDeracha"
-        android:background="@android:color/transparent"
+        android:id="@+id/btn_right"
         android:layout_marginTop="330dp"
-        android:layout_marginLeft="180dp" />
+        android:layout_marginLeft="180dp"
+        android:onClick="btnRight" />
     <Button
         android:layout_width="70dp"
         android:layout_height="50dp"
-        android:id="@+id/buttonIzqui"
-        android:background="@android:color/transparent"
+        android:id="@+id/btn_left"
         android:layout_marginTop="330dp"
-        android:layout_marginLeft="10dp" />
+        android:layout_marginLeft="10dp"
+        android:onClick="btnLeft" />
 
     <Button
         android:layout_width="60dp"

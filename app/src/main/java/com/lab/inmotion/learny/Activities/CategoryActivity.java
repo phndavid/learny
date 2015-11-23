@@ -100,7 +100,7 @@ public class CategoryActivity extends AppCompatActivity {
                         Intent theIntent = new Intent(v.getContext(), KeyActivity.class);
                         startActivity(theIntent);
                         finish();
-                    }else if (position == 5 && (position==id)){
+                    }else if (position == 5){
                         Intent theIntent = new Intent(v.getContext(), ArduinoActivity.class);
                         startActivity(theIntent);
                         finish();
