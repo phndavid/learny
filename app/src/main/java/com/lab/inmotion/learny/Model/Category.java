@@ -15,12 +15,14 @@ public class Category extends ParseObject{
     private double tiempo;
     private Test[] tests;
     private Test currentTest;
+    private boolean completed;
     private int id;
 
     public Category(){
         this.tests = new Test[5];
         inicializeTests();
         currentTest = tests[0];
+        completed=false;
     }
     public void measureTotalTime(){
         double totalTime=0;
@@ -95,5 +97,11 @@ public class Category extends ParseObject{
     }
     public void setId(int id){
         this.id = id;
+    }
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
+    }
+    public boolean isCompleted() {
+        return completed;
     }
 }

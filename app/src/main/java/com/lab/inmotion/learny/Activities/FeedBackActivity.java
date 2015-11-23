@@ -104,6 +104,7 @@ public class FeedBackActivity extends AppCompatActivity {
             }
         }else{
             app.getModel().getCurrent().measureTotalTime();
+            app.getModel().getCurrent().setCompleted(true);
             System.out.println("Tiempo total categoria: " +  app.getModel().getCurrent().getTiempo());
             app.getModel().nextCategory();
             Intent theIntent = new Intent(this,CategoryActivity.class);
