@@ -257,6 +257,7 @@ public class ObjectActivity extends AppCompatActivity {
         intent.putExtra("category", "construyelos");
         intent.putExtra("count", model.getCurrent().getCurrentTest().getId());
         startActivity(intent);
+        finish();
         count++;
         int actual = model.getCurrent().getCurrentTest().getId();
         if(actual<4) {

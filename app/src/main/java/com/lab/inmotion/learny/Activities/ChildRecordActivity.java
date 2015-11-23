@@ -90,8 +90,6 @@ public class ChildRecordActivity extends AppCompatActivity {
            txt_yearTest = (EditText) findViewById(R.id.txt_yearTest);
            txt_yearTest.setTypeface(tf);
        }
-
-
    }
     public void btnFinishRecord(View view){
         boolean cancontinue = false;

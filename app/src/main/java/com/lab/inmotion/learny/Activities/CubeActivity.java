@@ -42,6 +42,7 @@ public class CubeActivity extends AppCompatActivity {
         intent.putExtra("category","organizalos");
         intent.putExtra("count", model.getCurrent().getCurrentTest().getId());
         startActivity(intent);
+        finish();
         getPositionCount();
         int actual = model.getCurrent().getCurrentTest().getId();
         if(actual<4) {

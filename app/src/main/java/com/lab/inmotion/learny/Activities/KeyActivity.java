@@ -1,5 +1,7 @@
 package com.lab.inmotion.learny.Activities;
 
+import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -23,10 +25,11 @@ public class KeyActivity extends AppCompatActivity {
     private ImageView imgPosFour;
     private ImageView imgPosFive;
 
-    private int count;
+    private Typeface tf;
+
     private int[] imgResourceIds = {R.mipmap.uno, R.mipmap.dos, R.mipmap.tres, R.mipmap.cuatro, R.mipmap.cinco, R.mipmap.seis, R.mipmap.siete,
             R.mipmap.ocho, R.mipmap.nueve};
-    private String[] numbers = {"31242", "76532", "98421", "78128"};
+    private String[] numbers = {"31242", "76532", "98421", "78128","45892"};
 
     public void init() {
         number = "";
@@ -94,20 +97,28 @@ public class KeyActivity extends AppCompatActivity {
     }
 
     public void btnContinueKey(View view) {
-
+        Intent intent = new Intent(this,FeedBackActivity.class);
+        intent.putExtra("category", "descifraClave");
+        intent.putExtra("count", model.getCurrent().getCurrentTest().getId());
+        startActivity(intent);
+        finish();
+        int actual = model.getCurrent().getCurrentTest().getId();
+        if(actual<4) {
+            System.out.println("puntaje acumulado: " + model.getCurrent().getPuntaje());
+            model.nextTest();
+        }
     }
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_key);
         init();
+        tf=Typeface.createFromAsset(getAssets(), "fonts/CAFE.TTF");
         textNumber = (TextView) findViewById(R.id.textViewNumber);
+        textNumber.setTypeface(tf);
         App app = (App) getApplication();
         model = app.getModel();
-
     }
-
     @Override
     protected void onResume() {
         super.onResume();
@@ -126,7 +137,16 @@ public class KeyActivity extends AppCompatActivity {
                 case 4:
                     textNumber.setText(numbers[4]);
                     break;
+                case 5:
+
+                    break;
             }
         }
+    }
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        System.out.println("se ejecuta el onrestart");
+
     }
 }
