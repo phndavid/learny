@@ -50,25 +50,46 @@ public class KeyActivity extends AppCompatActivity {
 
     }
     public void btnThree(View view ){
-
+        ImageView myImage = new ImageView(this);
+        myImage.setImageResource(R.mipmap.uno);
+        miL.addView(myImage);
+        setContentView(miL);
     }
     public void btnFour(View view ){
-
+        ImageView myImage = new ImageView(this);
+        myImage.setImageResource(R.mipmap.uno);
+        miL.addView(myImage);
+        setContentView(miL);
     }
     public void btnFive(View view ){
-
+        ImageView myImage = new ImageView(this);
+        myImage.setImageResource(R.mipmap.uno);
+        miL.addView(myImage);
+        setContentView(miL);
     }
     public void btnSix(View view ){
-
+        ImageView myImage = new ImageView(this);
+        myImage.setImageResource(R.mipmap.uno);
+        miL.addView(myImage);
+        setContentView(miL);
     }
     public void btnSeven(View view ){
-
+        ImageView myImage = new ImageView(this);
+        myImage.setImageResource(R.mipmap.uno);
+        miL.addView(myImage);
+        setContentView(miL);
     }
     public void btnEight(View view ){
-
+        ImageView myImage = new ImageView(this);
+        myImage.setImageResource(R.mipmap.uno);
+        miL.addView(myImage);
+        setContentView(miL);
     }
     public void btnNine(View view ){
-
+        ImageView myImage = new ImageView(this);
+        myImage.setImageResource(R.mipmap.uno);
+        miL.addView(myImage);
+        setContentView(miL);
     }
     public void btnContinueKey(View view){
         Intent intent = new Intent(this,FeedBackActivity.class);
