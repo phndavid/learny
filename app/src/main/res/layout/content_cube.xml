@@ -24,51 +24,46 @@
             android:layout_height="125dp"
             android:text="Rojo"
             android:id="@+id/cubeOne"
-            android:src="@mipmap/pquno"
+            android:background="@mipmap/pquno"
             android:layout_below="@+id/textView4"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:onClick="btnRojo" />
+            android:layout_alignParentStart="true" />
         <ImageView
             android:layout_width="125dp"
             android:layout_height="125dp"
             android:text="Rojo"
             android:id="@+id/cubeTwo"
-            android:src="@mipmap/pqdos"
+            android:background="@mipmap/pqdos"
             android:layout_below="@+id/textView4"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:onClick="btnRojo" />
+            android:layout_alignParentStart="true" />
 
         <ImageView
             android:layout_width="125dp"
             android:layout_height="125dp"
             android:text="Rojo"
             android:id="@+id/cubeThree"
-            android:src="@mipmap/pquno"
+            android:background="@mipmap/pquno"
             android:layout_below="@+id/textView4"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:onClick="btnRojo" />
+            android:layout_alignParentStart="true" />
 
         <ImageView
             android:layout_width="125dp"
             android:layout_height="125dp"
             android:text="Rojo"
             android:id="@+id/cubeFour"
-            android:src="@mipmap/pqdos"
+            android:background="@mipmap/pqdos"
             android:layout_below="@+id/textView4"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:onClick="btnRojo" />
+            android:layout_alignParentStart="true" />
     </LinearLayout>
 
     <ImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:id="@+id/figuraMuestra"
-        android:src="@mipmap/figurauno"
-        android:onClick="btnRojo"
+        android:id="@+id/img_figureCube"
+        android:background="@mipmap/figurauno"
         android:layout_marginLeft="133dp"
         android:layout_marginStart="133dp"
         android:layout_marginTop="65dp"
@@ -118,9 +113,8 @@
         android:layout_height="wrap_content"
         android:text="siguient"
         android:id="@+id/cuboSiguiente"
-        android:layout_alignBottom="@+id/left_img"
-        android:layout_toRightOf="@+id/right_imgCuatro"
-        android:layout_toEndOf="@+id/right_imgCuatro"
-        android:onClick="btnContinueCube" />
+        android:onClick="btnContinueCube"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

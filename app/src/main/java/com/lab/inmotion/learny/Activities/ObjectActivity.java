@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.lab.inmotion.learny.Application.App;
 import com.lab.inmotion.learny.Model.Learny;
@@ -47,6 +48,16 @@ public class ObjectActivity extends AppCompatActivity {
     private int count;
     private RelativeLayout relativeLayout;
     private Learny model;
+
+    private Button imgRompe1;
+    private Button imgRompe2;
+    private Button imgRompe3;
+    private Button imgRompe4;
+    private Button imgRompe5;
+    private Button imgRompe6;
+    private Button imgRompe7;
+    private Button imgRompe8;
+    private Button imgRompe9;
 
     public void popupOptions(){
         alertadd = new AlertDialog.Builder(ObjectActivity.this);
@@ -100,6 +111,22 @@ public class ObjectActivity extends AppCompatActivity {
         option8.setBackgroundResource(imgResourceIds[count*9+7]);
         ImageButton option9 = (ImageButton) view.findViewById(R.id.option9);
         option9.setBackgroundResource(imgResourceIds[count*9+8]);
+    }
+    public void validateAnswer(int count) {
+        if (imgRompe1.getBackground().getConstantState() == getResources().getDrawable(imgResourceIds[count*9]).getConstantState()) {
+            if (imgRompe2.getBackground().getConstantState() == getResources().getDrawable(imgResourceIds[count * 9 + 1]).getConstantState())
+                if (imgRompe3.getBackground().getConstantState() == getResources().getDrawable(imgResourceIds[count * 9 + 2]).getConstantState())
+                    if (imgRompe4.getBackground().getConstantState() == getResources().getDrawable(imgResourceIds[count * 9 + 3]).getConstantState())
+                        if (imgRompe5.getBackground().getConstantState() == getResources().getDrawable(imgResourceIds[count * 9 + 4]).getConstantState())
+                            if (imgRompe6.getBackground().getConstantState() == getResources().getDrawable(imgResourceIds[count * 9 + 5]).getConstantState())
+                                if (imgRompe7.getBackground().getConstantState() == getResources().getDrawable(imgResourceIds[count * 9 + 6]).getConstantState())
+                                    if (imgRompe8.getBackground().getConstantState() == getResources().getDrawable(imgResourceIds[count * 9 + 7]).getConstantState())
+                                        if (imgRompe9.getBackground().getConstantState() == getResources().getDrawable(imgResourceIds[count * 9 + 8]).getConstantState()){
+                                            Toast.makeText(this, "Armo el rompecabezas bien!", Toast.LENGTH_LONG).show();
+                                        }
+        }
+
+
     }
     public void changeImageoption(int imgResourceIds){
         switch (position){
@@ -233,6 +260,7 @@ public class ObjectActivity extends AppCompatActivity {
         count++;
         int actual = model.getCurrent().getCurrentTest().getId();
         if(actual<4) {
+            validateAnswer(actual);
             System.out.println("puntaje acumulado: " + model.getCurrent().getPuntaje());
             model.nextTest();
         }
@@ -245,6 +273,15 @@ public class ObjectActivity extends AppCompatActivity {
         relativeLayout = (RelativeLayout) findViewById(R.id.backgroundObject);
         App app = (App) getApplication();
         model = app.getModel();
+        imgRompe1 = (Button) findViewById(R.id.btn_rompe1);
+        imgRompe2 = (Button) findViewById(R.id.btn_rompe2);
+        imgRompe3 = (Button) findViewById(R.id.btn_rompe3);
+        imgRompe4 = (Button) findViewById(R.id.btn_rompe4);
+        imgRompe5 = (Button) findViewById(R.id.btn_rompe5);
+        imgRompe6 = (Button) findViewById(R.id.btn_rompe6);
+        imgRompe7 = (Button) findViewById(R.id.btn_rompe7);
+        imgRompe8 = (Button) findViewById(R.id.btn_rompe8);
+        imgRompe9 = (Button) findViewById(R.id.btn_rompe9);
     }
     @Override
     protected void onResume() {

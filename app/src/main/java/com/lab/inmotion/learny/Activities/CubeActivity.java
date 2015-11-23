@@ -28,40 +28,20 @@ public class CubeActivity extends AppCompatActivity {
 
     private int[] fontResourceIds = {R.mipmap.figurauno,R.mipmap.figurados,R.mipmap.figuratres,
             R.mipmap.figuracuatro,R.mipmap.figuracinco};
+
     private ImageView imgCubeOne;
     private ImageView imgCubeTwo;
     private ImageView imgCubeThree;
     private ImageView imgCubeFour;
     private ImageView imgMuestra;
 
-    private int count;
     private Learny model;
-
-    public void init(){
-        setContentView(R.layout.activity_cube);
-
-        imgMuestra = (ImageView) findViewById(R.id.figuraMuestra);
-        imgCubeOne = (ImageView) findViewById(R.id.cubeOne);
-        imgCubeTwo = (ImageView) findViewById(R.id.cubeTwo);
-        imgCubeThree = (ImageView) findViewById(R.id.cubeThree);
-        imgCubeFour = (ImageView) findViewById(R.id.cubeFour);
-
-        findViewById(R.id.cubeOne).setOnTouchListener(new imgTouchListener());
-        findViewById(R.id.cubeTwo).setOnTouchListener(new imgTouchListener());
-        findViewById(R.id.cubeThree).setOnTouchListener(new imgTouchListener());
-        findViewById(R.id.cubeFour).setOnTouchListener(new imgTouchListener());
-        findViewById(R.id.right_img).setOnDragListener(new ContainerDragListener());
-        findViewById(R.id.right_imgCuatro).setOnDragListener(new ContainerDragListener());
-        findViewById(R.id.right_imgDos).setOnDragListener(new ContainerDragListener());
-        findViewById(R.id.right_imgTres).setOnDragListener(new ContainerDragListener());
-        findViewById(R.id.left_img).setOnDragListener(new ContainerDragListener());}
 
     public void btnContinueCube(View view){
         Intent intent = new Intent(this,FeedBackActivity.class);
         intent.putExtra("category","organizalos");
         intent.putExtra("count", model.getCurrent().getCurrentTest().getId());
         startActivity(intent);
-        count++;
         getPositionCount();
         int actual = model.getCurrent().getCurrentTest().getId();
         if(actual<4) {
@@ -95,10 +75,27 @@ public class CubeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        init();
+        setContentView(R.layout.activity_cube);
+
+        imgMuestra = (ImageView) findViewById(R.id.img_figureCube);
+        imgCubeOne = (ImageView) findViewById(R.id.cubeOne);
+        imgCubeTwo = (ImageView) findViewById(R.id.cubeTwo);
+        imgCubeThree = (ImageView) findViewById(R.id.cubeThree);
+        imgCubeFour = (ImageView) findViewById(R.id.cubeFour);
+
+        findViewById(R.id.cubeOne).setOnTouchListener(new imgTouchListener());
+        findViewById(R.id.cubeTwo).setOnTouchListener(new imgTouchListener());
+        findViewById(R.id.cubeThree).setOnTouchListener(new imgTouchListener());
+        findViewById(R.id.cubeFour).setOnTouchListener(new imgTouchListener());
+        findViewById(R.id.right_img).setOnDragListener(new ContainerDragListener());
+        findViewById(R.id.right_imgCuatro).setOnDragListener(new ContainerDragListener());
+        findViewById(R.id.right_imgDos).setOnDragListener(new ContainerDragListener());
+        findViewById(R.id.right_imgTres).setOnDragListener(new ContainerDragListener());
+        findViewById(R.id.left_img).setOnDragListener(new ContainerDragListener());
         App app = (App) getApplication();
         model = app.getModel();
     }
+
     private class imgTouchListener implements View.OnTouchListener {
         public boolean onTouch(View view, MotionEvent motionEvent) {
 
@@ -152,10 +149,11 @@ public class CubeActivity extends AppCompatActivity {
             return true;
         }
     }
+    @Override
    protected void onResume() {
         super.onResume();
-        System.out.println("OnResume Counter Sequence: " + count);
         int thecount = model.getCurrent().getCurrentTest().getId();
+
         if(thecount>0) {
             switch (thecount){
                 case 1:
@@ -163,7 +161,6 @@ public class CubeActivity extends AppCompatActivity {
                     break;
                 case 2:
                     imgMuestra.setBackgroundResource(fontResourceIds[2]);
-
                     imgCubeOne.setBackgroundResource(imgResourceIds[2]);
                     imgCubeTwo.setBackgroundResource(imgResourceIds[5]);
                     imgCubeThree.setBackgroundResource(imgResourceIds[1]);
@@ -171,7 +168,7 @@ public class CubeActivity extends AppCompatActivity {
                     break;
                 case 3:
                     imgMuestra.setBackgroundResource(fontResourceIds[3]);
-
+                    Toast.makeText(this, "Cambio 3: "+thecount, Toast.LENGTH_LONG).show();
                     imgCubeOne.setBackgroundResource(imgResourceIds[0]);
                     imgCubeTwo.setBackgroundResource(imgResourceIds[4]);
                     imgCubeFour.setBackgroundResource(imgResourceIds[0]);
@@ -192,6 +189,7 @@ public class CubeActivity extends AppCompatActivity {
         }
     }
 
+    @Override
     protected void onRestart() {
         super.onRestart();
         System.out.println("se ejecuta el onrestart");
