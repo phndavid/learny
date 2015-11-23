@@ -5,6 +5,7 @@ import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -37,10 +38,15 @@ public class ArduinoActivity extends AppCompatActivity {
     //SPP UUID. Look for it
     static final UUID myUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
 
+
+    private  MediaPlayer sp;
+    private  MediaPlayer spm;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+
+        sp = MediaPlayer.create(this,R.mipmap.sp);
 
         Intent newint = getIntent();
         address = newint.getStringExtra(DeviceActivity.EXTRA_ADDRESS); //receive the address of the bluetooth device
@@ -111,7 +117,14 @@ public class ArduinoActivity extends AppCompatActivity {
             }
         });
     }
-
+    public void playMusic(View view){
+        sp.start();
+    }
+    public void stopMusic(View view){
+        if(sp.isPlaying()==true){
+        sp.stop();
+        }
+    }
     private void Disconnect()
     {
         if (btSocket!=null) //If the btSocket is busy
