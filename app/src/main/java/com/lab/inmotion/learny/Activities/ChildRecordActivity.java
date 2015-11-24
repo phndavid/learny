@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.DragEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -107,6 +108,13 @@ public class ChildRecordActivity extends AppCompatActivity {
            txt_mothTest.setTypeface(tf);
            txt_yearTest = (EditText) findViewById(R.id.txt_yearTest);
            txt_yearTest.setTypeface(tf);
+           txt_dayTest.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View v) {
+                   System.out.println("entra al onclick");
+                   txt_dayTest.setText("");
+               }
+           });
        }
    }
     public void btnFinishRecord(View view){
@@ -167,10 +175,6 @@ public class ChildRecordActivity extends AppCompatActivity {
         }
     }
     public void registerChildInDB(final Child thechild){
-        // Set up a progress dialog
-        final ProgressDialog dialog = new ProgressDialog(this);
-        dialog.setMessage("Registrando paciente");
-        dialog.show();
         final ParseObject object = ParseObject.create("Child");
         System.out.println("datos del child:" + thechild.getFirstName());
         object.put("firstName", thechild.getFirstName());
@@ -211,7 +215,6 @@ public class ChildRecordActivity extends AppCompatActivity {
                                 e.printStackTrace();
                             } else {
                                 System.out.println("lo registro oh yeah");
-                                dialog.dismiss();
                                 try {
                                     user.fetch();
                                 } catch (ParseException e1) {
