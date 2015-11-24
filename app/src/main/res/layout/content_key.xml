@@ -94,16 +94,16 @@
         android:onClick="btnNine" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Continuar"
+        android:layout_width="55dp"
+        android:layout_height="90dp"
+        android:background="@mipmap/bntsiguiente"
         android:id="@+id/button43"
+        android:layout_marginLeft="101dp"
+        android:layout_marginStart="101dp"
+        android:onClick="btnContinueKey"
         android:layout_below="@+id/button42"
         android:layout_toRightOf="@+id/button42"
-        android:layout_toEndOf="@+id/button42"
-        android:layout_marginLeft="57dp"
-        android:layout_marginStart="57dp"
-        android:onClick="btnContinueKey" />
+        android:layout_toEndOf="@+id/button42" />
 
     <ImageView
         android:layout_width="200dp"

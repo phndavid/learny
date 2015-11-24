@@ -97,12 +97,11 @@
         android:onClick="btnRompe9" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Continuar"
+        android:layout_width="50dp"
+        android:layout_height="90dp"
+        android:background="@mipmap/bntsiguiente"
         android:id="@+id/button33"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/btn_rompe8"
-        android:layout_toEndOf="@+id/btn_rompe8"
-        android:onClick="btnContinue" />
+        android:onClick="btnContinue"
+        android:layout_below="@+id/btn_rompe7"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
