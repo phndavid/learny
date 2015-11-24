@@ -49,11 +49,18 @@ public class ChildListAdapter extends BaseAdapter {
         if(convertView==null){
             convertView = layoutInflater.inflate(R.layout.child_list_element,parent,false);
         }
+        tf = Typeface.createFromAsset(convertView.getContext().getAssets(),"fonts/CAFE.TTF");
         TextView txtPuntaje1 = (TextView) convertView.findViewById(R.id.textView5);
         TextView txtPuntaje2 = (TextView) convertView.findViewById(R.id.textView11);
         TextView txtPuntaje3 = (TextView) convertView.findViewById(R.id.textView7);
         TextView txtPuntaje4 = (TextView) convertView.findViewById(R.id.textView13);
         TextView txtPuntaje5 = (TextView) convertView.findViewById(R.id.textView9);
+
+        txtPuntaje1.setTypeface(tf);
+        txtPuntaje2.setTypeface(tf);
+        txtPuntaje3.setTypeface(tf);
+        txtPuntaje4.setTypeface(tf);
+        txtPuntaje5.setTypeface(tf);
 
         TextView txtTime1 = (TextView) convertView.findViewById(R.id.textView4);
         TextView txtTime2 = (TextView) convertView.findViewById(R.id.textView10);
@@ -61,12 +68,38 @@ public class ChildListAdapter extends BaseAdapter {
         TextView txtTime4 = (TextView) convertView.findViewById(R.id.textView12);
         TextView txtTime5 = (TextView) convertView.findViewById(R.id.textView8);
 
+        txtTime1.setTypeface(tf);
+        txtTime2.setTypeface(tf);
+        txtTime3.setTypeface(tf);
+        txtTime4.setTypeface(tf);
+        txtTime5.setTypeface(tf);
+
         TextView txtName = (TextView) convertView.findViewById(R.id.txt_nombre_paciente);
         TextView txtGenero = (TextView) convertView.findViewById(R.id.txt_genero);
         TextView txtBirth = (TextView) convertView.findViewById(R.id.txt_birth);
         TextView txtParente = (TextView) convertView.findViewById(R.id.txt_pariente);
         TextView txtColegio = (TextView) convertView.findViewById(R.id.txt_school);
         TextView txtAddress = (TextView) convertView.findViewById(R.id.txt_address);
+
+        txtName.setTypeface(tf);
+        txtGenero.setTypeface(tf);
+        txtBirth.setTypeface(tf);
+        txtParente.setTypeface(tf);
+        txtColegio.setTypeface(tf);
+        txtAddress.setTypeface(tf);
+
+
+        TextView lblGenero = (TextView) convertView.findViewById(R.id.lbl_genero);
+        TextView lblBirth = (TextView) convertView.findViewById(R.id.lbl_birth);
+        TextView lblParienta = (TextView) convertView.findViewById(R.id.lbl_pariente);
+        TextView lblSchool = (TextView) convertView.findViewById(R.id.lbl_school);
+        TextView lblAddress = (TextView) convertView.findViewById(R.id.lbl_address);
+
+        lblAddress.setTypeface(tf);
+        lblBirth.setTypeface(tf);
+        lblParienta.setTypeface(tf);
+        lblSchool.setTypeface(tf);
+        lblAddress.setTypeface(tf);
 
         Child child = children.get(position);
         txtName.setText(child.getFirstName());
