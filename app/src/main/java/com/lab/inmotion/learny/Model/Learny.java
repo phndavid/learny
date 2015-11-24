@@ -68,6 +68,7 @@ public class Learny {
     }
     public void nextCategory(){
         current.setCompleted(true);
+        categories[current.getId()].setCompleted(true);
         current.editTest(4,current.getCurrentTest());
         int currentId = current.getId();
         categories[currentId] = current;
