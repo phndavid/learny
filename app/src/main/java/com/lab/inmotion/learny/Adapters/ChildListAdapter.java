@@ -1,6 +1,7 @@
 package com.lab.inmotion.learny.Adapters;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
  */
 public class ChildListAdapter extends BaseAdapter {
 
+    private Typeface tf;
     private LayoutInflater layoutInflater;
     private ArrayList<Child> children;
 
@@ -67,7 +69,6 @@ public class ChildListAdapter extends BaseAdapter {
         TextView txtAddress = (TextView) convertView.findViewById(R.id.txt_address);
 
         Child child = children.get(position);
-
         txtName.setText(child.getFirstName());
         txtGenero.setText(child.getSex());
         txtBirth.setText(child.getTestPlace());

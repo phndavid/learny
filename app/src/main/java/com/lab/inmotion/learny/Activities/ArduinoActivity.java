@@ -66,18 +66,25 @@ public class ArduinoActivity extends AppCompatActivity {
         }
     }
     public void btnAhead(View view){
+        Toast.makeText(this, "Ahead", Toast.LENGTH_LONG).show();
         ahead();
+
     }
     public void btnBack(View view){
+        Toast.makeText(this, "Back", Toast.LENGTH_LONG).show();
         back();
     }
     public void btnRight(View view){
+        Toast.makeText(this, "Right", Toast.LENGTH_LONG).show();
         right();
     }
     public void btnLeft(View view){
+        Toast.makeText(this, "Left", Toast.LENGTH_LONG).show();
         left();
     }
+
     private void Disconnect()
+
     {
         if (btSocket!=null) //If the btSocket is busy
         {
@@ -98,7 +105,7 @@ public class ArduinoActivity extends AppCompatActivity {
         {
             try
             {
-                btSocket.getOutputStream().write('3');
+                btSocket.getOutputStream().write('b');
             }
             catch (IOException e)
             {
@@ -113,7 +120,7 @@ public class ArduinoActivity extends AppCompatActivity {
         {
             try
             {
-                btSocket.getOutputStream().write('5');
+                btSocket.getOutputStream().write('d');
             }
             catch (IOException e)
             {
@@ -128,7 +135,7 @@ public class ArduinoActivity extends AppCompatActivity {
         {
             try
             {
-                btSocket.getOutputStream().write('2');
+                btSocket.getOutputStream().write('a');
             }
             catch (IOException e)
             {
@@ -143,7 +150,7 @@ public class ArduinoActivity extends AppCompatActivity {
         {
             try
             {
-                btSocket.getOutputStream().write('6');
+                btSocket.getOutputStream().write('e');
             }
             catch (IOException e)
             {
