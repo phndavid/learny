@@ -2,6 +2,7 @@ package com.lab.inmotion.learny.Activities;
 
 import android.app.AlertDialog;
 import android.app.Application;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -31,7 +32,8 @@ public class FigureActivity extends AppCompatActivity {
     private String [][] answers = {{"rin","rrin","riin","rinn","riinn"},{"bigote","bigotes","bigute","bigutes","bigutrs"},{"cuatro","IV","cutro","catro","cuato"},{"cacho","cuerno","cueno","cerno","cuernp"},{"pata","pierna","paata","patta","pataa"}};
     private int puntaje=0;
     private boolean firstTime =false;
-
+    private AlertDialog.Builder alerBuilder;
+    private Dialog dialog;
     private  int count;
     private RelativeLayout relativeLayout;
     private ImageView imgFigure;
@@ -248,11 +250,13 @@ public class FigureActivity extends AppCompatActivity {
             @Override
             public void run() {
                 // TODO Auto-generated method stub
-                AlertDialog.Builder alertadd = new AlertDialog.Builder(FigureActivity.this);
+                final AlertDialog.Builder alertadd = new AlertDialog.Builder(FigureActivity.this);
+                alerBuilder = alertadd;
                 LayoutInflater factory = LayoutInflater.from(FigureActivity.this);
                 final View view1 = factory.inflate(R.layout.try_again_layout, null);
                 alertadd.setView(view1);
-                alertadd.show();
+                final Dialog d = alertadd.show();
+                dialog = d;
             }
         };
         mHandler.postDelayed(mRunnable,30*1000);
@@ -272,6 +276,5 @@ public class FigureActivity extends AppCompatActivity {
 
     }
     public void tapTest(View view){
-
     }
 }

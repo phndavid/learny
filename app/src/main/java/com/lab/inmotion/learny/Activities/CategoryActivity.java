@@ -88,8 +88,15 @@ public class CategoryActivity extends AppCompatActivity {
             if(selectedCategory.isCompleted()){
                 v.setImageResource(mResourceIdsBlack[position % mResourceIdsBlack.length]);
             }
+
+            if(position==4 && category.isCompleted()){
+                v.setImageResource(mResourceIdsBlack[position % mResourceIdsBlack.length]);
+            }
             if(position==id){
                 v.setImageResource(mResourceIdsColor[position % mResourceIdsColor.length]);
+            }
+            if(position==5){
+                v.setImageResource(mResourceIdsColor[position%mResourceIdsColor.length]);
             }
 
             v.setOnClickListener(new View.OnClickListener() {
@@ -111,11 +118,11 @@ public class CategoryActivity extends AppCompatActivity {
                         Intent theIntent = new Intent(v.getContext(), ObjectActivity.class);
                         startActivity(theIntent);
                         finish();
-                    }else if(position == 4 && (position==id)){
+                    }else if(position == 4 && (position==id) && !category.isCompleted()){
                         Intent theIntent = new Intent(v.getContext(), KeyActivity.class);
                         startActivity(theIntent);
                         finish();
-                    }else if (position == 5 && (id==4) && category.isCompleted()){
+                    }else if (position == 5){
                         Intent theIntent = new Intent(v.getContext(), ArduinoActivity.class);
                         startActivity(theIntent);
                         finish();
