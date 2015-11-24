@@ -30,7 +30,7 @@ public class KeyActivity extends AppCompatActivity {
 
     private int[] imgResourceIds = {R.mipmap.uno, R.mipmap.dos, R.mipmap.tres, R.mipmap.cuatro, R.mipmap.cinco, R.mipmap.seis, R.mipmap.siete,
             R.mipmap.ocho, R.mipmap.nueve};
-    private String[] numbers = {"31242", "76532", "98421", "78128","45892"};
+    private String[] numbers = {"13456", "76532", "98421", "78128","45892"};
 
     public void init() {
         number = "";
@@ -96,6 +96,15 @@ public class KeyActivity extends AppCompatActivity {
     public void btnNine(View view) {
         validePostion(imgResourceIds[8], "9");
     }
+    public void checkAnswer(String thenumber){
+        System.out.println("numero: " + thenumber);
+        System.out.println("el atributo numero: " + number);
+        if(thenumber.equals(number)){
+            System.out.println("entra al gano");
+            App app = (App) getApplication();
+            app.getModel().performCorrectPlay();
+        }
+    }
 
     public void btnContinueKey(View view) {
         long finalTime = SystemClock.elapsedRealtime();
@@ -109,7 +118,9 @@ public class KeyActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
         int actual = model.getCurrent().getCurrentTest().getId();
+        System.out.println("el actual:" + actual);
         if(actual<4) {
+            checkAnswer(numbers[actual]);
             System.out.println("puntaje acumulado: " + model.getCurrent().getPuntaje());
             model.nextTest();
         }
