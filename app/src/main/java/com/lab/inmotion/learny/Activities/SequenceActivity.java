@@ -19,9 +19,14 @@ import com.lab.inmotion.learny.R;
 
 public class SequenceActivity extends AppCompatActivity {
 
-    private int[] imgResourceIds = {R.mipmap.plantauno,R.mipmap.plantados,R.mipmap.plantatres,R.mipmap.mediauno,R.mipmap.mediados,R.mipmap.mediatres,
+    private int[] imgResourceIds = {R.mipmap.plantatres,R.mipmap.plantauno,R.mipmap.plantados,R.mipmap.mediados,R.mipmap.mediatres,R.mipmap.mediauno,
+            R.mipmap.vacatres,R.mipmap.vacauno,R.mipmap.vacados,R.mipmap.paletauno,R.mipmap.paletados,R.mipmap.paletatres,
+            R.mipmap.banotres,R.mipmap.banodos,R.mipmap.banouno};
+
+    private int[] resourceIds = {R.mipmap.plantauno,R.mipmap.plantados,R.mipmap.plantatres,R.mipmap.mediauno,R.mipmap.mediados,R.mipmap.mediatres,
             R.mipmap.vacauno,R.mipmap.vacados,R.mipmap.vacatres,R.mipmap.paletauno,R.mipmap.paletados,R.mipmap.paletatres,
             R.mipmap.banouno,R.mipmap.banodos,R.mipmap.banotres};
+
     private int[] fontResourceIds = {R.mipmap.fondouno,R.mipmap.fondodos,R.mipmap.fondotres,R.mipmap.fondocuatro,R.mipmap.fondocinco};
 
     private ImageView imgOne;
@@ -40,9 +45,9 @@ public class SequenceActivity extends AppCompatActivity {
         ImageView img2 = (ImageView) linearTwo.getChildAt(0);
         ImageView img3 = (ImageView) linearThree.getChildAt(0);
         if(img1 != null && img2 != null && img3 != null) {
-            if (img1.getBackground().getConstantState() == getResources().getDrawable(imgResourceIds[count * 3]).getConstantState()) {
-                if (img2.getBackground().getConstantState() == getResources().getDrawable(imgResourceIds[count * 3 + 1]).getConstantState())
-                    if (img3.getBackground().getConstantState() == getResources().getDrawable(imgResourceIds[count * 3 + 2]).getConstantState()) {
+            if (img1.getBackground().getConstantState() == getResources().getDrawable(resourceIds[count * 3]).getConstantState()) {
+                if (img2.getBackground().getConstantState() == getResources().getDrawable(resourceIds[count * 3 + 1]).getConstantState())
+                    if (img3.getBackground().getConstantState() == getResources().getDrawable(resourceIds[count * 3 + 2]).getConstantState()) {
                         Toast.makeText(this, "Secuencia correcta!", Toast.LENGTH_LONG).show();
                     }
             }
