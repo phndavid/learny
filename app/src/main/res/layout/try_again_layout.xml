@@ -5,9 +5,9 @@
     android:background="#005ccFFF">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView"
+        android:layout_width="750dp"
+        android:layout_height="500dp"
+        android:id="@+id/imageViewtry"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:src="@mipmap/intento_xhdpi"
