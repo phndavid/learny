@@ -67,7 +67,9 @@
         android:layout_alignStart="@+id/linearFigureOne"
         android:layout_alignRight="@+id/linearFigureOne"
         android:layout_alignEnd="@+id/linearFigureOne"
-        android:layout_alignTop="@+id/linearTwo"></LinearLayout>
+        android:layout_alignTop="@+id/linearTwo">
+
+    </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"

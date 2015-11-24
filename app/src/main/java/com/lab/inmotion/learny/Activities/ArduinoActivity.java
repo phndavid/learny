@@ -98,7 +98,7 @@ public class ArduinoActivity extends AppCompatActivity {
         {
             try
             {
-                btSocket.getOutputStream().write("b".toString().getBytes());
+                btSocket.getOutputStream().write('3');
             }
             catch (IOException e)
             {
@@ -113,7 +113,7 @@ public class ArduinoActivity extends AppCompatActivity {
         {
             try
             {
-                btSocket.getOutputStream().write("d".toString().getBytes());
+                btSocket.getOutputStream().write('5');
             }
             catch (IOException e)
             {
@@ -128,7 +128,7 @@ public class ArduinoActivity extends AppCompatActivity {
         {
             try
             {
-                btSocket.getOutputStream().write("a".toString().getBytes());
+                btSocket.getOutputStream().write('2');
             }
             catch (IOException e)
             {
@@ -143,7 +143,7 @@ public class ArduinoActivity extends AppCompatActivity {
         {
             try
             {
-                btSocket.getOutputStream().write("e".toString().getBytes());
+                btSocket.getOutputStream().write('6');
             }
             catch (IOException e)
             {

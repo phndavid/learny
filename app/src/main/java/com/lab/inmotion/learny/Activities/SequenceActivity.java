@@ -2,6 +2,7 @@ package com.lab.inmotion.learny.Activities;
 
 import android.content.ClipData;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.DragEvent;
@@ -28,29 +29,24 @@ public class SequenceActivity extends AppCompatActivity {
     private ImageView imgThree;
 
     private RelativeLayout relativeLayout;
-    private int count;
+    private LinearLayout linearOne;
+    private LinearLayout linearTwo;
+    private LinearLayout linearThree;
+
     private Learny model;
 
-    public void init(){
-        setContentView(R.layout.activity_sequence);
-        imgOne = (ImageView) findViewById(R.id.imgOne);
-        imgTwo = (ImageView) findViewById(R.id.imgTwo);
-        imgThree = (ImageView) findViewById(R.id.imgThree);
-        findViewById(R.id.imgOne).setOnTouchListener(new imgTouchListener());
-        findViewById(R.id.imgTwo).setOnTouchListener(new imgTouchListener());
-        findViewById(R.id.imgThree).setOnTouchListener(new imgTouchListener());
-        findViewById(R.id.linearOne).setOnDragListener(new ContainerDragListener());
-        findViewById(R.id.linearTwo).setOnDragListener(new ContainerDragListener());
-        findViewById(R.id.linearThree).setOnDragListener(new ContainerDragListener());
-        findViewById(R.id.linearFigureOne).setOnDragListener(new ContainerDragListener());
-        findViewById(R.id.linearFigureTwo).setOnDragListener(new ContainerDragListener());
-        findViewById(R.id.linearFigureThree).setOnDragListener(new ContainerDragListener());
-        relativeLayout = (RelativeLayout) findViewById(R.id.backgroudSequence);
-    }
-    public boolean checkAnswer(){
-        boolean correct = false;
-
-        return correct;
+    public void checkAnswer(int count){
+        ImageView img1 = (ImageView) linearOne.getChildAt(0);
+        ImageView img2 = (ImageView) linearTwo.getChildAt(0);
+        ImageView img3 = (ImageView) linearThree.getChildAt(0);
+        if(img1 != null && img2 != null && img3 != null) {
+            if (img1.getBackground().getConstantState() == getResources().getDrawable(imgResourceIds[count * 3]).getConstantState()) {
+                if (img2.getBackground().getConstantState() == getResources().getDrawable(imgResourceIds[count * 3 + 1]).getConstantState())
+                    if (img3.getBackground().getConstantState() == getResources().getDrawable(imgResourceIds[count * 3 + 2]).getConstantState()) {
+                        Toast.makeText(this, "Secuencia correcta!", Toast.LENGTH_LONG).show();
+                    }
+            }
+        }
     }
     public void btnContinue(View view){
         Intent intent = new Intent(this,FeedBackActivity.class);
@@ -58,32 +54,12 @@ public class SequenceActivity extends AppCompatActivity {
         intent.putExtra("count", model.getCurrent().getCurrentTest().getId());
         startActivity(intent);
         finish();
-        count++;
-        getPositionCount();
         int actual = model.getCurrent().getCurrentTest().getId();
-        if(actual<4) {
+        if(actual < 4) {
             System.out.println("puntaje acumulado: " + model.getCurrent().getPuntaje());
             model.nextTest();
+            checkAnswer(actual);
         }
-
-    }
-    public  void getPositionCount(){
-        int[] locations1 = new int[2];
-        imgOne.getLocationOnScreen(locations1);
-        int x1 = locations1[0];
-        int y1 = locations1[1];
-        int[] locations2 = new int[2];
-        imgTwo.getLocationOnScreen(locations2);
-        int x2 = locations2[0];
-        int y2 = locations2[1];
-        int[] locations3 = new int[2];
-        imgThree.getLocationOnScreen(locations3);
-        int x3 = locations3[0];
-        int y3 = locations3[1];
-
-        String msg = "IMG1 X:"+x1+" Y:"+y1+" - IMG2 X:"+x2+" Y:"+y2+" - IMG3 X:"+x3+" Y:"+y3;
-        Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
-        
 
     }
 
@@ -143,15 +119,29 @@ public class SequenceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        init();
+        setContentView(R.layout.activity_sequence);
+        imgOne = (ImageView) findViewById(R.id.imgOne);
+        imgTwo = (ImageView) findViewById(R.id.imgTwo);
+        imgThree = (ImageView) findViewById(R.id.imgThree);
+        findViewById(R.id.imgOne).setOnTouchListener(new imgTouchListener());
+        findViewById(R.id.imgTwo).setOnTouchListener(new imgTouchListener());
+        findViewById(R.id.imgThree).setOnTouchListener(new imgTouchListener());
+        findViewById(R.id.linearOne).setOnDragListener(new ContainerDragListener());
+        findViewById(R.id.linearTwo).setOnDragListener(new ContainerDragListener());
+        findViewById(R.id.linearThree).setOnDragListener(new ContainerDragListener());
+        findViewById(R.id.linearFigureOne).setOnDragListener(new ContainerDragListener());
+        findViewById(R.id.linearFigureTwo).setOnDragListener(new ContainerDragListener());
+        findViewById(R.id.linearFigureThree).setOnDragListener(new ContainerDragListener());
+        relativeLayout = (RelativeLayout) findViewById(R.id.backgroudSequence);
+        linearOne = (LinearLayout) findViewById(R.id.linearOne);
+        linearTwo = (LinearLayout) findViewById(R.id.linearTwo);
+        linearThree = (LinearLayout) findViewById(R.id.linearThree);
         App app = (App) getApplication();
         model = app.getModel();
     }
     @Override
      protected void onResume() {
         super.onResume();
-        //init();
-        System.out.println("OnResume Counter Sequence: " + count);
         int thecount= model.getCurrent().getCurrentTest().getId();
         if(thecount>0) {
             switch (thecount){
