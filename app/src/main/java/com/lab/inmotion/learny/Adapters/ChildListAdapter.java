@@ -48,18 +48,16 @@ public class ChildListAdapter extends BaseAdapter {
             convertView = layoutInflater.inflate(R.layout.child_list_element,parent,false);
         }
         TextView txtPuntaje1 = (TextView) convertView.findViewById(R.id.textView5);
-        TextView txtPuntaje2 = (TextView) convertView.findViewById(R.id.textView6);
-        TextView txtPuntaje3 = (TextView) convertView.findViewById(R.id.textView8);
-        TextView txtPuntaje4 = (TextView) convertView.findViewById(R.id.textView10);
-        TextView txtPuntaje5 = (TextView) convertView.findViewById(R.id.textView12);
-        TextView txtPuntaje6 = (TextView) convertView.findViewById(R.id.textView14);
+        TextView txtPuntaje2 = (TextView) convertView.findViewById(R.id.textView11);
+        TextView txtPuntaje3 = (TextView) convertView.findViewById(R.id.textView7);
+        TextView txtPuntaje4 = (TextView) convertView.findViewById(R.id.textView13);
+        TextView txtPuntaje5 = (TextView) convertView.findViewById(R.id.textView9);
 
         TextView txtTime1 = (TextView) convertView.findViewById(R.id.textView4);
-        TextView txtTime2 = (TextView) convertView.findViewById(R.id.textView7);
-        TextView txtTime3 = (TextView) convertView.findViewById(R.id.textView9);
-        TextView txtTime4 = (TextView) convertView.findViewById(R.id.textView11);
-        TextView txtTime5 = (TextView) convertView.findViewById(R.id.textView13);
-        TextView txtTime6 = (TextView) convertView.findViewById(R.id.textView15);
+        TextView txtTime2 = (TextView) convertView.findViewById(R.id.textView10);
+        TextView txtTime3 = (TextView) convertView.findViewById(R.id.textView6);
+        TextView txtTime4 = (TextView) convertView.findViewById(R.id.textView12);
+        TextView txtTime5 = (TextView) convertView.findViewById(R.id.textView8);
 
         TextView txtName = (TextView) convertView.findViewById(R.id.txt_nombre_paciente);
         TextView txtGenero = (TextView) convertView.findViewById(R.id.txt_genero);
@@ -81,13 +79,11 @@ public class ChildListAdapter extends BaseAdapter {
         txtPuntaje3.setText(child.getPuntajes()[2] + " puntos");
         txtPuntaje4.setText(child.getPuntajes()[3] + " puntos");
         txtPuntaje5.setText(child.getPuntajes()[4] + " puntos");
-//        txtPuntaje6.setText(child.getPuntajes()[5] + " puntos");
         txtTime1.setText(child.getTiempos()[0] + " segundos");
         txtTime2.setText(child.getTiempos()[1] + " segundos");
         txtTime3.setText(child.getTiempos()[2] + " segundos");
         txtTime4.setText(child.getTiempos()[3] + " segundos");
         txtTime5.setText(child.getTiempos()[4] + " segundos");
-  //      txtTime6.setText(child.getTiempos()[5] + " segundos");
 
 
         return convertView;

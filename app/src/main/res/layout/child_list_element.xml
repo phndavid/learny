@@ -128,7 +128,7 @@
     <TextView
         android:layout_width="120dp"
         android:layout_height="35dp"
-        android:text="New Text"
+        android:text="No aplica"
         android:id="@+id/textView14"
         android:layout_alignWithParentIfMissing="true"
         android:layout_alignTop="@+id/textView12"
@@ -139,7 +139,7 @@
     <TextView
         android:layout_width="120dp"
         android:layout_height="35dp"
-        android:text="New Text"
+        android:text="No aplica"
         android:id="@+id/textView15"
         android:layout_alignWithParentIfMissing="true"
         android:layout_below="@+id/textView14"

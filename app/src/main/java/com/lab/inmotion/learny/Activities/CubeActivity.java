@@ -73,9 +73,9 @@ public class CubeActivity extends AppCompatActivity {
         finish();
         int actual = model.getCurrent().getCurrentTest().getId();
         if(actual<4) {
-            System.out.println("puntaje acumulado: " + model.getCurrent().getPuntaje());
             checkAnswer(actual);
             model.nextTest();
+            System.out.println("puntaje acumulado: " + model.getCurrent().getPuntaje());
         }
     }
 

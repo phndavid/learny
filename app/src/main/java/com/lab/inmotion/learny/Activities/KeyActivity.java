@@ -3,6 +3,7 @@ package com.lab.inmotion.learny.Activities;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
@@ -97,6 +98,11 @@ public class KeyActivity extends AppCompatActivity {
     }
 
     public void btnContinueKey(View view) {
+        long finalTime = SystemClock.elapsedRealtime();
+        double dFinalTime = (double) finalTime;
+        System.out.println("finalTime long: " + finalTime + " finalTime double: " + dFinalTime);
+        model.getCurrent().getCurrentTest().setFinalTime(dFinalTime);
+        model.getCurrent().getCurrentTest().measureTime();
         Intent intent = new Intent(this,FeedBackActivity.class);
         intent.putExtra("category", "descifraClave");
         intent.putExtra("count", model.getCurrent().getCurrentTest().getId());

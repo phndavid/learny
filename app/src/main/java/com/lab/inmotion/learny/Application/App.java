@@ -73,9 +73,10 @@ public class App extends Application {
                         String sex = theChild.getString("sex");
                         List<Integer> scores = theChild.getList("scores");
                         List times = theChild.getList("times");
-                        double[] theScore = new double[5];
-                        double[] theTime = new double[5];
+                        double[] theScore = null;
+                        double[] theTime = null;
                         if(scores==null){
+                            theScore=new double[5];
                             theScore[0]=0;
                             theScore[1]=0;
                             theScore[2]=0;
@@ -84,6 +85,7 @@ public class App extends Application {
 
                         }
                         if(times==null){
+                            theTime=new double[5];
                             theTime[0] = 0;
                             theTime[1] = 0;
                             theTime[2] = 0;
@@ -92,11 +94,13 @@ public class App extends Application {
 
                         }
                         if(scores!=null){
+                            theScore = new double[scores.size()];
                             for(int k=0;k<scores.size();k++){
                                 theScore[k] = (double)scores.get(k).intValue();
                             }
                         }
                         if(times!=null){
+                            theTime = new double[scores.size()];
                             for(int k=0;k<scores.size();k++){
                                 try{
                                     DecimalFormat df = new DecimalFormat("#.00");
