@@ -24,27 +24,27 @@ public class Child extends ParseObject {
     private Date testDate;
     private String sex;
 
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
-
     private double [] puntajes;
     private double [] tiempos;
+    private boolean current;
 
     public Child(){
-        this.puntajes = new double[CATEGORIAS];
-        this.tiempos = new double[CATEGORIAS];
-        for(int i=0;i<CATEGORIAS;i++){
+        this.puntajes = new double[CATEGORIAS-1];
+        this.tiempos = new double[CATEGORIAS-1];
+        current = false;
+        for(int i=0;i<CATEGORIAS-1;i++){
             this.puntajes[i] = 0;
             this.tiempos[i] = 0;
         }
 
     }
 
+    public void registerTime(double time,int index){
+        tiempos[index] = time;
+    }
+    public void registerScore (double score, int index){
+        puntajes[index] = score;
+    }
     public String getLastName() {
         return lastName;
     }
@@ -118,6 +118,29 @@ public class Child extends ParseObject {
     }
     public double[] getTiempos(){
         return tiempos;
+    }
+
+    public boolean isCurrent() {
+        return current;
+    }
+
+    public void setCurrent(boolean current) {
+        this.current = current;
+    }
+
+    public void setPuntajes(double[] puntajes) {
+        this.puntajes = puntajes;
+    }
+
+    public void setTiempos(double[] tiempos) {
+        this.tiempos = tiempos;
+    }
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 }
 

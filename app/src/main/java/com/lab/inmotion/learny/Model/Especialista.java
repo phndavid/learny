@@ -45,6 +45,27 @@ public class Especialista extends ParseUser{
     public ArrayList<Child> getChilldren(){
         return children;
     }
+    public void setChildToCurrent(String firstName, String lastName){
+        boolean finish = false;
+        System.out.println("entra al metodo setchild to current");
+        for(int i=0;i<children.size() && !finish;i++){
+            if(children.get(i).getFirstName().equals(firstName) && children.get(i).getLastName().equals(lastName)){
+                System.out.println("entra al setChildToCurrent");
+                children.get(i).setCurrent(true);
+                finish = true;
+            }
+        }
+
+    }
+    public Child getCurrenChild(){
+        boolean found = false;
+        for(int i=0;i<children.size() && !found;i++){
+            if(children.get(i).isCurrent()){
+                return children.get(i);
+            }
+        }
+        return null;
+    }
     public String getUsername(){
         return username;
     }

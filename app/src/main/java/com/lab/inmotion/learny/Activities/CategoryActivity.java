@@ -114,10 +114,13 @@ public class CategoryActivity extends AppCompatActivity {
                         Intent theIntent = new Intent(v.getContext(), KeyActivity.class);
                         startActivity(theIntent);
                         finish();
-                    }else if (position == 5){
+                    }else if (position == 5 && (position==id)){
                         Intent theIntent = new Intent(v.getContext(), ArduinoActivity.class);
                         startActivity(theIntent);
                         finish();
+                    }else if(position!=id){
+                        Toast toast = Toast.makeText(getApplicationContext(),"Ya has completado este nivel o aun no has llegado a él!",Toast.LENGTH_LONG);
+                        toast.show();
                     }
                 }
             });

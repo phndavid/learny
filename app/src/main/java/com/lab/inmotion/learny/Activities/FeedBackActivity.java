@@ -12,6 +12,7 @@ import android.widget.RelativeLayout;
 
 import com.lab.inmotion.learny.Application.App;
 import com.lab.inmotion.learny.Model.Category;
+import com.lab.inmotion.learny.Model.Child;
 import com.lab.inmotion.learny.R;
 
 public class FeedBackActivity extends AppCompatActivity {
@@ -105,8 +106,27 @@ public class FeedBackActivity extends AppCompatActivity {
         }else{
             app.getModel().getCurrent().measureTotalTime();
             app.getModel().getCurrent().setCompleted(true);
-            System.out.println("Tiempo total categoria: " +  app.getModel().getCurrent().getTiempo());
-            app.getModel().nextCategory();
+            System.out.println("Tiempo total categoria: " + app.getModel().getCurrent().getTiempo());
+            Category category = app.getModel().getCurrent();
+            System.out.println("----categoria actual:" + category.getNombre());
+            System.out.println("---- especialista: " + app.getModel().getEspecialista().getUsername());
+            System.out.println("---current child: " + app.getModel().getEspecialista().getCurrenChild().getFirstName());
+            System.out.println("----Puntaje de categoria actual: " + category.getPuntaje());
+            System.out.println("----Tiempo de categoria actual: " + category.getTiempo());
+            System.out.println("---id del current category: " + category.getId());
+            app.getModel().getEspecialista().getCurrenChild().registerScore(category.getPuntaje(), category.getId());
+            app.getModel().getEspecialista().getCurrenChild().registerTime(category.getTiempo(), category.getId());
+            if(app.getModel().getCurrent().getId()<4){
+                app.getModel().nextCategory();
+            }else{
+                Child currentchild = app.getModel().getEspecialista().getCurrenChild();
+                final double[] times = app.getModel().getEspecialista().getCurrenChild().getTiempos();
+                System.out.println("los tiempos size: " + times[0] + " " + times[1] + " " + times[2]);
+                final double[] scores = app.getModel().getEspecialista().getCurrenChild().getPuntajes();
+                System.out.println("los tiempos size: " + scores[0] + " " + scores[1] + " " + scores[2]);
+                app.registerScoreInDB(currentchild.getFirstName(),currentchild.getLastName(),scores);
+                app.registerTimesInDB(currentchild.getFirstName(),currentchild.getLastName(),times);
+            }
             Intent theIntent = new Intent(this,CategoryActivity.class);
             startActivity(theIntent);
             finish();

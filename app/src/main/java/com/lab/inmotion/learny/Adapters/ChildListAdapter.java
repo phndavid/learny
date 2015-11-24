@@ -81,13 +81,13 @@ public class ChildListAdapter extends BaseAdapter {
         txtPuntaje3.setText(child.getPuntajes()[2] + " puntos");
         txtPuntaje4.setText(child.getPuntajes()[3] + " puntos");
         txtPuntaje5.setText(child.getPuntajes()[4] + " puntos");
-        txtPuntaje6.setText(child.getPuntajes()[5] + " puntos");
+//        txtPuntaje6.setText(child.getPuntajes()[5] + " puntos");
         txtTime1.setText(child.getTiempos()[0] + " segundos");
         txtTime2.setText(child.getTiempos()[1] + " segundos");
         txtTime3.setText(child.getTiempos()[2] + " segundos");
         txtTime4.setText(child.getTiempos()[3] + " segundos");
         txtTime5.setText(child.getTiempos()[4] + " segundos");
-        txtTime6.setText(child.getTiempos()[5] + " segundos");
+  //      txtTime6.setText(child.getTiempos()[5] + " segundos");
 
 
         return convertView;

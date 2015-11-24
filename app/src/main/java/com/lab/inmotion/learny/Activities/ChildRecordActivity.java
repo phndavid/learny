@@ -145,8 +145,6 @@ public class ChildRecordActivity extends AppCompatActivity {
             toast.show();
 
         }
-        System.out.println("birthdate: " + birthdate.toString());
-        System.out.println("birthdate: " + testdate.toString());
         if(cancontinue){
             App app = (App) getApplication();
             Child child = new Child();
@@ -162,6 +160,7 @@ public class ChildRecordActivity extends AppCompatActivity {
             child.setSex(sex);
             app.getModel().getEspecialista().addChild(child);
             registerChildInDB(child);
+            app.getModel().getEspecialista().setChildToCurrent(firstName,lastName);
             Intent theIntent = new Intent(this, LearnyActivity.class);
             startActivity(theIntent);
         }

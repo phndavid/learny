@@ -15,8 +15,12 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseRelation;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
+import java.lang.reflect.Array;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -49,12 +53,13 @@ public class App extends Application {
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> objects, ParseException e) {
-                if(e!=null){
+                if (e != null) {
                     System.out.println("entro al error del query");
                     e.printStackTrace();
-                }else{
+                } else {
                     System.out.println("al parecer hizo el query bien");
-                    for(int i=0;i<objects.size();i++){
+                    System.out.println("primera consulta a relacion size: " + objects.size());
+                    for (int i = 0; i < objects.size(); i++) {
                         ParseObject theChild = objects.get(i);
                         String firstName = theChild.getString("firstName");
                         String lastName = theChild.getString("lastName");
@@ -65,7 +70,29 @@ public class App extends Application {
                         String parentName = theChild.getString("parentName");
                         String school = theChild.getString("school");
                         String educationLevel = theChild.getString("educationLevel");
+                        String sex = theChild.getString("sex");
+                        List<Integer> scores = theChild.getList("scores");
+                        List times = theChild.getList("times");
+                        double[] theScore = new double[scores.size()];
+                        double[] theTime = new double[times.size()];
+                        for(int k=0;k<scores.size();k++){
+                            try{
+                                DecimalFormat df = new DecimalFormat("#.00");
+                                df.format(theTime[k]);
+                                double firstTime = (double)times.get(k);
+                                String sTime = df.format(firstTime);
+                                double time = Double.parseDouble(sTime);
+                                theScore[k] = (double)scores.get(k).intValue();
+                                theTime[k] = time;
+                            }catch (Exception ex){
+                                theTime[k] = 0;
+                                theScore[k] = 0;
+                            }
+
+                        }
                         Child child = new Child();
+                        child.setPuntajes(theScore);
+                        child.setTiempos(theTime);
                         child.setFirstName(firstName);
                         child.setLastName(lastName);
                         child.setBirth(birthDate);
@@ -75,6 +102,7 @@ public class App extends Application {
                         child.setEducationLevel(educationLevel);
                         child.setTestPlace(testPlace);
                         child.setTestDate(testDate);
+                        child.setSex(sex);
 
                         model.getEspecialista().addChildWithoutDB(child);
 
@@ -86,5 +114,75 @@ public class App extends Application {
     public Learny getModel(){
         return model;
     }
+    public void registerScoreInDB(String firstName,String lastName, final double[] scores){
+        ParseRelation relation = ParseUser.getCurrentUser().getRelation("children");
+        ParseQuery<ParseObject> query = relation.getQuery();
+        query.whereEqualTo("firstName",firstName);
+        query.whereEqualTo("lastName",lastName);
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> objects, ParseException e) {
+                if(e!=null){
+                    System.out.println("entro al error");
+                    e.printStackTrace();
+                }else{
+                    for(int i=0;i<objects.size();i++){
+                        ParseObject object = objects.get(i);
+                        String thefirstName = object.getString("firstName");
+                        System.out.println("Este es el firstName que trae de la DB:" + thefirstName);
 
+                        for(int j=0;j<scores.length;j++){
+                            System.out.println("---cada score cuando va a guardar:" + scores[j]);
+                            object.add("scores",scores[j]);
+                        }
+                        object.saveInBackground(new SaveCallback() {
+                            @Override
+                            public void done(ParseException e) {
+                                if (e != null) {
+                                    System.out.println("llega al error del guardar score");
+                                } else {
+                                    System.out.println("guardo score satisfactoriamente");
+                                }
+                            }
+                        });
+                    }
+                }
+            }
+        });
+    }
+    public void registerTimesInDB(String firstName,String lastName, final double[] times){
+        ParseRelation relation = ParseUser.getCurrentUser().getRelation("children");
+        ParseQuery<ParseObject> query = relation.getQuery();
+        query.whereEqualTo("firstName",firstName);
+        query.whereEqualTo("lastName",lastName);
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> objects, ParseException e) {
+                if(e!=null){
+                    System.out.println("entro al error");
+                    e.printStackTrace();
+                }else{
+                    for(int i=0;i<objects.size();i++){
+                        ParseObject object = objects.get(i);
+                        String thefirstName = object.getString("firstName");
+                        System.out.println("Este es el firstName que trae de la DB:" + thefirstName);
+                        for(int j=0;j<times.length;j++){
+                            System.out.println("---cada time cuando va a guardar:" + times[i]);
+                            object.add("times",times[j]);
+                        }
+                        object.saveInBackground(new SaveCallback() {
+                            @Override
+                            public void done(ParseException e) {
+                                if (e != null) {
+                                    System.out.println("llega al error del guardar score");
+                                } else {
+                                    System.out.println("guardo score satisfactoriamente");
+                                }
+                            }
+                        });
+                    }
+                }
+            }
+        });
+    }
 }
