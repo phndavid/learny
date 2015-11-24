@@ -3,6 +3,7 @@ package com.lab.inmotion.learny.Activities;
 import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.view.DragEvent;
 import android.view.MotionEvent;
@@ -53,11 +54,18 @@ public class CubeActivity extends AppCompatActivity {
                     if (img3.getBackground().getConstantState() == getResources().getDrawable(resourceIds[count*4+2]).getConstantState())
                         if (img4.getBackground().getConstantState() == getResources().getDrawable(resourceIds[count*4+3]).getConstantState()){
                             Toast.makeText(this, "Figura correcta!", Toast.LENGTH_LONG).show();
+                            App app = (App) getApplication();
+                            app.getModel().performCorrectPlay();
                         }
             }
         }
     }
     public void btnContinueCube(View view){
+        long finalTime = SystemClock.elapsedRealtime();
+        double dFinalTime = (double) finalTime;
+        System.out.println("finalTime long: " + finalTime + " finalTime double: " + dFinalTime);
+        model.getCurrent().getCurrentTest().setFinalTime(dFinalTime);
+        model.getCurrent().getCurrentTest().measureTime();
         Intent intent = new Intent(this,FeedBackActivity.class);
         intent.putExtra("category","organizalos");
         intent.putExtra("count", model.getCurrent().getCurrentTest().getId());
@@ -66,8 +74,8 @@ public class CubeActivity extends AppCompatActivity {
         int actual = model.getCurrent().getCurrentTest().getId();
         if(actual<4) {
             System.out.println("puntaje acumulado: " + model.getCurrent().getPuntaje());
-            model.nextTest();
             checkAnswer(actual);
+            model.nextTest();
         }
     }
 
@@ -154,6 +162,9 @@ public class CubeActivity extends AppCompatActivity {
     @Override
    protected void onResume() {
         super.onResume();
+        long startTime = SystemClock.elapsedRealtime();
+        double dStartTime = (double) startTime;
+        model.getCurrent().getCurrentTest().setInitialTime(dStartTime);
         int thecount = model.getCurrent().getCurrentTest().getId();
 
         if(thecount>0) {

@@ -66,6 +66,15 @@ public class Especialista extends ParseUser{
         }
         return null;
     }
+    public boolean theresCurrentChild(){
+        boolean current = false;
+        for(int i=0;i<children.size();i++){
+            if(children.get(i).isCurrent()){
+                current=true;
+            }
+        }
+        return current;
+    }
     public String getUsername(){
         return username;
     }

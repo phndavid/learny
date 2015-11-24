@@ -70,9 +70,9 @@ public class SequenceActivity extends AppCompatActivity {
         finish();
         int actual = model.getCurrent().getCurrentTest().getId();
         if(actual < 4) {
+            checkAnswer(actual);
             System.out.println("puntaje acumulado: " + model.getCurrent().getPuntaje());
             model.nextTest();
-            checkAnswer(actual);
         }
 
     }
@@ -156,10 +156,10 @@ public class SequenceActivity extends AppCompatActivity {
     @Override
      protected void onResume() {
         super.onResume();
-        int thecount= model.getCurrent().getCurrentTest().getId();
         long startTime = SystemClock.elapsedRealtime();
         double dStartTime = (double) startTime;
         model.getCurrent().getCurrentTest().setInitialTime(dStartTime);
+        int thecount= model.getCurrent().getCurrentTest().getId();
         if(thecount>0) {
             switch (thecount){
                 case 1:

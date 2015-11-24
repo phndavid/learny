@@ -3,6 +3,7 @@ package com.lab.inmotion.learny.Activities;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -113,7 +114,7 @@ public class ObjectActivity extends AppCompatActivity {
         option9.setBackgroundResource(imgResourceIds[count*9+8]);
     }
     public void validateAnswer(int count) {
-        if (imgRompe1.getBackground().getConstantState() == getResources().getDrawable(imgResourceIds[count*9]).getConstantState()) {
+        if (imgRompe1.getBackground().getConstantState() == getResources().getDrawable(imgResourceIds[count * 9]).getConstantState()) {
             if (imgRompe2.getBackground().getConstantState() == getResources().getDrawable(imgResourceIds[count * 9 + 1]).getConstantState())
                 if (imgRompe3.getBackground().getConstantState() == getResources().getDrawable(imgResourceIds[count * 9 + 2]).getConstantState())
                     if (imgRompe4.getBackground().getConstantState() == getResources().getDrawable(imgResourceIds[count * 9 + 3]).getConstantState())
@@ -123,6 +124,8 @@ public class ObjectActivity extends AppCompatActivity {
                                     if (imgRompe8.getBackground().getConstantState() == getResources().getDrawable(imgResourceIds[count * 9 + 7]).getConstantState())
                                         if (imgRompe9.getBackground().getConstantState() == getResources().getDrawable(imgResourceIds[count * 9 + 8]).getConstantState()){
                                             Toast.makeText(this, "Armo el rompecabezas bien!", Toast.LENGTH_LONG).show();
+                                                App app = (App) getApplication();
+                                                app.getModel().performCorrectPlay();
                                         }
         }
 
@@ -253,6 +256,11 @@ public class ObjectActivity extends AppCompatActivity {
     }
     //---------------------------------------
     public void btnContinue(View view){
+        long finalTime = SystemClock.elapsedRealtime();
+        double dFinalTime = (double) finalTime;
+        System.out.println("finalTime long: " + finalTime + " finalTime double: " + dFinalTime);
+        model.getCurrent().getCurrentTest().setFinalTime(dFinalTime);
+        model.getCurrent().getCurrentTest().measureTime();
         Intent intent = new Intent(this,FeedBackActivity.class);
         intent.putExtra("category", "construyelos");
         intent.putExtra("count", model.getCurrent().getCurrentTest().getId());
@@ -287,6 +295,9 @@ public class ObjectActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        long startTime = SystemClock.elapsedRealtime();
+        double dStartTime = (double) startTime;
+        model.getCurrent().getCurrentTest().setInitialTime(dStartTime);
         //init();
         System.out.println("OnResume Counter Sequence: " + count);
         int thecount= model.getCurrent().getCurrentTest().getId();
