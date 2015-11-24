@@ -70,7 +70,7 @@ public class ChildListAdapter extends BaseAdapter {
 
         txtName.setText(child.getFirstName());
         txtGenero.setText(child.getSex());
-        txtBirth.setText(child.getBirth().toString());
+        txtBirth.setText(child.getTestPlace());
         txtParente.setText(child.getParentName());
         txtColegio.setText(child.getSchool());
         txtAddress.setText(child.getAddress());
