@@ -59,6 +59,7 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:id="@+id/txt_dayBirth"
+        android:hint="Día"
         android:layout_below="@+id/lbl_birth"
         android:layout_alignLeft="@+id/lbl_birth"
         android:layout_alignStart="@+id/lbl_birth"
@@ -69,6 +70,7 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:id="@+id/txt_mothBirth"
+        android:hint="Mes"
         android:layout_below="@+id/lbl_birth"
         android:layout_toRightOf="@+id/txt_dayBirth"
         android:layout_toEndOf="@+id/txt_dayBirth" />
@@ -79,6 +81,7 @@
         android:inputType="number"
         android:id="@+id/txt_yearBirth"
         android:layout_alignTop="@+id/txt_mothBirth"
+        android:hint="Año"
         android:layout_toRightOf="@+id/txt_mothBirth"
         android:layout_alignRight="@+id/lbl_parents"
         android:layout_alignEnd="@+id/lbl_parents" />
