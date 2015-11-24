@@ -95,7 +95,7 @@
         android:layout_height="132dp"
         android:layout_marginBottom="0dp"
         android:layout_marginLeft="670dp"
-        android:layout_marginTop="315dp"
+        android:layout_marginTop="330dp"
         android:id="@+id/right_imgCuatro">
     </LinearLayout>
     <LinearLayout
@@ -104,7 +104,7 @@
         android:layout_height="132dp"
         android:layout_marginBottom="0dp"
         android:layout_marginLeft="550dp"
-        android:layout_marginTop="315dp"
+        android:layout_marginTop="330dp"
         android:id="@+id/right_imgTres">
     </LinearLayout>
 

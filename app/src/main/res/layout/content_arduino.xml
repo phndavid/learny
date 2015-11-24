@@ -53,51 +53,59 @@
          />
 
     <Button
-        android:layout_width="70dp"
-        android:layout_height="50dp"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
         android:id="@+id/btn_ahead"
-        android:layout_marginTop="260dp"
-        android:layout_marginLeft="95dp"
+        android:background="@android:color/transparent"
+        android:layout_marginTop="240dp"
+        android:layout_marginLeft="75dp"
         android:onClick="btnAhead" />
     <Button
         android:layout_width="70dp"
-        android:layout_height="50dp"
+        android:layout_height="80dp"
         android:id="@+id/btn_back"
+        android:background="@android:color/transparent"
         android:layout_marginTop="395dp"
         android:layout_marginLeft="95dp"
         android:nestedScrollingEnabled="false"
         android:onClick="btnBack" />
     <Button
         android:layout_width="70dp"
-        android:layout_height="50dp"
+        android:layout_height="80dp"
         android:id="@+id/btn_right"
+        android:background="@android:color/transparent"
         android:layout_marginTop="330dp"
         android:layout_marginLeft="180dp"
         android:onClick="btnRight" />
     <Button
         android:layout_width="70dp"
-        android:layout_height="50dp"
+        android:layout_height="80dp"
         android:id="@+id/btn_left"
-        android:layout_marginTop="330dp"
+        android:background="@android:color/transparent"
+        android:layout_marginTop="325dp"
         android:layout_marginLeft="10dp"
         android:onClick="btnLeft" />
 
     <Button
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:id="@+id/buttonPlay"
-        android:background="@mipmap/play43"
-        android:layout_marginTop="370dp"
-        android:layout_marginLeft="595dp"
-        android:onClick="playMusic" />
+        android:onClick="playMusic"
+        android:background="@android:color/transparent"
+        android:layout_alignTop="@+id/button3"
+        android:layout_alignLeft="@+id/buttonStop"
+        android:layout_alignStart="@+id/buttonStop" />
 
     <Button
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:id="@+id/buttonStop"
-        android:background="@mipmap/pause48"
-        android:layout_marginTop="390dp"
-        android:layout_marginLeft="780dp"
-        android:onClick="stopMusic" />
+        android:background="@android:color/transparent"
+        android:onClick="stopMusic"
+        android:layout_marginRight="80dp"
+        android:layout_marginEnd="80dp"
+        android:layout_alignTop="@+id/btn_ahead"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
