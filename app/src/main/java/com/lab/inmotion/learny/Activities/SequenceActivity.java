@@ -4,6 +4,7 @@ import android.content.ClipData;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.view.DragEvent;
 import android.view.MotionEvent;
@@ -49,11 +50,19 @@ public class SequenceActivity extends AppCompatActivity {
                 if (img2.getBackground().getConstantState() == getResources().getDrawable(resourceIds[count * 3 + 1]).getConstantState())
                     if (img3.getBackground().getConstantState() == getResources().getDrawable(resourceIds[count * 3 + 2]).getConstantState()) {
                         Toast.makeText(this, "Secuencia correcta!", Toast.LENGTH_LONG).show();
+                        //aqui gano
+                        App app = (App) getApplication();
+                        app.getModel().performCorrectPlay();
                     }
             }
         }
     }
     public void btnContinue(View view){
+        long finalTime = SystemClock.elapsedRealtime();
+        double dFinalTime = (double) finalTime;
+        System.out.println("finalTime long: " + finalTime + " finalTime double: " + dFinalTime);
+        model.getCurrent().getCurrentTest().setFinalTime(dFinalTime);
+        model.getCurrent().getCurrentTest().measureTime();
         Intent intent = new Intent(this,FeedBackActivity.class);
         intent.putExtra("category", "vidaCotidiana");
         intent.putExtra("count", model.getCurrent().getCurrentTest().getId());
@@ -148,6 +157,9 @@ public class SequenceActivity extends AppCompatActivity {
      protected void onResume() {
         super.onResume();
         int thecount= model.getCurrent().getCurrentTest().getId();
+        long startTime = SystemClock.elapsedRealtime();
+        double dStartTime = (double) startTime;
+        model.getCurrent().getCurrentTest().setInitialTime(dStartTime);
         if(thecount>0) {
             switch (thecount){
                 case 1:

@@ -78,7 +78,7 @@ public class CategoryActivity extends AppCompatActivity {
             }
 
             App app = (App) getApplication();
-            Category category = app.getModel().getCurrent();
+            final Category category = app.getModel().getCurrent();
             Category selectedCategory = app.getModel().getCategories()[position];
             final int theId = selectedCategory.getId();
             final int id = category.getId();
@@ -91,6 +91,7 @@ public class CategoryActivity extends AppCompatActivity {
             if(position==id){
                 v.setImageResource(mResourceIdsColor[position % mResourceIdsColor.length]);
             }
+
             v.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -114,11 +115,11 @@ public class CategoryActivity extends AppCompatActivity {
                         Intent theIntent = new Intent(v.getContext(), KeyActivity.class);
                         startActivity(theIntent);
                         finish();
-                    }else if (position == 5 && (position==id)){
+                    }else if (position == 5 && (id==4) && category.isCompleted()){
                         Intent theIntent = new Intent(v.getContext(), ArduinoActivity.class);
                         startActivity(theIntent);
                         finish();
-                    }else if(position!=id){
+                    }else {
                         Toast toast = Toast.makeText(getApplicationContext(),"Ya has completado este nivel o aun no has llegado a él!",Toast.LENGTH_LONG);
                         toast.show();
                     }

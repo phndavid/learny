@@ -152,6 +152,7 @@ public class FigureActivity extends AppCompatActivity {
         textWord.setText(word);
     }
 
+
     public boolean checkAnswer(String answer,int count){
         System.out.println("la respuesta: "+answer);
         boolean correct = false;

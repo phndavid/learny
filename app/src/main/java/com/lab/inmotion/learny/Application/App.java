@@ -73,22 +73,43 @@ public class App extends Application {
                         String sex = theChild.getString("sex");
                         List<Integer> scores = theChild.getList("scores");
                         List times = theChild.getList("times");
-                        double[] theScore = new double[scores.size()];
-                        double[] theTime = new double[times.size()];
-                        for(int k=0;k<scores.size();k++){
-                            try{
-                                DecimalFormat df = new DecimalFormat("#.00");
-                                df.format(theTime[k]);
-                                double firstTime = (double)times.get(k);
-                                String sTime = df.format(firstTime);
-                                double time = Double.parseDouble(sTime);
-                                theScore[k] = (double)scores.get(k).intValue();
-                                theTime[k] = time;
-                            }catch (Exception ex){
-                                theTime[k] = 0;
-                                theScore[k] = 0;
-                            }
+                        double[] theScore = new double[5];
+                        double[] theTime = new double[5];
+                        if(scores==null){
+                            theScore[0]=0;
+                            theScore[1]=0;
+                            theScore[2]=0;
+                            theScore[3]=0;
+                            theScore[4]=0;
 
+                        }
+                        if(times==null){
+                            theTime[0] = 0;
+                            theTime[1] = 0;
+                            theTime[2] = 0;
+                            theTime[3] = 0;
+                            theTime[4] = 0;
+
+                        }
+                        if(scores!=null){
+                            for(int k=0;k<scores.size();k++){
+                                theScore[k] = (double)scores.get(k).intValue();
+                            }
+                        }
+                        if(times!=null){
+                            for(int k=0;k<scores.size();k++){
+                                try{
+                                    DecimalFormat df = new DecimalFormat("#.00");
+                                    double firstTime = (double)times.get(k);
+                                    String sTime = df.format(firstTime);
+                                    double time = Double.parseDouble(sTime);
+                                    theTime[k] = time;
+                                }catch (Exception ex){
+                                    theTime[k] = 0;
+                                    theScore[k] = 0;
+                                }
+
+                            }
                         }
                         Child child = new Child();
                         child.setPuntajes(theScore);

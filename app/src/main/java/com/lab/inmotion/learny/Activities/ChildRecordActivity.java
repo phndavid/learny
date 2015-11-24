@@ -163,6 +163,7 @@ public class ChildRecordActivity extends AppCompatActivity {
             app.getModel().getEspecialista().setChildToCurrent(firstName,lastName);
             Intent theIntent = new Intent(this, LearnyActivity.class);
             startActivity(theIntent);
+            finish();
         }
     }
     public void registerChildInDB(final Child thechild){
