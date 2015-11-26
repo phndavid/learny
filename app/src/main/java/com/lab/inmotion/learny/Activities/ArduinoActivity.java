@@ -37,7 +37,7 @@ public class ArduinoActivity extends AppCompatActivity {
     //SPP UUID. Look for it
     static final UUID myUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
 
-    private  MediaPlayer sp;
+    //private  MediaPlayer sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -47,10 +47,11 @@ public class ArduinoActivity extends AppCompatActivity {
         address = newint.getStringExtra(DeviceActivity.EXTRA_ADDRESS); //receive the address of the bluetooth device
 
         setContentView(R.layout.activity_arduino);
-        sp = MediaPlayer.create(this, R.raw.sp);
+        //sp = MediaPlayer.create(this, R.raw.sp);
 
         new ConnectBT().execute(); //Call the class to connect
     }
+    /*
     public void playMusic(View view){
         if(!sp.isPlaying()){
             sp.start();
@@ -64,7 +65,7 @@ public class ArduinoActivity extends AppCompatActivity {
         if(sp.isPlaying()){
             sp.pause();
         }
-    }
+    }*/
     public void btnAhead(View view){
         Toast.makeText(this, "Ahead", Toast.LENGTH_LONG).show();
         ahead();
